@@ -13,6 +13,13 @@ Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 # include $(ms)/perl.def
 
+cribdir:
+	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@
+
+ww.mk: cribdir
+	cat cribdir/Makefile > $@
+	cat cribdir/*.mk >> $@
+
 ##################################################################
 
 ## Content
