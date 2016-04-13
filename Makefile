@@ -1,8 +1,8 @@
-# Circumcision_and_behaviour
+::# Circumcision_and_behaviour
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: notarget
+target pngtarget pdftarget vtarget acrtarget: add.Rout
 
 ##################################################################
 
@@ -17,6 +17,10 @@ include stuff.mk
 
 ## Content
 
+Sources += $(wildcard *.R)
+
+add.Rout: add.R
+
 ######################################################################
 
 ### Makestuff
@@ -27,5 +31,5 @@ include stuff.mk
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
 
-# -include $(ms)/wrapR.mk
+-include $(ms)/wrapR.mk
 # -include $(ms)/oldlatex.mk
