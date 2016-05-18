@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: combines.summary.output 
+target pngtarget pdftarget vtarget acrtarget: surveys.Rout 
 
 ##################################################################
 
@@ -12,7 +12,7 @@ Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 # include $(ms)/perl.def
 
-Makefile: datadir cribdir
+Makefile: datadir
 
 datadir:
 	/bin/ln -s $(MC)/MC\ DHS\ data/ $@
@@ -161,6 +161,16 @@ combines.objects.output: $(sets:%=%.combined.objects.Routput)
 combines.summary.output: $(sets:%=%.combined.summary.Routput)
 	cat $^ > $@
 
+######################################################################
+
+## Combine all of the surveys
+## We already have a country code, but we need to code surveys as new or old.
+
+surveys.Rout: $(sets:%=%.combined.Rout.envir) surveys.R
+	$(run-R)
+
+## Does not work! Does summary not play nicely with plyr?
+surveys.summary.Routput: surveys.R
 
 ######################################################################
 
