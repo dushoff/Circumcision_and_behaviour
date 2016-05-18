@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: mediaQuants.summary.output 
+target pngtarget pdftarget vtarget acrtarget: combines.summary.output 
 
 ##################################################################
 
@@ -12,8 +12,7 @@ Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 # include $(ms)/perl.def
 
-datadir:
-	/bin/ln -s ~/Dropbox/MC\ \(1\)/MC\ DHS\ data/ $@
+# datadir: /bin/ln -s ~/Dropbox/MC\ \(1\)/MC\ DHS\ data/ $@
 
 cribdir:
 	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@
@@ -63,6 +62,7 @@ recodes.summary.output: $(sets:%=%.recode.summary.Routput)
 
 ######################################################################
 
+.PRECIOUS: %.knowledgeQual.Rout
 %.knowledgeQual.Rout: %.recode.Rout knowledge.R qual.R
 	$(run-R)
 
@@ -75,6 +75,7 @@ knowledgeQuals.objects.output: $(sets:%=%.knowledgeQual.objects.Routput)
 knowledgeQuals.summary.output: $(sets:%=%.knowledgeQual.summary.Routput)
 	cat $^ > $@
 
+.PRECIOUS: %.mediaQual.Rout
 %.mediaQual.Rout: %.recode.Rout media.R qual.R
 	$(run-R)
 
@@ -88,6 +89,7 @@ mediaQuals.summary.output: $(sets:%=%.mediaQual.summary.Routput)
 	cat $^ > $@
 
 
+.PRECIOUS: %.knowledgeQuant.Rout
 %.knowledgeQuant.Rout: %.knowledgeQual.Rout levelcodes_knowledge.tsv quant.R
 	$(run-R)
 
@@ -100,6 +102,7 @@ knowledgeQuants.objects.output: $(sets:%=%.knowledgeQuant.objects.Routput)
 knowledgeQuants.summary.output: $(sets:%=%.knowledgeQuant.summary.Routput)
 	cat $^ > $@
 
+.PRECIOUS: %.mediaQuant.Rout
 %.mediaQuant.Rout: %.mediaQual.Rout levelcodes_media.tsv quant.R
 	$(run-R)
 
@@ -111,6 +114,52 @@ mediaQuants.objects.output: $(sets:%=%.mediaQuant.objects.Routput)
 
 mediaQuants.summary.output: $(sets:%=%.mediaQuant.summary.Routput)
 	cat $^ > $@
+
+######################################################################
+
+## PCA
+
+.PRECIOUS: %.knowledgePCA.Rout
+%.knowledgePCA.Rout: %.knowledgeQuant.Rout catPCA.R 
+	$(run-R)
+
+knowledgePCAs.output: $(sets:%=%.knowledgePCA.Routput)
+	cat $^ > $@
+
+knowledgePCAs.objects.output: $(sets:%=%.knowledgePCA.objects.Routput)
+	cat $^ > $@
+
+knowledgePCAs.summary.output: $(sets:%=%.knowledgePCA.summary.Routput)
+	cat $^ > $@
+
+.PRECIOUS: %.mediaPCA.Rout
+%.mediaPCA.Rout: %.mediaQuant.Rout catPCA.R
+	$(run-R)
+
+mediaPCAs.output: $(sets:%=%.mediaPCA.Routput)
+	cat $^ > $@
+
+mediaPCAs.objects.output: $(sets:%=%.mediaPCA.objects.Routput)
+	cat $^ > $@
+
+mediaPCAs.summary.output: $(sets:%=%.mediaPCA.summary.Routput)
+	cat $^ > $@
+
+.PRECIOUS: %.combined.Rout
+%.combined.Rout: %.recode.Rout %.knowledgePCA.Rout.envir %.mediaPCA.Rout.envir combinePCA.R
+	$(run-R)
+
+combines.output: $(sets:%=%.combined.Routput)
+	cat $^ > $@
+
+combines.objects.output: $(sets:%=%.combined.objects.Routput)
+	cat $^ > $@
+
+combines.summary.output: $(sets:%=%.combined.summary.Routput)
+	cat $^ > $@
+
+
+######################################################################
 
 ## Crib 
 
