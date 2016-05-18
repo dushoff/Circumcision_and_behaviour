@@ -12,7 +12,10 @@ Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 # include $(ms)/perl.def
 
-# datadir: /bin/ln -s ~/Dropbox/MC\ \(1\)/MC\ DHS\ data/ $@
+Makefile: datadir cribdir
+
+datadir:
+	/bin/ln -s $(MC)/MC\ DHS\ data/ $@
 
 cribdir:
 	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@
@@ -163,6 +166,7 @@ combines.summary.output: $(sets:%=%.combined.summary.Routput)
 
 ## Crib 
 
+.PRECIOUS: %.tsv %.ccsv %.csv %.R
 %.tsv %.ccsv %.csv %.R: 
 	$(CP) cribdir/$@ .
 
