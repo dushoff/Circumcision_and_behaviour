@@ -19,9 +19,9 @@ maritalStat, V501
 recentSex, V536
 job, V714
 heardHIV, V751
-yKnowCondomsProtect, V754CP
-yKnowLessPartnerProtect, V754DP
-yKnowHealthyGetAids, V756
+knowledgeCondomsProtect, V754CP
+knowledgeLessPartnerProtect, V754DP
+knowledgeHealthyGetAids, V756
 # response (risk behaviors)
 condom, V761
 partnerYear, V766B
