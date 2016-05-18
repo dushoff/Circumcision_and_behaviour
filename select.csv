@@ -1,0 +1,33 @@
+# Blocks
+survey, V000
+clusterId, V001
+region, SREGNAT, V101
+# ethni, V131
+# Basic
+sampleWeight, V005
+age, V012
+ageGroup, V013
+urRural, V025
+edu, V106
+religion, V130, S132
+mediaNpMg, V157
+mediaRadio, V158
+mediaTv, V159
+wealthIndex, V190
+wealth, V191
+maritalStat, V501
+recentSex, V536
+job, V714
+heardHIV, V751
+yKnowCondomsProtect, V754CP
+yKnowLessPartnerProtect, V754DP
+yKnowHealthyGetAids, V756
+# response (risk behaviors)
+condom, V761
+partnerYear, V766B
+whoLastSex, V767A
+partnerLife, V836
+# predictors
+MC, V483, S448, S720, S801, S737, S748, FG103, S625
+ageMC, V483A, S802, S805A
+# anyProtection, V754Z is only available in pre-2007 surveys
