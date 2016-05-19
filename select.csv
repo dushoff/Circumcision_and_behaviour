@@ -1,8 +1,8 @@
 # Blocks
 survey, V000
 clusterId, V001
-region, SREGNAT, V101
-# ethni, V131
+#region, SREGNAT, V101
+ethni, V131
 # Basic
 sampleWeight, V005
 age, V012
