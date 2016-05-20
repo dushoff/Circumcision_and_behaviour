@@ -103,28 +103,7 @@ Answers$MCCategory <- as.factor(with(Answers,
 ))
 
 Answers <- within(Answers, {
-	region <- as.factor(paste(CC, region, sep="_"))
 	clusterId <- as.factor(paste(survey, clusterId, sep="_"))
-})
-
-Answers <- within(Answers, {
-		levels(region)[levels(region)=="KE_North Eastern"] <- "KE_Northeastern"
-		levels(region)[levels(region)=="LS_Qacha's-Nek"] <- "LS_Qasha's Nek"
-		levels(region)[levels(region)=="LS_Qacha's-Nek"] <- "LS_Qasha's Nek"
-		levels(region)[levels(region)=="LS_Thaba-Tseka"] <- "LS_Thaba Tseka"
-		levels(region)[levels(region)=="LS_Butha-bothe"] <- "LS_Butha-Buthe"
-		levels(region)[levels(region)=="MZ_Cabo delgado"] <- "MZ_Cabo Delgado"
-		levels(region)[levels(region)=="MZ_Zamb\x82zia"] <- "MZ_Zambezia"
-		levels(region)[levels(region)=="MZ_Maputo provincia"] <- "MZ_Maputo Provincia"
-		levels(region)[levels(region)=="MZ_Maputo cidade"] <- "MZ_Maputo Cidade"
-		levels(region)[levels(region)=="RW_City of Kigali"] <- "RW_Kigali City"
-		levels(region)[levels(region)=="TZ_Dar Es Salaam"] <- "TZ_Dar Es Salam"
-		levels(region)[levels(region)=="TZ_Kilimanjaro"] <- "TZ_Kilmanjaro"
-		levels(region)[levels(region)=="TZ_Zanzibar South"] <- "TZ_Zanziba South"
-		levels(region)[levels(region)=="UG_West-Nile"] <- "UG_West Nile"
-		levels(region)[levels(region)=="ZW_Matabeleland North"] <- "ZW_Matebeleland North"
-		levels(region)[levels(region)=="ZW_Matabeleland South"] <- "ZW_Matebeleland South"
-		levels(region)[levels(region)=="MZ_Zamb\x82zia"] <- "MZ_Zambezia"
 })
 
 # rdsave(Answers)
