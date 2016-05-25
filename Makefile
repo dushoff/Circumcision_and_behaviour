@@ -186,8 +186,8 @@ surveys.summary.Routput: surveys.R
 ## Crib 
 
 .PRECIOUS: %.tsv %.ccsv %.csv %.R
-%.tsv %.ccsv %.csv %.R: 
-	$(CP) cribdir/$@ .
+# %.tsv %.ccsv %.csv %.R: 
+	# $(CP) cribdir/$@ .
 
 ######################################################################
 
