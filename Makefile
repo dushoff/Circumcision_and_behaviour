@@ -12,6 +12,8 @@ Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 # include $(ms)/perl.def
 
+Sources += dushoff.mk
+
 Makefile: datadir
 
 datadir:
