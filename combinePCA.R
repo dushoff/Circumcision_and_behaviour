@@ -1,5 +1,6 @@
-
-print("#######################  RTARGET ####################")
+cat("##############################################\n")
+print(rtargetname)
+cat("##############################################\n")
 
 for (env in envir_list){
 	scores <- data.frame(row.names=row.names(env[["scores"]]))

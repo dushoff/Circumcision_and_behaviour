@@ -1,4 +1,7 @@
-cat ("\n\n##########  RTARGET  ##########\n\n")
+cat("##############################################\n")
+print(rtargetname)
+cat("##############################################\n")
+
 catList <- grepl(catname, names(Answers))
 qual <- Answers[catList]
 Answers <- Answers[!catList]

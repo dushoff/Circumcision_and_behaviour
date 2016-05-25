@@ -88,7 +88,7 @@ partnerLifeMax <- 6
 # Calculate MC statuses:
 ctable <- read.csv(grep("mcc", input_files, value=TRUE))
 print(ctable)
-set <- sub("[.].*", "", "RTARGET")
+set <- sub("[.].*", "", rtargetname)
 ind <- cut <- which(set==rownames(ctable))
 cut <- ifelse(length(ind)==1, ctable$cut[[ind]], NA)
 Answers$mccut <- rep(cut, nrow(Answers))
