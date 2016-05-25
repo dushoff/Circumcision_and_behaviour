@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: recodes.summary.output 
+target pngtarget pdftarget vtarget acrtarget: condomStatus.Rout 
 
 ##################################################################
 
@@ -62,6 +62,13 @@ recodes.output: $(sets:%=%.recode.Routput)
 
 recodes.summary.output: $(sets:%=%.recode.summary.Routput)
 	cat $^ > $@
+
+## Explore a little bit
+patterns.Rout: surveys.Rout patterns.R
+	$(run-R)
+
+## Make a model (fingers crossed!)
+condomStatus.Rout: surveys.Rout condomStatus.R
 
 ######################################################################
 
