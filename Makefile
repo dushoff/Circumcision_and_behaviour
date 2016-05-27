@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: condomStatus.Rout 
+target pngtarget pdftarget vtarget acrtarget: surveys.Rout 
 
 ##################################################################
 
