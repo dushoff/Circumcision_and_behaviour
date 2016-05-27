@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: combines.output 
+target pngtarget pdftarget vtarget acrtarget: knowledgePCAs.output 
 
 ##################################################################
 
@@ -206,6 +206,7 @@ datadir/ke7.men.Rout: datadir/KEMR70SV/KEMR70FL.SAV
 datadir/nm6.men.Rout: datadir/NMMR61SV/NMMR61FL.SAV
 datadir/zm5.men.Rout: datadir/ZMMR51SV/ZMMR51FL.SAV
 datadir/zm6.men.Rout: datadir/ZMMR61SV/ZMMR61FL.SAV
+datadir/rw7.men.Rout: datadir/RWMR70FL.SAV
  
 ### Makestuff
 
