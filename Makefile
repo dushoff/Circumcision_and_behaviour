@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: knowledgePCAs.output 
+target pngtarget pdftarget vtarget acrtarget: datadir/rw7.men.Rout 
 
 ##################################################################
 
@@ -26,6 +26,30 @@ ww.mk: cribdir
 	cat cribdir/Makefile > $@
 	cat cribdir/*.mk >> $@
 
+
+##################################################################
+
+# New set import. Carefully
+
+newmen = $(newsets:%=datadir/%.men.RData)
+
+## This did not work until I made it completely implicit, which is insane. 
+## Changing back because working version is dangerous
+$(newmen):datadir/%.RData: convert_dataset.R
+	$(MAKE) datadir/$*.Rout
+	cd datadir && /bin/ln -fs .$*.RData $*.RData
+
+# More danger
+datadir/%.Rout: convert_dataset.R
+	$(run-R)
+
+datadir/rw7.men.Rout: datadir/RWMR70FL.SAV
+datadir/ke7.men.Rout: datadir/KEMR70SV/KEMR70FL.SAV
+datadir/nm6.men.Rout: datadir/NMMR61SV/NMMR61FL.SAV
+datadir/zm5.men.Rout: datadir/ZMMR51SV/ZMMR51FL.SAV
+datadir/zm6.men.Rout: datadir/ZMMR61SV/ZMMR61FL.SAV
+datadir/nm5.men.Rout: datadir/NMMR51sv/nmmr51fl.sav
+
 ##################################################################
 
 ## Content
@@ -36,12 +60,13 @@ Sources += $(wildcard *.R)
 ### Data sets
 sets = ke4 ke7 ls4 ls6 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
 
+newsets = ke7 nm5 nm6 rw7 zm5 zm6
+
 ######################################################################
 
 ### Selecting
 select=$(sets:%=%.select.Rout)
 
-Sources += select.csv
 
 ## wselect.R needs to be moved to a general place
 $(select): %.select.Rout: datadir/%.men.RData select.csv wselect.R
