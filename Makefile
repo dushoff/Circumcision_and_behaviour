@@ -36,7 +36,6 @@ Sources += $(wildcard *.R)
 ### Data sets
 sets = ke4 ke5 ls4 ls6 mw4 mw6 mz4 mz6 tz4 tz6 ug5 ug6 zw5 zw6
 
-
 ######################################################################
 
 ### Selecting
