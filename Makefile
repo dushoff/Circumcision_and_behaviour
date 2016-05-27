@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: surveys.Rout 
+target pngtarget pdftarget vtarget acrtarget: combines.output 
 
 ##################################################################
 
@@ -34,7 +34,7 @@ Sources += $(wildcard *.R)
 
 
 ### Data sets
-sets = ke4 ke7 ls4 ls6 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm5 zw5 zw6
+sets = ke4 ke7 ls4 ls6 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
 
 ######################################################################
 
@@ -63,13 +63,6 @@ recodes.output: $(sets:%=%.recode.Routput)
 
 recodes.summary.output: $(sets:%=%.recode.summary.Routput)
 	cat $^ > $@
-
-## Explore a little bit
-patterns.Rout: surveys.Rout patterns.R
-	$(run-R)
-
-## Make a model (fingers crossed!)
-condomStatus.Rout: surveys.Rout condomStatus.R
 
 ######################################################################
 
@@ -182,6 +175,13 @@ surveys.summary.Routput: surveys.R
 
 ######################################################################
 
+## Explore a little bit
+patterns.Rout: surveys.Rout patterns.R
+	$(run-R)
+
+## Make a model (fingers crossed!)
+condomStatus.Rout: surveys.Rout condomStatus.R
+
 ## Crib 
 
 .PRECIOUS: %.tsv %.ccsv %.csv %.R
@@ -190,6 +190,23 @@ surveys.summary.Routput: surveys.R
 
 ######################################################################
 
+## Temporary file pipeline
+
+## Unzipping not used; too much case confusion
+datadir/%fl.sav: datadir/%sv.zip
+	unzip -d download_files -LL -o $<
+	touch $@
+
+datadir/%.men.Rout: convert_dataset.R
+	$(run-R)
+	cd datadir && ln -s .$*.men.RData $*.men.RData
+
+datadir/nm5.men.Rout: datadir/NMMR51sv/nmmr51fl.sav
+datadir/ke7.men.Rout: datadir/KEMR70SV/KEMR70FL.SAV
+datadir/nm6.men.Rout: datadir/NMMR61SV/NMMR61FL.SAV
+datadir/zm5.men.Rout: datadir/ZMMR51SV/ZMMR51FL.SAV
+datadir/zm6.men.Rout: datadir/ZMMR61SV/ZMMR61FL.SAV
+ 
 ### Makestuff
 
 ## Change this name to download a new version of the makestuff directory
