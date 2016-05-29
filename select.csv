@@ -1,7 +1,6 @@
 # Blocks
 survey, V000
 clusterId, V001
-ethni, V131
 # Basic
 sampleWeight, V005
 age, V012
@@ -30,3 +29,4 @@ partnerLife, V836
 MC, V483, S448, S720, S801, S737, S748, FG103, S625
 ageMC, V483A, S802, S805A
 # anyProtection, V754Z is only available in pre-2007 surveys
+#ethni, V131
