@@ -1,5 +1,6 @@
 Catholic: Catholic/Orthodox
 Orthodox: Catholic/Orthodox
+Roman catholic: Catholic/Orthodox
 Adventist: Other Christian
 Anglican: Other Christian
 Anglican Church: Other Christian
@@ -10,19 +11,23 @@ Charismatic: Other Christian
 Christrian: Other Christian
 Chrétienne: Other Christian
 Eglise du 7e jour: Other Christian
+Elcin: Other Christian
 Envagelic: Other Christian
 Evangelist: Other Christian
 Evangelical: Other Christian
 ^Christian: Other Christian
 Jehovah: Other Christian
+Jehovah Witness: Other Christian
 kimbanguist: Other Christian
 Methodist: Other Christian
 New apostolic: Other Christian
 Pentecostal: Other Christian
 Protestant: Other Christian
+Protestant/Anglican: Other Christian
 Protestant/ other Christian: Other Christian
 Salvation Army: Other Christian
 Seventh Day: Other Christian
+Seventh-day adventist: Other Christian
 SDA: Other Christian
 Baptist: Other Christian
 ^Zion: Other Christian
