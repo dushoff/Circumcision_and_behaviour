@@ -27,6 +27,16 @@ whoLastSex, V767A
 partnerLife, V836
 # predictors
 MC, V483, S448, S720, S801, S737, S748, FG103, S625
+# For S625:
+#It’s Circumcised in mz4
+# but "Where did you go for the injection the last time?" in tz4
+# and "Ever gotten \"drunk\"" in ls4
+# For S737:
+# It's "Circumcised" in MW4
+# "Not married men should have sex with only one partner" in rw5
 ageMC, V483A, S802, S805A
+# For 805A:
+# It’s "Age at circumcision" for ls6, but
+# "Person who administered last health injection" in UG6
 # anyProtection, V754Z is only available in pre-2007 surveys
-#ethni, V131
+# ethni, V131
