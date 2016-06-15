@@ -26,7 +26,7 @@ partnerYear, V766B
 whoLastSex, V767A
 partnerLife, V836
 # predictors
-MC, FG103, S448, S625, S720, S737, S748, S801, S805C, V483 
+MC, FG103, S448, S625, S720, S737, S748, S801, S805A, S805C, V483 
 # For S625:
 #It’s Circumcised in mz4
 # but "Where did you go for the injection the last time?" in tz4
@@ -34,10 +34,6 @@ MC, FG103, S448, S625, S720, S737, S748, S801, S805C, V483
 # For S737:
 # It's "Circumcised" in MW4
 # "Not married men should have sex with only one partner" in rw5
-# S805A in ls7 is MC status:  what do we do with this troublesome one?
-ageMC, S802, S805A, S805B, S805D, V483A
-# For 805A:
-# It’s "Age at circumcision" for ls6, but
-# "Person who administered last health injection" in UG6
+ageMC, S802, S805B, S805D, V483A
 # anyProtection, V754Z is only available in pre-2007 surveys
 # ethni, V131
