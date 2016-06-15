@@ -44,6 +44,7 @@ datadir/%.Rout: convert_dataset.R
 	$(run-R)
 
 datadir/rw7.men.Rout: datadir/RWMR70FL.SAV
+datadir/ls7.men.Rout: datadir/LSMR71SV/LSMR71FL.SAV
 datadir/ke7.men.Rout: datadir/KEMR70SV/KEMR70FL.SAV
 datadir/nm6.men.Rout: datadir/NMMR61SV/NMMR61FL.SAV
 datadir/zm5.men.Rout: datadir/ZMMR51SV/ZMMR51FL.SAV
@@ -58,9 +59,9 @@ Sources += $(wildcard *.R)
 
 
 ### Data sets
-sets = ke4 ke7 ls4 ls6 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
+sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
 
-newsets = ke7 nm5 nm6 rw7 zm5 zm6
+newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
 
 ######################################################################
 
