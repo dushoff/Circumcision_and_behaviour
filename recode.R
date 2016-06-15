@@ -86,7 +86,7 @@ partnerLifeMax <- 6
 })
 
 # Calculate MC statuses:
-# in ageMC, 98 is "don't know" and 95 and 96 are "during childhoos <5 years"
+# in ageMC, 98 is "don't know" and 95 and 96 are "during childhood <5 years"
 ctable <- read.csv(grep("mcc", input_files, value=TRUE))
 print(ctable)
 set <- sub("[.].*", "", rtargetname)
