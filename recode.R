@@ -94,7 +94,7 @@ ind <- cut <- which(set==rownames(ctable))
 cut <- ifelse(length(ind)==1, ctable$cut[[ind]], NA)
 Answers$mccut <- rep(cut, nrow(Answers))
 baseAge <- with(Answers, 
-	ifelse(ageMC==95 | ageMC==96 | ageMC==98, 0, ageMC)
+	ifelse(ageMC==95 | ageMC==96 | ageMC==98, NA, ageMC)
 )
 oldMC <- with(Answers, 
 	ifelse(age-baseAge>mccut, "Old", "New")
