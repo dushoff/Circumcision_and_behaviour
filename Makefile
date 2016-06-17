@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: surveys.Rout 
+target pngtarget pdftarget vtarget acrtarget: recodes.summary.output 
 
 ##################################################################
 
@@ -33,15 +33,21 @@ ww.mk: cribdir
 
 newmen = $(newsets:%=datadir/%.men.RData)
 
+######################################################################
+
+## You need to uncomment these rules to import new data sets, apparently
+
 ## This did not work until I made it completely implicit, which is insane. 
 ## Changing back because working version is dangerous
-$(newmen):datadir/%.RData: convert_dataset.R
-	$(MAKE) datadir/$*.Rout
-	cd datadir && /bin/ln -fs .$*.RData $*.RData
+# datadir/%.RData: convert_dataset.R
+# 	$(MAKE) datadir/$*.Rout
+# 	cd datadir && /bin/ln -fs .$*.RData $*.RData
 
 # More danger
-datadir/%.Rout: convert_dataset.R
-	$(run-R)
+# datadir/%.Rout: convert_dataset.R
+# 	$(run-R)
+
+######################################################################
 
 datadir/rw7.men.Rout: datadir/RWMR70FL.SAV
 datadir/ls7.men.Rout: datadir/LSMR71SV/LSMR71FL.SAV
@@ -67,7 +73,6 @@ newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
 
 ### Selecting
 select=$(sets:%=%.select.Rout)
-
 
 ## wselect.R needs to be moved to a general place
 $(select): %.select.Rout: datadir/%.men.RData select.csv wselect.R
