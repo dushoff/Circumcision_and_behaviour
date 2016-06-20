@@ -86,7 +86,7 @@ partnerLifeMax <- 6
 })
 
 # Calculate MC statuses:
-# in ageMC, 98 is "don't know" and 95 and 96 are "during childhood <5 years"
+# in ageMC, 98 is "don't know" and 95 and 96 are "during childhood <5 years"  So 98 shall be coded as NA and 95 and 96 oldMC.
 ctable <- read.csv(grep("mcc", input_files, value=TRUE))
 print(ctable)
 set <- sub("[.].*", "", rtargetname)
