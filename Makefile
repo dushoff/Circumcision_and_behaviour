@@ -80,6 +80,11 @@ $(select): %.select.Rout: datadir/%.men.RData select.csv wselect.R
 
 select.output: $(sets:%=%.select.Routput)
 	cat $^ > $@
+select.objects.output: $(sets:%=%.select.objects.Routput)
+	cat $^ > $@
+
+select.summary.output: $(sets:%=%.select.summary.Routput) select.mk
+	cat $^ > $@
 
 ### Recoding
 Sources += $(wildcard *.ccsv *.tsv)
