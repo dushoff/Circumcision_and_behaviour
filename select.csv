@@ -34,6 +34,7 @@ MC, FG103, S448, S625, S720, S737, S748, S801, V483
 # For S737:
 # It's "Circumcised" in MW4
 # "Not married men should have sex with only one partner" in rw5
-ageMC, S802, S805A, S805D, V483A
+ageMC, V483A, S802, S805A, S805D
+# S805A is "Person who administered last health injection" in UG6 (where ageMC is V483A), but ageMC in MW5
 # anyProtection, V754Z is only available in pre-2007 surveys
 # ethni, V131
