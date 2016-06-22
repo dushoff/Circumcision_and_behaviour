@@ -21,7 +21,7 @@ Answers <- subset(Answers,
 	!is.na(recentSex) & !grepl("Never", recentSex)
 )
 Answers <- subset(Answers,
-	!is.na(MC) & !(MC=="Don't know") & !(MC=="DK")
+	!is.na(MC) & !(MC=="Don't know") & !(MC=="DK") & !(MC=="DK/Not sure")
 )
 Answers <- within(Answers, {
 	MC <- drop.levels(MC, reorder=FALSE)
