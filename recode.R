@@ -93,11 +93,14 @@ set <- sub("[.].*", "", rtargetname)
 ind <- cut <- which(set==rownames(ctable))
 cut <- ifelse(length(ind)==1, ctable$cut[[ind]], NA)
 Answers$mccut <- rep(cut, nrow(Answers))
-baseAge <- with(Answers, 
-	ifelse(ageMC==95 | ageMC==96 | ageMC==98, NA, ageMC)
+Answers$baseAge <- with(Answers, 
+	ifelse(ageMC==95 | ageMC==96,
+		5, ifelse(ageMC==98, NA, ageMC)
+	)
 )
+
 oldMC <- with(Answers, 
-	ifelse(age-baseAge>mccut, "Old", "New")
+	ifelse(age-Answers$baseAge>mccut, "Old", "New")
 )
 Answers$MCCategory <- as.factor(with(Answers,
 	ifelse(MC=="No", "No", oldMC)
