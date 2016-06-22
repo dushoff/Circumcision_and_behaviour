@@ -1,7 +1,4 @@
-There are some questions we need to answer before running the models:
-+ Are we OK with Tanzania religion coded as Tanzania under religion since this variable is not surveyed?
-+ To fix 95, 96 and 98 in ageMC
++ In surveys.Rout, there are 12570 NAs in MCCategory.  It is the sum of circumcised men in the pre-2007 datasets.
 
-In the paper:
 + explain how we coded partner by year and by lifetime
 
