@@ -1,4 +1,5 @@
 options(width=200)
+# library(coefplot)
 library(ordinal)
 library(splines)
 
