@@ -217,6 +217,10 @@ patterns.Rout: surveys.Rout patterns.R
 
 ## Make a model (fingers crossed!)
 condomStatus.Rout: surveys.Rout condomStatus.R
+partnerYearStatus.Rout: surveys.Rout partnerYearStatus.R
+partnerLifeStatus.Rout: surveys.Rout partnerLifeStatus.R
+condomRecency.Rout: surveys.Rout condomRecency.R
+partnerYearRecency.Rout: surveys.Rout partnerYearRecency.R
 
 ## Crib 
 
