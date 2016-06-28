@@ -17,7 +17,7 @@ Sources += dushoff.mk
 Makefile: datadir
 
 datadir:
-	/bin/ln -s $(MC)/MC\ DHS\ data/ $@
+	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
 
 cribdir:
 	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@
