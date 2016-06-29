@@ -18,7 +18,7 @@ mod <- clmm(condom ~ ns(age, 4)
 + ns(wealth,3)
 + religion + edu + urRural + job + maritalStat
 + media + knowledge + MCCategory + (1|clusterId),
-data=modAns, family=binomial()
+data=modAns
 )
  
 # rdsave(mod, modAns)
