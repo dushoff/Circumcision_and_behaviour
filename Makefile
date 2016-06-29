@@ -222,6 +222,8 @@ condomRecency.Rout: surveys.Rout condomRecency.R
 partnerYearRecency.Rout: surveys.Rout partnerYearRecency.R
 partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
+temp_summary_results.Rout: temp_summary_results.R
+
 ## Crib 
 
 .PRECIOUS: %.tsv %.ccsv %.csv %.R
