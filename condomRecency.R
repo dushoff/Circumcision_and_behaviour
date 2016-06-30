@@ -6,7 +6,7 @@ library(splines)
 Answers <-subset(Answers, period=="new")
 
 modAns <- model.frame(
-condom ~  age+wealth+religion+edu+urRural+job+maritalStat+
+condom ~  survey + age+wealth+religion+edu+urRural+job+maritalStat+
 media + knowledge + MCCategory + clusterId,
 data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
 )
@@ -17,7 +17,7 @@ attr(modAns, "terms") <- NULL
 mod <- clmm(condom ~ ns(age, 4)
 + ns(wealth,3)
 + religion + edu + urRural + job + maritalStat
-+ media + knowledge + MCCategory + (1|clusterId),
++ media + knowledge + MCCategory + survey + (1|clusterId),
 data=modAns
 )
  
