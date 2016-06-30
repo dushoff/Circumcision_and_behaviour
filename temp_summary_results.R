@@ -18,7 +18,7 @@ summary(mod)
 
 
 ## Partner Life Recency
-load(".partnerYearRecency.RData")
+load(".partnerLifeRecency.RData")
 summary(mod)
 
 
