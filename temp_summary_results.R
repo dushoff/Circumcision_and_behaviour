@@ -25,4 +25,3 @@ load(".partnerLifeRecency.RData")
 summary(mod)
 
 
-
