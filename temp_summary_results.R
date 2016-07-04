@@ -2,15 +2,13 @@ library(ordinal)
 
 ##summary results
 
-## Partner Year Status
+## condom Status
 load(".condomStatus.RData")
 summary(mod)
 
 ## Partner Year Status
 load(".partnerYearStatus.RData")
 summary(mod)
-
-
 
 ## Condom Recency
 load(".condomRecency.RData")
