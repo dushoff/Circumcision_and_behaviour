@@ -14,11 +14,14 @@ data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
 attr(modAns, "terms") <- NULL 
  
 mod <- clmm(extraPartnerYear ~ 
-survey + ns(age, 4) + ns(wealth,3)
+ns(age, 4) + ns(wealth,3)
 + religion + edu + urRural + job + maritalStat
-+ media + knowledge + MCCategory + (1|clusterId),
++ media + knowledge + MCCategory + (1|clusterId) + (1 + media + knowledge|survey),
 data=modAns)
  
+
+print(summary(mod))
+
 # rdsave(mod, modAns)
 
 
