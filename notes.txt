@@ -1,23 +1,23 @@
 (Old notes on wiki, C will copy them over)
 
-= To Do =
-* to use the approach of predicting the future of MC risk rather than showing "fact" of what happened and what not.
-* clmm vs. glmm:  which one to use?  How about[[Mixed_models/examples | lme3]]?
-* Shall we apply our results like in these  [[Mixed_models/examples | figures]]?
-* to decide which model to use:  how to treat region-- fixed vs. random to solve the NA problem
-* What is the difference between [[MC_risk_Africa/vertical | vertical.R]] and [[MC_risk_Africa/PCA | combinePCA.R]]?  Both of the outputs seems the same to Chyu.
-* Look at [[MC_risk_Africa/vertical | region]]  UG_Karamoja in UG6 is by itself.  Do we need to work on it?
-* [[MC_risk_Africa/recode | recode]]:   What does this code mean: 	CC <- substring(survey, 1, 2)
+* To Do 
++ to use the approach of predicting the future of MC risk rather than showing "fact" of what happened and what not.
++ clmm vs. glmm:  which one to use?  How about[[Mixed_models/examples | lme3]]?
++ Shall we apply our results like in these  [[Mixed_models/examples | figures]]?
++ to decide which model to use:  how to treat region-- fixed vs. random to solve the NA problem
++ What is the difference between [[MC_risk_Africa/vertical | vertical.R]] and [[MC_risk_Africa/PCA | combinePCA.R]]?  Both of the outputs seems the same to Chyu.
++ Look at [[MC_risk_Africa/vertical | region]]  UG_Karamoja in UG6 is by itself.  Do we need to work on it?
++ [[MC_risk_Africa/recode | recode]]:   What does this code mean: 	CC <- substring(survey, 1, 2)
 	CC <- as.factor(CC)
 	recode <- as.numeric(substring(survey, 3, 3))
 })  Why 3?
 * Do we want to include types of sexual partners?  Reasons for not to include it in the Uganda project were because of sample size and difficulties of parsing out the category.  Sample size seems no longer a problem in the multi-nation data.  I think our code of types of sexual partners is good for the test.
-* to compare the main models with the 4 testing models once they are done which may take months!
++ to compare the main models with the 4 testing models once they are done which may take months!
 
-== To Discuss ==
-* To focus on the multi-nation MC project and discontinue the Uganda paper.
-* Can we present part of our results by region as the [http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.1001626 Pulliin's GPS paper] did?
-* Why is there [[MC_risk_Africa/predictor_predictions | no MCCat figures]] as at [[MC_risk_behaviors_Uganda_AIS/predictor_predictions | AIS]]?
+* To Discuss
++ To focus on the multi-nation MC project and discontinue the Uganda paper.
++ Can we present part of our results by region as the [http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.1001626 Pulliin's GPS paper] did?
++ Why is there [[MC_risk_Africa/predictor_predictions | no MCCat figures]] as at [[MC_risk_behaviors_Uganda_AIS/predictor_predictions | AIS]]?
 * to mock Tanzania in all the results (e.g., tables, figures, etc)
 * We need to look at the interaction effect of religion and MC status on risk behaviors.
 * Like to tear apart [[MC_risk_Africa_gender | gender]] in the couple data to gain some ideas of women's role in MC risk.  Chyun is working on it.
