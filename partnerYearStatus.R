@@ -14,7 +14,7 @@ attr(modAns, "terms") <- NULL
 mod <- clmm(extraPartnerYear ~
  ns(age, 4) + ns(wealth,3)
 + religion + edu + urRural + job + maritalStat
-+ media + knowledge + MC*period + (1|clusterId)+ (1 + media + knowledge|CC),
++ media + knowledge + MC*period + (1|clusterId)+ (1|CC),
 data=modAns)
 
 print(summary(mod))
