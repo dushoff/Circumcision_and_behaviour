@@ -1,0 +1,9 @@
+(Old notes on wiki, C will copy them over)
+
+Mon Jul 11 13:44:34 EDT 2016
+
+We are not adding random slopes because we don't have the power to do all of
+them, and we don't want to choose some at random. This means, in part, that our
+inferences about slopes are more limited (and certainly don't try to go beyond
+the countries whose surveys we are using).
+
