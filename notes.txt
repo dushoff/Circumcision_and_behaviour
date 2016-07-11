@@ -1,8 +1,8 @@
 
-** To Do 
+== To Do ==
 * Shall we apply our results like in these  [[Mixed_models/examples | figures]]?
 
-** To Discuss
+== To Discuss ==
 * Can we present part of our results by region as the [http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.1001626 Pulliin's GPS paper] did?
 * We need to look at the interaction effect of religion and MC status on risk behaviors.
 * Like to tear apart [[MC_risk_Africa_gender | gender]] in the couple data to gain some ideas of women's role in MC risk.  Chyun is working on it.
@@ -23,29 +23,25 @@ inferences about slopes are more limited (and certainly don't try to go beyond
 the countries whose surveys we are using).
 
 * 5/26/14
-+ There are too many NAs in the model results.  So we decided to run some tests to diagonosis the problem and also compare the results.  It can give us some ideas what might cause the problem and how different those results are.  We decided to run 4 testing models:  
-+ without religion
-+ without Tanzania
-+ without AQG.
-+ treating region as random factor
++ There are too many NAs in the model results.  So we decided to run some tests to diagonosis the problem and also compare the results.  It can give us some ideas what might cause the problem and how different those results are.  We decided to run 4 testing models:  without religion, without Tanzania, without AQG, and treating region as random factor
 
-** 1/16/14
-* To include all the HIV+ smaples
-* To use 2007 as the cut-off, and treat 2007 as old surveys.
-* To include only men aged 15-49 to reflect the prioritized MC population recommended by UN.
+* 1/16/14
++ To include all the HIV+ smaples
++ To use 2007 as the cut-off, and treat 2007 as old surveys.
++ To include only men aged 15-49 to reflect the prioritized MC population recommended by UN.
 
-== 10/25 ==
+* 10/25
 
-* We decide to add whoLastSex as an "ordinal" response. (10/25)
-* We recoded partnerYear and partnerLife and made 3 and 6 the maximum (changed from 2 and 5) (10/25)
-* Both of Lesotho surveys are excluded from the MC status model because there is no condom variable in Lesotho 4. (10/25)
-* We decided to throw away all the samples never with sex in their life. (10/28)
++ We decide to add whoLastSex as an "ordinal" response. (10/25)
++ We recoded partnerYear and partnerLife and made 3 and 6 the maximum (changed from 2 and 5) (10/25)
++ Both of Lesotho surveys are excluded from the MC status model because there is no condom variable in Lesotho 4. (10/25)
++ We decided to throw away all the samples never with sex in their life. (10/28)
 
-== 10/28 ==
+* 10/28
 
-* Exclude everyone with no lifetime sex at the beginning
-* Going to look at patterns of people with one partner to evaluate how to model partnerYear as a risk behaviour
-** Also look at two partners?
-* We will use recentSex (V536: Recent sexual activity) as the criteria to select samples for partnerYear.  recentSex is based on  No. V613 (Never had sexual intercourse) in DHS manual VI.
++ Exclude everyone with no lifetime sex at the beginning
++ Going to look at patterns of people with one partner to evaluate how to model partnerYear as a risk behaviour
++ Also look at two partners?
++ We will use recentSex (V536: Recent sexual activity) as the criteria to select samples for partnerYear.  recentSex is based on  No. V613 (Never had sexual intercourse) in DHS manual VI.
 
 
