@@ -17,7 +17,7 @@ attr(modAns, "terms") <- NULL
 mod <- clmm(condom ~ ns(age, 4)
 + ns(wealth,3)
 + religion + edu + urRural + job + maritalStat
-+ media + knowledge + MCCategory + (1|clusterId) + (1|survey),
++ media + knowledge + MCCategory + (1|clusterId) + (1 + media|survey),
 data=modAns
 )
  
