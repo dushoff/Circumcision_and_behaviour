@@ -25,4 +25,12 @@ mod <- clmm(condom ~
 
 print(summary(mod))
 
-# rdsave(mod, modAns)
+lmemod <- glmer(condom ~ 
+                  ns(age, 4) + ns(wealth,3) 
+                + religion + edu + urRural + job + maritalStat 
+                + media + knowledge + MC*period + (1|clusterId) 
+                + (1 + media|CC)
+                , data=modAns
+                , family = "binomial")
+
+# rdsave(mod, lmemod, modAns)
