@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: condomStatus.Rout 
+target pngtarget pdftarget vtarget acrtarget: partnerYearStatus_EP.Rout 
 
 ##################################################################
 
@@ -228,10 +228,12 @@ temp_summary_results.Rout: temp_summary_results.R
 
 
 ## plots
-partnerYearStatus_EP.Rout: partnerYearStatus.Rout effectPlotsCat.R
+partnerYearStatus_EP.Rout: datadir/partnerYearStatus.Rout effectPlotsCat.R
+	$(run-R)
 partnerYearRecency_EP.Rout: partnerYearRecency.Rout effectPlotsCat.R
 partnerLifeRecency_EP.Rout: partnerLifeRecency.Rout effectPlotsCat.R
 condomStatusLME_EP.Rout: condomStatusLME.Rout effectPlotsLME.R
+
 ## Crib 
 
 .PRECIOUS: %.tsv %.ccsv %.csv %.R
@@ -240,6 +242,13 @@ condomStatusLME_EP.Rout: condomStatusLME.Rout effectPlotsLME.R
 
 ######################################################################
 
+## Importing (without wasting Chyun's time)
+
+get_fits:
+	cp -f datadir/condom*.Rout .; touch condom*.Rout
+	cp datadir/.condom*.RData .
+	cp datadir/partner*.Rout .
+	cp datadir/.partner*.RData .
  
 ### Makestuff
 
