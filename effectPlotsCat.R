@@ -4,4 +4,6 @@ library(splines)
 
 summary(mod)
 effobj <- allEffects(mod=mod)
-print(plot(effobj))
+for(eff in effobj){
+	print(plot(eff))
+}

@@ -2,6 +2,9 @@ library(lme4)
 library(effects)
 library(splines)
 
-summary(mod)
+summary(lmemod)
 effobj <- allEffects(mod=lmemod)
-print(plot(effobj))
+# print(plot(effobj))
+for(eff in effobj){
+	print(plot(eff))
+}

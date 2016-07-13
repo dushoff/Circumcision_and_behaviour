@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: partnerYearStatus_EP.Rout 
+target pngtarget pdftarget vtarget acrtarget: partnerYearRecency_EP.Rout 
 
 ##################################################################
 
@@ -230,9 +230,15 @@ temp_summary_results.Rout: temp_summary_results.R
 ## plots
 partnerYearStatus_EP.Rout: datadir/partnerYearStatus.Rout effectPlotsCat.R
 	$(run-R)
-partnerYearRecency_EP.Rout: partnerYearRecency.Rout effectPlotsCat.R
-partnerLifeRecency_EP.Rout: partnerLifeRecency.Rout effectPlotsCat.R
-condomStatusLME_EP.Rout: condomStatusLME.Rout effectPlotsLME.R
+
+partnerYearRecency_EP.Rout: datadir/partnerYearRecency.Rout effectPlotsCat.R
+	$(run-R)
+
+partnerLifeRecency_EP.Rout: datadir/partnerLifeRecency.Rout effectPlotsCat.R
+	$(run-R)
+
+condomStatusLME_EP.Rout: datadir/condomStatusLME.Rout effectPlotsLME.R
+	$(run-R)
 
 ## Crib 
 
