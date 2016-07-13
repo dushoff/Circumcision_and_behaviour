@@ -226,6 +226,12 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
 temp_summary_results.Rout: temp_summary_results.R
 
+
+## plots
+partnerYearStatus_EP.Rout: partnerYearStatus.Rout effectPlotsCat.R
+partnerYearRecency_EP.Rout: partnerYearRecency.Rout effectPlotsCat.R
+partnerLifeRecency_EP.Rout: partnerLifeRecency.Rout effectPlotsCat.R
+condomStatusLME_EP.Rout: condomStatusLME.Rout effectPlotsLME.R
 ## Crib 
 
 .PRECIOUS: %.tsv %.ccsv %.csv %.R
