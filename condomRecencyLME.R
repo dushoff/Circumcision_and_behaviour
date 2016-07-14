@@ -1,6 +1,6 @@
 options(width=200)
 # library(coefplot)
-library(ordinal)
+library(lme4)
 library(splines)
 
 Answers <-subset(Answers, period=="new")
