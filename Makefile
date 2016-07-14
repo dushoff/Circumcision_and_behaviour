@@ -224,6 +224,9 @@ condomRecency.Rout: surveys.Rout condomRecency.R
 partnerYearRecency.Rout: surveys.Rout partnerYearRecency.R
 partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
+condomStatusLME.Rout: surveys.Rout condomStatusLME.R
+condomRecencyLME.Rout: surveys.Rout condomRecencyLME.R
+
 temp_summary_results.Rout: temp_summary_results.R
 
 
