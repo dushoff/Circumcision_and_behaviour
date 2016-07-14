@@ -19,6 +19,8 @@ ns(age, 4) + ns(wealth,3)
 data=modAns)
 
 print(summary(mod))
+
+varlvlsum <- drop1(mod)
  
-# rdsave(mod, modAns)
+# rdsave(mod, varlvlsum, modAns)
 

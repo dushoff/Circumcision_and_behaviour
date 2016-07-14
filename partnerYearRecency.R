@@ -22,6 +22,7 @@ data=modAns)
 
 print(summary(mod))
 
-# rdsave(mod, modAns)
+varlvlsum <- drop1(mod)
 
+# rdsave(mod, varlvlsum, modAns)
 
