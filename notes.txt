@@ -15,6 +15,9 @@
 
 == Meeting Note ==
 
+* July 13
+
++ Mike will get CI P values.  Chyun will update her MS notes.
 
 * Mon Jul 11 
 
