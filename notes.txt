@@ -47,4 +47,5 @@ the countries whose surveys we are using).
 + Also look at two partners?
 + We will use recentSex (V536: Recent sexual activity) as the criteria to select samples for partnerYear.  recentSex is based on  No. V613 (Never had sexual intercourse) in DHS manual VI.
 
-
+* 7/17/16
+make variable base p-values
