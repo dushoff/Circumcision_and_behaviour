@@ -243,6 +243,11 @@ partnerLifeRecency_EP.Rout: datadir/partnerLifeRecency.Rout effectPlotsCat.R
 condomStatusLME_EP.Rout: datadir/condomStatusLME.Rout effectPlotsLME.R
 	$(run-R)
 
+## pvalue
+
+pvalue_summary.Rout: pvalue_summary.R
+	$(run-R)
+
 ## Crib 
 
 .PRECIOUS: %.tsv %.ccsv %.csv %.R
