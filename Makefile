@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: condomRecencyLME_EP.Rout 
+target pngtarget pdftarget vtarget acrtarget: effectPlots.Rout 
 
 ##################################################################
 
@@ -64,7 +64,6 @@ datadir/nm5.men.Rout: datadir/NMMR51sv/nmmr51fl.sav
 ## Content
 
 Sources += $(wildcard *.R)
-
 
 ### Data sets
 sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
@@ -212,6 +211,12 @@ surveys.Rout: $(sets:%=%.combined.Rout.envir) surveys.R
 surveys.summary.Routput: surveys.R
 
 ######################################################################
+
+## How do we handle the "typical" problem in effects?
+
+effectTest.Rout: surveys.Rout effectTest.R
+
+effectPlots.Rout: effectTest.Rout effectPlots.R
 
 ## Explore a little bit
 patterns.Rout: surveys.Rout patterns.R
