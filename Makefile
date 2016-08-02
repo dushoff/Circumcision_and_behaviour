@@ -245,6 +245,17 @@ condomStatusLME_EP.Rout: datadir/condomStatusLME.Rout effectPlotsLME.R
 
 condomRecencyLME_EP.Rout: datadir/condomRecencyLME.Rout effectPlotsLME.R
 	$(run-R)
+	
+
+## BRMS
+partnerYearStatus_brms_plots.Rout: mc/partnerYearStatus_brms.Rout brms_plots.R
+	$(run-R)
+
+partnerYearRecency_brms.Rout: mc/partnerYearRecency.Rout brms_plots.R
+	$(run-R)
+
+partnerLifeRecency_brms.Rout: mc/partnerLifeRecency.Rout brms_plots.R
+	$(run-R)
 
 ## pvalue
 
