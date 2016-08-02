@@ -250,7 +250,18 @@ condomStatusLME_EP.Rout: datadir/condomStatusLME.Rout effectPlotsLME.R
 
 condomRecencyLME_EP.Rout: datadir/condomRecencyLME.Rout effectPlotsLME.R
 	$(run-R)
-	
+
+
+## brms models
+condomStatus_brms.Rout: surveys.Rout condomStatus_brms.R
+partnerYearStatus_brms.Rout: surveys.Rout partnerYearStatus_brms.R
+condomRecency_brms.Rout: surveys.Rout condomRecency_brms.R
+partnerYearRecency_brms.Rout: surveys.Rout partnerYearRecency_brms.R
+partnerLifeRecency_brms.Rout: surveys.Rout partnerLifeRecency_brms.R
+        $(run-R)
+
+
+
 
 ## BRMS
 partnerYearStatus_brms_plots.Rout: mc/partnerYearStatus_brms.Rout brms_plots.R
