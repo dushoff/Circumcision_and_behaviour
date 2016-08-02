@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: condomStatusLME_EP.Rout 
+target pngtarget pdftarget vtarget acrtarget: condomRecencyLME_EP.Rout 
 
 ##################################################################
 
@@ -241,6 +241,9 @@ partnerLifeRecency_EP.Rout: datadir/partnerLifeRecency.Rout effectPlotsCat.R
 	$(run-R)
 
 condomStatusLME_EP.Rout: datadir/condomStatusLME.Rout effectPlotsLME.R
+	$(run-R)
+
+condomRecencyLME_EP.Rout: datadir/condomRecencyLME.Rout effectPlotsLME.R
 	$(run-R)
 
 ## pvalue
