@@ -12,7 +12,6 @@ commit.txt
 *out
 *.RData
 *.Rlog
-*.[r]
 .Rhistory
 
 *.wrapR.*
