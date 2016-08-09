@@ -52,3 +52,10 @@ the countries whose surveys we are using).
 
 * 7/17/16
 make variable base p-values
+
+
+* 8/9/16
+- change order "now", "old", "plot"
+- variable level pvalues on label
+- interaction coeff confint (relative odds ratio) 
+ 
