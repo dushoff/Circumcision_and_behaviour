@@ -1,0 +1,153 @@
+---
+title: "MC plots"
+author: "mike"
+date: "August 9, 2016"
+output: html_document
+---
+
+```{r pkgs, message=FALSE,warning=FALSE,echo=FALSE}
+
+library(ordinal)
+library(splines)
+library(gridExtra)
+library(ggplot2)
+theme_set(theme_bw())
+
+```
+
+# Condom Status 
+
+```{r condom status, echo=FALSE,message=FALSE,warning=FALSE}
+load(".condomStatus_varlvlsum.RData")
+source("ordfuns.R")
+source("plotFuns.R")
+catNames <- c("religion","urRural","job","maritalStat","MCCategory")
+predNames <- predfun("status")
+source("iso.R",echo=FALSE, verbose=FALSE)
+
+grid.arrange(varPlot(isoList[[1]]),
+             varPlot(isoList[[2]]),
+             varPlot(isoList[[3]]),
+             varPlot(isoList[[4]]),
+             varPlot(isoList[[5]]),
+             varPlot(isoList[[6]]),
+             varPlot(isoList[[7]]),
+             varPlot(isoList[[8]]),
+             varPlot(isoList[[9]]),
+             nrow=3)
+
+source("intfuns.R")
+source("intplot.R")
+
+print(varlvlsum)
+
+```
+
+# Partner Status Year
+
+```{r partner status year, echo=FALSE,message=FALSE,warning=FALSE}
+load(".partnerYearStatus_varlvlsum.RData")
+source("ordfuns.R")
+source("plotFuns.R")
+catNames <- c("religion","urRural","job","maritalStat","MCCategory")
+predNames <- predfun("status")
+source("iso.R",echo=FALSE, verbose=FALSE)
+
+grid.arrange(varPlot(isoList[[1]]),
+             varPlot(isoList[[2]]),
+             varPlot(isoList[[3]]),
+             varPlot(isoList[[4]]),
+             varPlot(isoList[[5]]),
+             varPlot(isoList[[6]]),
+             varPlot(isoList[[7]]),
+             varPlot(isoList[[8]]),
+             varPlot(isoList[[9]]),
+             nrow=3)
+
+source("intfuns.R")
+source("intplot.R")
+
+print(varlvlsum)
+
+```
+
+# Condom Recency
+
+```{r condom recency, echo=FALSE,message=FALSE,warning=FALSE}
+load(".condomRecency_varlvlsum.RData")
+source("ordfuns.R")
+source("plotFuns.R")
+catNames <- c("religion","urRural","job","maritalStat","MCCategory")
+predNames <- predfun("recency")
+source("iso.R",echo=FALSE,verbose = FALSE)
+
+grid.arrange(varPlot(isoList[[1]]),
+             varPlot(isoList[[2]]),
+             varPlot(isoList[[3]]),
+             varPlot(isoList[[4]]),
+             varPlot(isoList[[5]]),
+             varPlot(isoList[[6]]),
+             varPlot(isoList[[7]]),
+             varPlot(isoList[[8]]),
+             varPlot(isoList[[9]]),
+             varPlot(isoList[[10]]),
+             nrow=4)
+
+print(varlvlsum)
+
+```
+
+# Partner Year Recency
+
+```{r partner year recency, echo=FALSE,message=FALSE,warning=FALSE}
+load(".parterYearRecency_varlvlsum.RData")
+source("ordfuns.R")
+source("plotFuns.R")
+catNames <- c("religion","urRural","job","maritalStat","MCCategory")
+predNames <- predfun("recency")
+source("iso.R",echo=FALSE,verbose = FALSE)
+
+grid.arrange(varPlot(isoList[[1]]),
+             varPlot(isoList[[2]]),
+             varPlot(isoList[[3]]),
+             varPlot(isoList[[4]]),
+             varPlot(isoList[[5]]),
+             varPlot(isoList[[6]]),
+             varPlot(isoList[[7]]),
+             varPlot(isoList[[8]]),
+             varPlot(isoList[[9]]),
+             varPlot(isoList[[10]]),
+             nrow=4)
+
+print(varlvlsum)
+
+```
+
+
+# Partner Life Recency
+
+```{r partner life recency, echo=FALSE,message=FALSE,warning=FALSE}
+load(".partnerLifeRecency_varlvlsum.RData")
+source("ordfuns.R")
+source("plotFuns.R")
+catNames <- c("religion","urRural","job","maritalStat","MCCategory")
+predNames <- predfun("recency")
+source("iso.R",echo=FALSE,verbose = FALSE)
+
+grid.arrange(varPlot(isoList[[1]]),
+             varPlot(isoList[[2]]),
+             varPlot(isoList[[3]]),
+             varPlot(isoList[[4]]),
+             varPlot(isoList[[5]]),
+             varPlot(isoList[[6]]),
+             varPlot(isoList[[7]]),
+             varPlot(isoList[[8]]),
+             varPlot(isoList[[9]]),
+             varPlot(isoList[[10]]),
+             nrow=4)
+
+print(varlvlsum)
+
+```
+
+

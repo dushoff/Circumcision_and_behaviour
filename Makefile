@@ -229,9 +229,6 @@ condomRecency.Rout: surveys.Rout condomRecency.R
 partnerYearRecency.Rout: surveys.Rout partnerYearRecency.R
 partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
-condomStatusLME.Rout: surveys.Rout condomStatusLME.R
-condomRecencyLME.Rout: surveys.Rout condomRecencyLME.R
-
 temp_summary_results.Rout: temp_summary_results.R
 
 
@@ -252,26 +249,9 @@ condomRecencyLME_EP.Rout: datadir/condomRecencyLME.Rout effectPlotsLME.R
 	$(run-R)
 
 
-## brms models
-condomStatus_brms.Rout: surveys.Rout condomStatus_brms.R
-partnerYearStatus_brms.Rout: surveys.Rout partnerYearStatus_brms.R
-condomRecency_brms.Rout: surveys.Rout condomRecency_brms.R
-partnerYearRecency_brms.Rout: surveys.Rout partnerYearRecency_brms.R
-partnerLifeRecency_brms.Rout: surveys.Rout partnerLifeRecency_brms.R
-        $(run-R)
+### anovas
 
-
-
-
-## BRMS
-partnerYearStatus_brms_plots.Rout: mc/partnerYearStatus_brms.Rout brms_plots.R
-	$(run-R)
-
-partnerYearRecency_brms.Rout: mc/partnerYearRecency.Rout brms_plots.R
-	$(run-R)
-
-partnerLifeRecency_brms.Rout: mc/partnerLifeRecency.Rout brms_plots.R
-	$(run-R)
+partnerYearStatus
 
 ## pvalue
 

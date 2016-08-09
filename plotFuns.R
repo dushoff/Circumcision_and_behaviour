@@ -34,7 +34,7 @@ fplot <- function(pf, xname, ylab="Response", P=NULL){
         ymin=lwr,ymax=upr,  
         geom="pointrange", data=pf,
         xlab=xname, ylab=ylab
-  )
+  ) + theme(axis.text.x = element_text(size=6,angle = 30, hjust = 1))
 }
 
 varPlot <- function(pf, ylab="Response", P=NULL){
@@ -64,4 +64,16 @@ panelPlot <- function(pf, r, c, ylab="Response", P=NULL){
 
 listPlot <- function(predList, ylab="Response"){
   lapply(predList, varPlot, ylab=ylab)
+}
+
+predfun <- function(modtype){
+  predNames = NULL
+  ifelse(modtype == "recency"
+         , predNames <- c(
+           "age", "wealth", "religion", "edu", "urRural", "job",
+           "maritalStat", "media", "knowledge", "MCCategory")
+         , predNames <- c("age","wealth","religion","edu","urRural","job",
+                          "maritalStat", "media", "knowledge")
+  )
+  return(predNames)
 }
