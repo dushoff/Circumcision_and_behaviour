@@ -41,6 +41,7 @@ source("intfuns.R")
 source("intplot.R")
 
 print(varlvlsum)
+source("effectSize.R")
 
 ```
 
@@ -69,6 +70,8 @@ source("intfuns.R")
 source("intplot.R")
 
 print(varlvlsum)
+
+source("effectSize.R")
 
 ```
 
