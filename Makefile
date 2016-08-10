@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: condomStatus.Rout
+target pngtarget pdftarget vtarget acrtarget: all 
 
 ##################################################################
 
@@ -19,7 +19,7 @@ Sources += dushoff.mk
 Makefile: datadir
 
 datadir:
-	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
+	/bin/ln -s $(MC)/MC\ DHS\ data/ $@
 
 cribdir:
 	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@
@@ -72,9 +72,12 @@ newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
 
 ######################################################################
 
+all: select.output combines.output surveys.Rout
+
 ### Selecting
 select=$(sets:%=%.select.Rout)
 
+Sources += select.csv
 ## wselect.R needs to be moved to a general place
 $(select): %.select.Rout: datadir/%.men.RData select.csv wselect.R
 	$(run-R)
