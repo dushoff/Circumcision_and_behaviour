@@ -66,14 +66,3 @@ listPlot <- function(predList, ylab="Response"){
   lapply(predList, varPlot, ylab=ylab)
 }
 
-predfun <- function(modtype){
-  predNames = NULL
-  ifelse(modtype == "recency"
-         , predNames <- c(
-           "age", "wealth", "religion", "edu", "urRural", "job",
-           "maritalStat", "media", "knowledge", "MCCategory")
-         , predNames <- c("age","wealth","religion","edu","urRural","job",
-                          "maritalStat", "media", "knowledge")
-  )
-  return(predNames)
-}

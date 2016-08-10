@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: effectPlots.Rout 
+target pngtarget pdftarget vtarget acrtarget: condomStatus.Rout
 
 ##################################################################
 
@@ -229,30 +229,15 @@ condomRecency.Rout: surveys.Rout condomRecency.R
 partnerYearRecency.Rout: surveys.Rout partnerYearRecency.R
 partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
-temp_summary_results.Rout: temp_summary_results.R
-
-
-## plots
-partnerYearStatus_EP.Rout: datadir/partnerYearStatus.Rout effectPlotsCat.R
+## Variable p-values
+%_varlvlsum.Rout: %.Rout varlvlsum.R
 	$(run-R)
 
-partnerYearRecency_EP.Rout: datadir/partnerYearRecency.Rout effectPlotsCat.R
+## Iso plots
+%_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
 	$(run-R)
-
-partnerLifeRecency_EP.Rout: datadir/partnerLifeRecency.Rout effectPlotsCat.R
-	$(run-R)
-
-condomStatusLME_EP.Rout: datadir/condomStatusLME.Rout effectPlotsLME.R
-	$(run-R)
-
-condomRecencyLME_EP.Rout: datadir/condomRecencyLME.Rout effectPlotsLME.R
-	$(run-R)
-
 
 ### anovas
-
-partnerYearStatus
-
 ## pvalue
 
 pvalue_summary.Rout: pvalue_summary.R
