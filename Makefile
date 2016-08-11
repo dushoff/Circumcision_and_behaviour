@@ -240,10 +240,21 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 %_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
-### anovas
-## pvalue
+## Int plots (status models only)
 
-pvalue_summary.Rout: pvalue_summary.R
+%_intplots.Rout: condomStatus_varlvlsum.Rout ordfuns.R plotFuns.R intfuns.R intplot.R
+	$(run-R) 
+%_intplots.Rout: partnerYearStatus_varlvlsum.Rout ordfuns.R plotFuns.R intfuns.R intplot.R
+	$(run-R)
+
+## Interaction coeff (status models only)
+
+%_int.Rout: %_intplots.Rout ordfuns.R effectSize.R
+	$(run-R)
+
+## MC Cat plots (recency models only)
+
+%_MCcat.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R MCcat.R
 	$(run-R)
 
 ## Crib 

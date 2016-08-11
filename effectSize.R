@@ -4,7 +4,6 @@ bet <- mod$beta
 int <- grep("MCYes:", names(bet), value=TRUE)
 b <- bet[[int]]
 se <- sqrt(vcov(mod)[[int, int]])
-print(c(b=b, se=se))
 
 brange <- c(
   lwr=b+se*qnorm(0.025),
@@ -20,12 +19,19 @@ rawcounterfactual <- with(mcs,
 )
 
 # Interaction should match model
-print(c(interaction=mcs$rawfit[[4]]-rawcounterfactual))
 
 rawrange <- rawcounterfactual+brange
 
 counterfactual <- ordTrans(rawcounterfactual, mod$alpha)
 estRange <- ordTrans(rawrange, mod$alpha)
 
-print(counterfactual)
-print(estRange)
+
+if(unlist(strsplit(rtargetname,"[.]")) == "condomStatus_int"){
+  print(brange)
+  print(exp(brange))
+}
+if(unlist(strsplit(rtargetname,"[.]")) == "partnerStatus_int"){
+  print(counterfactual)
+  print(estRange)
+  print(estRange - counterfactual)
+}

@@ -1,5 +1,6 @@
 library(ordinal)
 library(splines)
+library(ggplot2)
 
 mcs <- ff(mod, modAns, "MC", "period", isolate=TRUE)
 
@@ -19,3 +20,5 @@ ge <- (g +
        + geom_line(position = position_dodge(width=ww))
 )
 print(ge)
+
+#rdsave(mcs, mod, modAns)

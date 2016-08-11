@@ -32,6 +32,7 @@ isoList <- lapply(predNames, function(n){
   ordpred(mod, n, modAns)
 })
 
+print(
 grid.arrange(varPlot(rename(isoList[[1]],c(age="Age")),P=varlvlsum$`Pr(>Chisq)`[1]),
              varPlot(rename(isoList[[2]],c(wealth="Wealth")),P=varlvlsum$`Pr(>Chisq)`[2]),
              varPlot(rename(isoList[[3]],c(religion="Religion")),P=varlvlsum$`Pr(>Chisq)`[3]),
@@ -42,6 +43,6 @@ grid.arrange(varPlot(rename(isoList[[1]],c(age="Age")),P=varlvlsum$`Pr(>Chisq)`[
              varPlot(rename(isoList[[8]],c(media="Media")),P=varlvlsum$`Pr(>Chisq)`[8]),
              varPlot(rename(isoList[[9]],c(knowledge="Knowledge")),P=varlvlsum$`Pr(>Chisq)`[9]),
              nrow=3)
-
+)
 
 #rdsave(isoList,varlvlsum)
