@@ -4,6 +4,8 @@ library(ggplot2)
 
 mcs <- ff(mod, modAns, "MC", "period", isolate=TRUE)
 
+mcs$period <- factor(mcs$period,levels=c("old","new"),labels=c("Pre","Post"))
+
 # Use the same width for error bars and for dodge offset
 ww <- 0.15
 
