@@ -1,8 +1,17 @@
 library(ordinal)
 library(splines)
 library(ggplot2)
+theme_set(theme_bw())
 
 mcs <- ff(mod, modAns, "MC", "period", isolate=TRUE)
+
+resp <- unlist(strsplit(rtargetname,"_"))[1]
+if(resp == "condomStatus"){resp = "Condom"}
+if(resp == "partnerYearStatus"){resp = "Partner Year"}
+
+if(resp == "condomRecency"){resp = "Condom"}
+if(resp == "partnerYearRecency"){resp = "Partner Year"}
+if(resp == "partnerLifeRecency"){resp = "Partner Life"}
 
 mcs$period <- factor(mcs$period,levels=c("old","new"),labels=c("Pre","Post"))
 
@@ -11,7 +20,7 @@ ww <- 0.15
 
 g <- ggplot(mcs,
             aes(x=period, y=(fit), color=MC, group=MC)
-) +ylab("response")
+) +ylab(resp)
 
 ge <- (g + 
          geom_errorbar(

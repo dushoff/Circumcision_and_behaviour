@@ -6,7 +6,6 @@ library(reshape)
 theme_set(theme_bw())
 attr(modAns,"terms") <- NULL 
 
-
 predfun <- function(modtype){
   predNames = NULL
   ifelse(modtype == "recency"

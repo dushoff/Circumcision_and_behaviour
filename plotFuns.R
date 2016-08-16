@@ -1,3 +1,12 @@
+resp <- unlist(strsplit(rtargetname,"_"))[1]
+if(resp == "condomStatus"){resp = "Condom"}
+if(resp == "partnerYearStatus"){resp = "Partner Year"}
+
+if(resp == "condomRecency"){resp = "Condom"}
+if(resp == "partnerYearRecency"){resp = "Partner Year"}
+if(resp == "partnerLifeRecency"){resp = "Partner Life"}
+
+
 sigName <- function(n, P){
   if(!is.null(P)){
     Pstr <- sprintf("(P=%5.3f)", P)
@@ -9,7 +18,7 @@ sigName <- function(n, P){
   return(n)
 }
 
-numplot <- function(pf, xname, ylab="Response", P=NULL){
+numplot <- function(pf, xname, ylab=resp, P=NULL){
   xname <- sigName(xname, P)
   (qplot(pf[[1]], fit, data=pf,
          geom="line", xlab=xname, ylab=ylab
@@ -19,7 +28,7 @@ numplot <- function(pf, xname, ylab="Response", P=NULL){
   )
 }
 
-fplot <- function(pf, xname, ylab="Response", P=NULL){
+fplot <- function(pf, xname, ylab=resp, P=NULL){
   lNames <- levels(pf[[1]])
   
   for(rn in rownames(catNames)){
@@ -37,7 +46,7 @@ fplot <- function(pf, xname, ylab="Response", P=NULL){
   ) + theme(axis.text.x = element_text(size=6,angle = 30, hjust = 1))
 }
 
-varPlot <- function(pf, ylab="Response", P=NULL){
+varPlot <- function(pf, ylab=resp, P=NULL){
   if(is.numeric(pf[[1]])){
     numplot(pf, names(pf)[[1]], ylab, P)
   } else {
@@ -45,7 +54,7 @@ varPlot <- function(pf, ylab="Response", P=NULL){
   }
 }
 
-panelPlot <- function(pf, r, c, ylab="Response", P=NULL){
+panelPlot <- function(pf, r, c, ylab=resp, P=NULL){
   varNames <- names(pf)[[1]]
   
   for(rn in rownames(predNames)){
@@ -62,7 +71,7 @@ panelPlot <- function(pf, r, c, ylab="Response", P=NULL){
   ))
 }
 
-listPlot <- function(predList, ylab="Response"){
+listPlot <- function(predList, ylab=resp){
   lapply(predList, varPlot, ylab=ylab)
 }
 
