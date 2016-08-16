@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: all 
+target pngtarget pdftarget vtarget acrtarget: all
 
 ##################################################################
 
@@ -72,7 +72,7 @@ newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
 
 ######################################################################
 
-all: select.output combines.output surveys.Rout
+all: select.output combines.output surveys.Rout condomStatus.Rout
 
 ### Selecting
 select=$(sets:%=%.select.Rout)
