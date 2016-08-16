@@ -30,7 +30,8 @@ if(unlist(strsplit(rtargetname,"[.]")) == "condomStatus_int"){
   print(brange)
   print(exp(brange))
 }
-if(unlist(strsplit(rtargetname,"[.]")) == "partnerStatus_int"){
+
+if(unlist(strsplit(rtargetname,"[.]")) == "partnerYearStatus_int"){
   print(counterfactual)
   print(estRange)
   print(estRange - counterfactual)

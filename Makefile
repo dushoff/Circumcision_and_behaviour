@@ -239,19 +239,17 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
 ##shortcut 
 
+.PRECIOUS: %_load.Rout
 %_load.Rout: MC_varlvl/.%_varlvlsum.RData load.R
 	$(run-R)
 
+.PRECIOUS: %_isoplots.Rout
 %_isoplots.Rout: %_load.Rout ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
 ## Int plots (status models only)                                               
-%_intplots.Rout: %_load.Rout ordfuns.R plotFuns.R intfuns.R intplot.R
-	$(run-R)
-
-## MC Cat plots (recency models only)                                           
-
-%_MCcat.Rout: %_load.Rout ordfuns.R plotFuns.R iso.R MCcat.R
+.PRECIOUS: %_intplots.Rout
+%_intplots.Rout: %_load.Rout ordfuns.Rout plotFuns.Rout intfuns.Rout intplot.R
 	$(run-R)
 
 
@@ -266,10 +264,15 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
 ## Interaction coeff (status models only)
 
-%_int.Rout: %_intplots.Rout ordfuns.R effectSize.R
+.PRECIOUS: %_int.Rout
+%_int.Rout: %_intplots.Rout ordfuns.Rout effectSize.R
 	$(run-R)
 
 ## MC Cat plots (recency models only)
+
+.PRECIOUS: %_MCcat.Rout
+%_MCcat.Rout: %_load.Rout ordfuns.R plotFuns.R iso.R MCcat.R
+	$(run-R)
 
 #%_MCcat.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R MCcat.R
 	#$(run-R)
