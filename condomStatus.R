@@ -14,8 +14,6 @@ modAns <- model.frame(
 
 ## We can't let R use the terms from this object instead of working it out from the model!
 attr(modAns, "terms") <- NULL 
- 
-modAns <- modAns[sample(1:nrow(modAns),800),]
 
 mod <- clmm(condom ~ 
 	ns(age, 4) + ns(wealth,3) 
