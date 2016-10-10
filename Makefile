@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: all
+target pngtarget pdftarget vtarget acrtarget: ms.html 
 
 ##################################################################
 
@@ -60,8 +60,6 @@ datadir/zm6.men.Rout: datadir/ZMMR61SV/ZMMR61FL.SAV
 datadir/nm5.men.Rout: datadir/NMMR51sv/nmmr51fl.sav
 
 ##################################################################
-
-## Content
 
 Sources += $(wildcard *.R)
 
@@ -292,6 +290,14 @@ get_fits:
 	cp datadir/.condom*.RData .
 	cp datadir/partner*.Rout .
 	cp datadir/.partner*.RData .
+
+######################################################################
+
+## Manuscript?
+
+Sources += $(wildcard *.wikitext)
+
+ms.html: ms.wikitext
  
 ### Makestuff
 
@@ -300,6 +306,7 @@ get_fits:
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
+-include $(ms)/pandoc.mk
 
 -include $(ms)/wrapR.mk
 # -include $(ms)/oldlatex.mk
