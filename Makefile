@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: ms.html 
+target pngtarget pdftarget vtarget acrtarget: ms.pdf 
 
 ##################################################################
 
@@ -298,7 +298,17 @@ get_fits:
 Sources += $(wildcard *.wikitext)
 
 ms.html: ms.wikitext
+
+Sources += wt.pl top.tex bot.tex
  
+%.doc.tex: %.wikitext wt.pl
+	$(PUSH)
+
+ms.pdf: ms.wikitext
+
+%.tex: top.tex %.doc.tex bot.tex
+	cat $^ > $@
+
 ### Makestuff
 
 ## Change this name to download a new version of the makestuff directory
@@ -309,4 +319,4 @@ ms.html: ms.wikitext
 -include $(ms)/pandoc.mk
 
 -include $(ms)/wrapR.mk
-# -include $(ms)/oldlatex.mk
+-include $(ms)/flextex.mk
