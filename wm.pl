@@ -22,7 +22,7 @@ foreach my $par (split /\n\n+/, $f){
 	$par =~ s/MISSING_TABLE\s+(\w+)\s+(.*?)\.\s+(.*)/\\begin{table}[!hbt]\textbf{SKIPPING TABLE}\\caption{$3}\\label{$1.tab}\\end{table}/;
 
 	# Figures
-	$par =~ s/INSERT_FIGURE\s+(\w+)\s+(.*?)\.\s+(.*)/![$3]($2.pdf}{#fig:$1}/;
+	$par =~ s/INSERT_FIGURE\s+(\w+)\s+(.*?)\.\s+(.*)/![$3]($2.pdf){#fig:$1}/;
 	$par =~ s/\(FIGURE\s*(.*?)\)/+\@fig:$1/g;
 
 	$par =~ s/'''(.*?)'''/__$1_}/g;

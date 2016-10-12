@@ -188,7 +188,7 @@ There is more; see Uganda manuscript.
 
 ==
 
-INSERT_FIGURE DHS_condom_interaction DHS/condom.intYear.Rout.  Interaction plot showing the mean effect of MC Status on condom use, and the interaction with DHS survey year.  Interaction P=0.019.
+INSERT_FIGURE DHS_condom_interaction figdrop/condom.intYear.Rout.  Interaction plot showing the mean effect of MC Status on condom use, and the interaction with DHS survey year.  Interaction P=0.019.
 
 We found a significant interaction between circumcision status and condom use, but not for numbers of non-marital sexual partners of year nor of lifetime partners ((TABLE ptable)). The pattern for the condom use  is shown in (FIGURE DHS_condom_interaction).   The "relative" odds of a circumcised man (compared to an uncircumcised man) using a condom are significantly lower in 2011 than in 2006 (the relative odds ratio (ROR) is 0.56 (95% CI, 0.35--0.91; P=0.019)).  This result supports the concerns of sexual risk compensation (SRC).
 

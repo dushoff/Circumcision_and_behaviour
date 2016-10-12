@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: new.md 
+target pngtarget pdftarget vtarget acrtarget: new.html 
 
 ##################################################################
 
@@ -20,6 +20,9 @@ Makefile: datadir
 
 datadir:
 	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
+
+figdrop:
+	/bin/ln -s $(Drop)/MC\ varlvl $@
 
 cribdir:
 	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@
@@ -299,6 +302,8 @@ Sources += $(wildcard *.wikitext)
 
 ## Current plan. Make the .wikitext into .md and then save that
 ms.html: ms.wikitext
+
+Sources += conversion_notes.md
 
 Sources += wm.pl
 new.md: ms.wikitext wm.pl
