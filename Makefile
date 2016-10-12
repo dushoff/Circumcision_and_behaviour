@@ -22,7 +22,7 @@ datadir:
 	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
 
 figdrop:
-	/bin/ln -s $(Drop)/MC\ varlvl $@
+	/bin/ln -s $(Drop)/MC_varlvl $@
 
 cribdir:
 	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@

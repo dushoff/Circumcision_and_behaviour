@@ -120,8 +120,10 @@ Permission for using the DHS was authorized by USAID and is available upon regis
 - (insert TABLE Recency_characteristics Recency Sample Characteristics} (ditto)
 
 -  (insert FIGURE of condomStatus: the _interaction_ plot showing the mean effect of MC Status on condom use, and the interaction with DHS survey year.  The relative odds ratio (ROR) is 0.83 (95% CI, 0.74-0.92; interaction P=?)
+figdrop/condomStatus_intplots.pdf
 
 -  (insert FIGURE of partnerYearStatus: the _interaction_ between survey year and circumcision status on numbers of non-martial sexual partners within the previous year. The ROR is 0.006 (95% CI, -0.008-0.021; P=?)
+figdrop/partnerYearStatus_intplots.pdf
 
 - (insert FIGURE of condomRecency:  the comparison of condom use during the last sexual intercourse by circumcision category.  P<0.001).  Men circumcised after the UN's MMC promotion started were xx times more likely to use condom than uncircumcised men; and men circumcised before the MMC promotion were least likely to use condom.
 
@@ -130,6 +132,12 @@ Permission for using the DHS was authorized by USAID and is available upon regis
 - (insert FIGURE of partnerLifeRecency:  the comparison of numbers of non-martial sexual partners in lifetime by circumcision category.  P<0.001).  Men circumcised before the UN's MMC promotion had an average of xx sexual partners compared to xx in men circumcised newly circumcised after the UN's campaign started and to xx to men not circumcised; and the difference was significant.
 
 (Let's put these three recency results into one figure)
+
+__[To do: Combine the above recency figure descriptions into one P (to match one figure)]__
+
+__[To do: Combine the pages from the below recency figures descriptions into one figure]__
+
+#Second page of each of these
 
 (need a sentence on how many samples in total and by nation or by data. )
 
@@ -212,6 +220,12 @@ The findings and conclusions of this article are those of the authors and do not
 
 Acknowledgement:  Ben Bolker, Fiona Kouyoumdjian, Marta Wayne, Audrey Patocs, David Champredon
 
-### Developing
+### Appendix
 
-![Interaction plot showing the mean effect of MC Status on condom use, and the interaction with DHS survey year.  Interaction P=0.019.](figdrop/condom.intYear.Rout.pdf){#fig:DHS_condom_interaction}
+figdrop/partnerYearStatus_isoplots.pdf
+figdrop/condomStatus_isoplots.pdf
+
+# 1st page of each of these
+figdrop/condomRecency_MCcat.pdf
+figdrop/partnerLifeRecency_MCcat.pdf
+figdrop/partnerYearRecency_MCcat.pdf
