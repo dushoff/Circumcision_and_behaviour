@@ -303,6 +303,7 @@ Sources += $(wildcard *.wikitext)
 ## Current plan. Make the .wikitext into .md and then save that
 Sources += conversion_notes.md
 
+Sources += ms.md
 ms.html: ms.md
 
 ### Not in the pipeline anymore
