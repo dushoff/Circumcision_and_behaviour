@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: ms.pdf 
+target pngtarget pdftarget vtarget acrtarget: new.md 
 
 ##################################################################
 
@@ -297,7 +297,14 @@ get_fits:
 
 Sources += $(wildcard *.wikitext)
 
+## Current plan. Make the .wikitext into .md and then save that
 ms.html: ms.wikitext
+
+Sources += wm.pl
+new.md: ms.wikitext wm.pl
+	$(PUSH)
+
+new.html: ms.wikitext
 
 Sources += wt.pl top.tex bot.tex
  
