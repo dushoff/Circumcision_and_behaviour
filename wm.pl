@@ -29,6 +29,9 @@ foreach my $par (split /\n\n+/, $f){
 	$par =~ s/''(.*?)''/_$1_}/g;
 	$par =~ s/\(\((.*?)\)\)/CITE{$1}/gs;
 
+	while ($par =~ s/(CITE[{][^}]*),\s+/$1; @/){};
+	$par =~ s/CITE[{]([^}]*)[}]/[\@$1]/gs;
+
 	push @out, $par;
 }
 

@@ -5,7 +5,7 @@ Our wikitext is recognized (by pandoc) as mediawiki type, but the extra markup i
 
 Best would be to convert to .md first, then write a perl script for the extra markup.
 
-Right now, though, I'm just using an modified version of the old wt.pl, called wm.pl (wikitext2markup).
+For this, though, we used a modified version of the old wt.pl, called wm.pl (wikitext2markup).
 
 Work on this until a good stopping point is reached, and then:
 

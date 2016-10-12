@@ -301,25 +301,16 @@ get_fits:
 Sources += $(wildcard *.wikitext)
 
 ## Current plan. Make the .wikitext into .md and then save that
-ms.html: ms.wikitext
-
 Sources += conversion_notes.md
 
+ms.html: ms.md
+
+### Not in the pipeline anymore
 Sources += wm.pl
 new.md: ms.wikitext wm.pl
 	$(PUSH)
 
-new.html: ms.wikitext
-
-Sources += wt.pl top.tex bot.tex
- 
-%.doc.tex: %.wikitext wt.pl
-	$(PUSH)
-
-ms.pdf: ms.wikitext
-
-%.tex: top.tex %.doc.tex bot.tex
-	cat $^ > $@
+######################################################################
 
 ### Makestuff
 
