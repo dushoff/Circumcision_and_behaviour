@@ -53,11 +53,9 @@ Here, we look at population-level survey data from ten of the fourteen countries
 
 ## Research Questions
 
-__[JD: We spent a lot of time drafting text for these explanations for the Uganda MS. I would like to start from there. Is that OK? Is there a reason why you rewrote the text pretty substantially? In particular, you talk about "interaction of sexual behaviours and circumcision status", but the old version talked about "{interaction} between survey year and circumcision status in predicting sexual behaviour", which I think is more correct. Do you disagree?]__
-
 Our main analysis focuses on changes in risk behaviour between post-2007 and pre-2008 (i.e., before and after the UN MMC recommendation).  We analyze the \emph{interaction} between survey year and circumcision status in predicting sexual behaviour and whether the \emph{difference} between the behavior of circumcised and uncircumcised men changes.  We called this the "MC status" analysis.
 
-In addition,  we also analyzed data from after 2007 to study the differences of SRB among MC category (uncircumcised, previously circumcised-circumcised before 2008, and newly circumcised men -circumcised after 2007).  This analysis focused on the variable-level effect of circumcision category on risk behaviors at the overall effect of circumcision category as the main predictor.  We call this the "MC recency" analysis.
+In addition,  we also analyzed data from after 2007 to study the differences of SRB among MC category (uncircumcised, previously circumcised -circumcised before 2008, and newly circumcised men -circumcised after 2007).  This analysis focused on the variable-level effect of circumcision category on risk behaviors at the overall effect of circumcision category as the main predictor.  We call this the "MC recency" analysis.
 
 ## Methods
 
@@ -67,21 +65,13 @@ In addition,  we also analyzed data from after 2007 to study the differences of 
 
 We used nationally representative surveys from the Demographic and Health Surveys (DHS) in this study.  Countries with DHS data met the following criteria were selected: first, one of the 14 MMC  prioritized nations by WHO with national engagement in MMC programs either in implementing or pilot stage [@WHO11; @WHO11a; @WHO15] (also, see table of MC progress in appendix); second, availability of DHS data both before and after 2007; third, survey modules of the selected SRB data.  That resulted in ten nations: Kenya, Lesotho, Malawi, Mozambique, Namibia, Rwanda, Tanzania, Uganda, Zambia and Zimbabwe (see TABLE in Appendix).
 
-Each nation has two datasets, and it summed up to 20 datasets in total.  The datasets were grouped into pre-MC surveys (i.e., pre-2007 and 2007) [@KNBS04; @LSBS05; @MLBS05; @MZBS05; @NABS08; @RNBS06; @TNBS05; @UNBS07; @ZABS09; @ZIBS07], and post MC surveys (i.e., after 2007) [@KNBS14; @LSBS16; @MLBS10; @MZBS13; @NABS14; @RNBS16; @TNBS11; @UNBS12; @ZABS14; @ZIBS12].  Male samples aged from 15-49 were selected in consistence with the WHO's scale-up targets [@WHO11a]. 
-
-__[CF: Don't know how to cite Mozambique.  The report is in Portguese.]__
-
-* __[JD: Why are we citing any of these? We can just say we got those data from DHS. We can cite specific ones for specific reasons, if necessary.]__
+Each nation has two datasets, and it summed up to 20 datasets in total.  The datasets were grouped into pre-MC surveys (i.e., pre-2007 and 2007), and post MC surveys (i.e., after 2007).  Male samples aged from 15-49 were selected in consistence with the WHO's scale-up targets [@WHO11a]. 
 
 __[CF: Do we need a Sample_Selection table]__
 
 The following samples were excluded from this study:  never heard of AIDS, never had sexual intercourse prior to the surveys, unaware of their circumcision status, or had NA answers to any of the variables. (We can put this sentence as part of the description to the TABLE Sample_Selection, if we have one)
 
 The sample population was not proportionally representative of the countries because the survey sampling weights were not considered in this study.  Instead, we tried to make inferences about behaviour in the surveyed population. 
-
-__[CF:  I think we need more clear explanations why we don't want to use sample weight.  It has been a critique on the Uganda paper.]__
-
-* __[JD:  There was no criticism of the general approach (or explanation). One reviewer wanted one or two extra tables that used the sample weights. We will do that if they make us.]__
 
 (need a sentence on how many samples in total and by nation or by data)
 
