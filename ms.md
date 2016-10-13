@@ -55,7 +55,7 @@ Here, we look at population-level survey data from ten of the fourteen countries
 
 __[JD: We spent a lot of time drafting text for these explanations for the Uganda MS. I would like to start from there. Is that OK? Is there a reason why you rewrote the text pretty substantially? In particular, you talk about "interaction of sexual behaviours and circumcision status", but the old version talked about "{interaction} between survey year and circumcision status in predicting sexual behaviour", which I think is more correct. Do you disagree?]__
 
-Our main research interest focused on the _interaction_ of sexual behaviours and circumcision status between pre-2008 and after 2007 (i.e., pre and post surveys by using 2007 as the cut off year).  We called this the "MC status" analysis.
+Our main analysis focuses on changes in risk behaviour between post-2007 and pre-2008 (i.e., before and after the UN MMC recommendation).  We analyze the \emph{interaction} between survey year and circumcision status in predicting sexual behaviour and whether the \emph{difference} between the behavior of circumcised and uncircumcised men changes.  We called this the "MC status" analysis.
 
 In addition,  we also analyzed data from after 2007 to study the differences of SRB among MC category (uncircumcised, previously circumcised-circumcised before 2008, and newly circumcised men -circumcised after 2007).  This analysis focused on the variable-level effect of circumcision category on risk behaviors at the overall effect of circumcision category as the main predictor.  We call this the "MC recency" analysis.
 
