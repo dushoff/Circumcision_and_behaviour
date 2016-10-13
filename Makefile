@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: ms.html 
+target pngtarget pdftarget vtarget acrtarget: ms.pdf 
 
 ##################################################################
 
@@ -311,6 +311,28 @@ Sources += wm.pl
 new.md: ms.wikitext wm.pl
 	$(PUSH)
 
+ms.tex: ms.md
+	pandoc -o $@ --variable fontsize=12pt --filter pandoc-eqnos --filter pandoc-fignos --template=default --biblatex $<
+
+ms.pdf: ms.md
+
+######################################################################
+
+
+## Bibliography
+
+auto.bib: autorefs
+
+Sources += clip.pl
+manual.clip.bib: manual.bib clip.pl
+	$(PUSH)
+
+Sources += manual.bib auto.rmu
+refs.bib: auto.bib manual.clip.bib
+	$(cat)
+
+## http://lalashan.mcmaster.ca/theobio/projects/index.php?title=Special:GetProjectFile&display=download&project=R.bib
+
 ######################################################################
 
 ### Makestuff
@@ -324,3 +346,8 @@ new.md: ms.wikitext wm.pl
 
 -include $(ms)/wrapR.mk
 -include $(ms)/flextex.mk
+-include $(ms)/linkdirs.mk
+
+export autorefs = autorefs
+-include autorefs/inc.mk
+

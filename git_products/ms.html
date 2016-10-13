@@ -4,15 +4,20 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Chyun-Fung Shi" />
+  <meta name="author" content="Michael WZ Lee" />
+  <meta name="author" content="Jonathan Dushoff" />
+  <title>No Association of Male Circumcision and Sexual Risk Behaviors Found in the Prioritized Sub-Saharan Countries After the WHO's Medical Male Circumcision Promotion</title>
   <style type="text/css">code{white-space: pre;}</style>
 </head>
 <body>
-<h2 id="manuscript">Manuscript</h2>
-<h3 id="title">Title</h3>
-<p>No Association of Male Circumcision and Sexual Risk Behaviors Found in the Prioritized Sub-Saharan Countries After the WHO's Medical Male Circumcision Promotion</p>
-<h3 id="authors">Authors</h3>
-<p>Chyun-Fung Shi (corresponding author), Department of Biology, McMaster University. Mike Lee, Department of Biology, McMaster University. Jonathan Dushoff (corresponding author), Department of Biology, McMaster University.</p>
+<div id="header">
+<h1 class="title">No Association of Male Circumcision and Sexual Risk Behaviors Found in the Prioritized Sub-Saharan Countries After the WHO's Medical Male Circumcision Promotion</h1>
+<h2 class="author">Chyun-Fung Shi</h2>
+<h2 class="author">Michael WZ Lee</h2>
+<h2 class="author">Jonathan Dushoff</h2>
+<h3 class="date">November 2016</h3>
+</div>
 <h2 id="abstract">Abstract</h2>
 <h3 id="context">Context</h3>
 <h3 id="objective">Objective</h3>
@@ -50,12 +55,12 @@ Analyzing survey data provides a useful complement to RCT data, because it is no
 <p>(need a sentence on how many samples in total and by nation or by data)</p>
 <h3 id="measurements-and-concepts">Measurements and Concepts</h3>
 <p>There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction <span class="citation">[@Unde13]</span>. Our selection of SRB was based on DHS data availability and other related studies <span class="citation">[@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14]</span> cf{more}. Our main predictors were MC status, defined as circumcised vs. uncircumcised, in the MC status model, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model. The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model. We added number of non-martial sexual partners in lifetime in the recency model because of data availability.</p>
-<p>The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge. (see  and ). Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS. Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background. We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.</p>
+<p>The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge. (see Tables {Status.characteristics Status Sample Characteristics} and ). Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS. Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background. We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.</p>
 <ul>
 <li>insert TABLE Sample_Selection: sample size, method of selection (by per how many household), age, etc.} A raw index of wealth was used and coded as a three-knot spline based on a priori decision, and age four-knot spline. Marital status was recoded into four categories that did not distinguish between formal and informal marriage, and religion also into four categories. Because Tanzania missed religion data, we therefore coded it separately along the code for religion. Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non martial sexual partners in lifetime from zero to six. Numbers exceeded the maximum was truncated as the maximum. The media use refers to the amount spend on newspapers, radio and TV. The basic HIV knowledge was based on three questions: &quot;Reduce chances of AIDS by always using condoms during sex,&quot; &quot;Reduce chance of AIDS: have 1 sex partner with no other partner,&quot; and &quot;Can a healthy person have AIDS.&quot; Both of media use and HIV knowledge were constructed into scores. (Please confirm if this is correct)</li>
 </ul>
 <h3 id="statistical-model">Statistical Model</h3>
-<p>(J and M: please confirm and update this section) We used cumulative link mixed models (CLMMs) in the statistics package R <span class="citation">[@Rstats,Rpackage_ordinal]</span> in this study. The CLMM framework allows us to model a binary or ordinal response variable, while treating clusters and country as random effects.</p>
+<p>(J and M: please confirm and update this section) We used cumulative link mixed models (CLMMs) in the statistics package R <span class="citation">[@Rstats; @Rpackage_ordinal]</span> in this study. The CLMM framework allows us to model a binary or ordinal response variable, while treating clusters and country as random effects.</p>
 <p>Variable-level P values were calculated by sequentially dropping each variable and comparing the resulting restricted models to the full model. &quot;Prediction&quot; plots were made by calculating the effect of each level or value of a predictor variable on the linear predictor of the CLMM, using the model center as a reference point. Any sample with missing data for a given variable was adaptively dropped from analyses involving that variable.</p>
 <p>(A sentence why this is a good/more sensible tool?)</p>
 <h3 id="scripts">Scripts</h3>
