@@ -318,7 +318,6 @@ ms.pdf: ms.md
 
 ######################################################################
 
-
 ## Bibliography
 
 auto.bib: autorefs
@@ -327,7 +326,7 @@ Sources += clip.pl
 manual.clip.bib: manual.bib clip.pl
 	$(PUSH)
 
-Sources += manual.bib auto.rmu
+Sources += manual.bib auto.rmu original.rmu original.bib
 refs.bib: auto.bib manual.clip.bib
 	$(cat)
 
