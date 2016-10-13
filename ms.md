@@ -1,14 +1,17 @@
----
-title: No Association of Male Circumcision and Sexual Risk Behaviors Found in the Prioritized Sub-Saharan Countries After the WHO's Medical Male Circumcision Promotion
-author:
-- Chyun-Fung Shi
-- Michael WZ Lee
-- Jonathan Dushoff
+## Manuscript
 
-address: Department of Biology, McMaster University.
-date: November 2016
-bibliography: refs.bib
----
+
+### Title
+
+
+No Association of Male Circumcision and Sexual Risk Behaviors Found in the Prioritized Sub-Saharan Countries After the WHO's Medical Male Circumcision Promotion
+
+### Authors
+
+
+Chyun-Fung Shi (corresponding author), Department of Biology, McMaster University.
+Mike Lee, Department of Biology, McMaster University.
+Jonathan Dushoff (corresponding author), Department of Biology, McMaster University.
 
 ## Abstract
 
@@ -36,9 +39,11 @@ bibliography: refs.bib
 
 ### Keywords
 
+
 male circumcision, HIV, sexual risk behaviors, risk compensation, generalized linear mixed models (?), DHS
 
 ## Introduction
+
 
 The idea of a possible connection between male circumcision (MC) and HIV risk reduction has been suggested for a few decades [@Acle86; @CameSimo89; @Lind88; @HalpBail99].  In 2007, the World Health Organization (WHO) and the Joint United Nation Programme on HIV/AIDS (UNAIDS) recommended a medical male circumcision (MMC) scale-up as part of biomedical HIV prevention interventions [@WHO07a] after the results of three randomized clinical trials (RCT) [@AuveTalj05; @BailMose07; @GrayKigo07] found MC reducing female-to-male HIV transmission by up to 60%.  WHO subsequently prioritized 14 eastern and southern African countries with high HIV and low MC prevalence for a MMC scale-up, with a goal of 80% coverage of uncircumcised males aged 15-49 by 2015 [@WHO11a].  By 2014, Kenya and Tanzania had reached the goal with 108% and 89% targets implemented,  compared to nations like Namibia (6%) and Malawi (8%) lagging behind [@WHO15] \(see table of MC progress in appendix).  Since not all the governments and medical communities were able to satisfy MMC demands with sufficient resources and planning [@CurrNjeu11], people aware of the MC benefit were likely to seek the services at clinics or traditional healers where proper medical guidelines were not likely provided, and the need of safe sex less likely  emphasized [@GreeMaha13].
 
@@ -70,17 +75,18 @@ The sample population was not proportionally representative of the countries bec
 ### Measurements and Concepts
 
 
-There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction [@Unde13].  Our selection of SRB was based on DHS data availability and other related studies [@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14].  Our main predictors were MC status,  defined as circumcised vs. uncircumcised, in the MC status analysis, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model.  The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model.  We added number of non-martial sexual partners in lifetime only in the recency model because many of the pre 2008 surveys did not include this module.
+There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction [@Unde13].  Our selection of SRB was based on DHS data availability and other related studies [@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14].  Our main predictors were MC status,  defined as circumcised vs. uncircumcised, in the MC status analysis, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model.  The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model.  Number of non-martial sexual partners in lifetime was analyzed only in the recency model because many of the pre 2008 surveys did not include this module.
 
-The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  (see Tables {Status.characteristics Status Sample Characteristics} and \tref{Recency.characteristics Recency Sample Characteristics}).  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.
+The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  (see \tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics}).  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.
 
-- insert  TABLE Sample_Selection:  sample size, method of selection (by per how many household), age, etc.}  A raw index of wealth was used and coded as a three-knot spline based on a priori decision, and age four-knot spline.  Marital status was recoded into four categories that did not distinguish between formal and informal marriage, and religion also into four categories.  Because Tanzania missed religion data, we therefore coded it separately along the code for religion.  Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non martial sexual partners in lifetime from zero to six.  Numbers exceeded the maximum was truncated as the maximum.  The media use refers to the amount spend on newspapers, radio and TV.  The basic HIV knowledge was based on three questions:  "Reduce chances of AIDS by always using condoms during sex," "Reduce chance of AIDS: have 1 sex partner with no other partner," and "Can a healthy person have AIDS."  Both of media use and HIV knowledge were constructed into scores. (Please confirm if this is correct)
+- insert  TABLE Sample_Selection ({Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics}):  A raw index of wealth was used and coded as a three-knot spline based on a priori decision, and age four-knot spline.  Marital status was recoded into four categories that did not distinguish between formal and informal marriage, and religion also into four categories.  Because Tanzania missed religion data, we therefore coded it separately along the code for religion.  Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non martial sexual partners in lifetime from zero to six.  Numbers exceeded the maximum was truncated as the maximum.  The media use refered to the amount spend on newspapers, radio and TV.  The basic HIV knowledge was based on three questions:  "Reduce chances of AIDS by always using condoms during sex," "Reduce chance of AIDS: have 1 sex partner with no other partner," and "Can a healthy person have AIDS."  Both of media use and HIV knowledge were constructed into scores.  __[CF: Please confirm if this is correct]
 
 ### Statistical Model
 
 
-(J and M:  please confirm and update this section)
-We used cumulative link mixed models (CLMMs) in the statistics package R [@Rstats; @Rpackage_ordinal] in this study. The CLMM framework allows us to model a binary or ordinal response variable, while treating clusters and country as random effects.
+ __[CF: J and M, please confirm and update this section]
+ 
+We used cumulative link mixed models (CLMMs) in the statistics package R [@Rstats,Rpackage_ordinal] in this study. The CLMM framework allows us to model a binary or ordinal response variable, while treating clusters and country as random effects.
 
 Variable-level P values were calculated by sequentially dropping each variable and comparing the resulting restricted models to the full model.  "Prediction" plots were made by calculating the effect of each level or value of a predictor variable on the linear predictor of the CLMM, using the model center as a reference point.  Any sample with missing data for a given variable was adaptively dropped from analyses involving that variable.
 
