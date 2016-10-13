@@ -78,10 +78,7 @@ The sample population was not proportionally representative of the countries bec
 
 ### Measurements and Concepts
 
-
 There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction [@Unde13].  Our selection of SRB was based on DHS data availability and other related studies [@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14].  Our main predictors were MC status,  defined as circumcised vs. uncircumcised, in the MC status analysis, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model.  The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model.  Number of non-martial sexual partners in lifetime was analyzed only in the recency model because many of the pre 2008 surveys did not include this module.
-
-<<<<<<< 4fd1299de28af4b82ec25e18b4aee9cb9bfaa2e8
 
 The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  (see [@tab:Status_characteristics; @tab:Status_Sample_Characteristics] and [@tab:Recency_characteristics @tab:Recency_Sample_Characteristics]).  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.
 
