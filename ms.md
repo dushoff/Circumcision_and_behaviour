@@ -67,13 +67,12 @@ We used nationally representative surveys from the Demographic and Health Survey
 
 Each nation has two datasets, and it summed up to 20 datasets in total.  The datasets were grouped into pre-MC surveys (i.e., pre-2007 and 2007), and post MC surveys (i.e., after 2007).  Male samples aged from 15-49 were selected in consistence with the WHO's scale-up targets [@WHO11a]. 
 
-__[CF: Do we need a Sample_Selection table]__
+__[CF: Sample_Selection tables in Appendix:  nation by varialbles, one pre-2008 and one post-2007.]__
 
 The following samples were excluded from this study:  never heard of AIDS, never had sexual intercourse prior to the surveys, unaware of their circumcision status, or had NA answers to any of the variables. (We can put this sentence as part of the description to the TABLE Sample_Selection, if we have one)
 
 The sample population was not proportionally representative of the countries because the survey sampling weights were not considered in this study.  Instead, we tried to make inferences about behaviour in the surveyed population. 
 
-(need a sentence on how many samples in total and by nation or by data)
 
 ### Measurements and Concepts
 
