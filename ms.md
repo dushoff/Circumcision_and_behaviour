@@ -63,9 +63,9 @@ In addition,  we also analyzed data from after 2007 to study the differences of 
 ### Data and Samples
 
 
-We used nationally representative surveys from the Demographic and Health Surveys (DHS) in this study.  Countries with DHS data met the following criteria were selected: first, one of the 14 MMC  prioritized nations by WHO with national engagement in MMC programs either in implementing or pilot stage [@WHO11; @WHO11a; @WHO15]  (also, see table of MC progress in appendix); second, availability of DHS data both before and after 2007; third, survey modules of the selected SRB data.  That resulted in ten nations: Kenya, Lesotho, Malawi, Mozambique, Namibia, Rwanda, Tanzania, Uganda, Zambia and Zimbabwe (see TABLE in Appendix).
+We used nationally representative surveys from the Demographic and Health Surveys (DHS) in this study.  Countries with DHS data met the following criteria were selected: first, one of the 14 MMC  prioritized nations by WHO with national engagement in MMC programs either in implementing or pilot stage [@WHO11; @WHO11a; @WHO15]  (also, see table of MC progress in appendix); second, availability of DHS data both before and after 2007; third, survey modules of the selected SRB data.  That resulted in ten nations: Kenya, Lesotho, Malawi, Mozambique, Namibia, Rwanda, Tanzania, Uganda, Zambia and Zimbabwe.
 
-Each nation has two datasets, and it summed up to 20 datasets in total.  The datasets were grouped into pre-MC surveys (i.e., pre-2007 and 2007), and post MC surveys (i.e., after 2007).  Male samples aged from 15-49 were selected in consistence with the WHO's scale-up targets [@WHO11a]. (see \tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics}) __[CF: we can put this in Appendix:  nation by varialbles, one pre-2008 and one post-2007.]__
+Each nation has two datasets, and that summed up to 20 datasets in total.  The datasets were grouped into pre-surveys before the UN's MMC recommodention (i.e., pre-2007 and 2007) and post surveys (i.e., after 2007).  Male samples aged from 15-49 were selected in consistence with the WHO's scale-up targets [@WHO11a].
 
 The following samples were excluded from this study:  never heard of AIDS, never had sexual intercourse prior to the surveys, unaware of their circumcision status, or had NA answers to any of the variables. (We can put this sentence as part of the description to the (\tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics}))
 
@@ -126,7 +126,8 @@ __[To do: Combine the pages from the below recency figures descriptions into one
 
 __[Second page of each of these]_
 
-(need a sentence on how many samples in total and by nation or by data. )
+
+There were xxx samples in the status analysis and xxx in the recency analysis (For details, see \tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics} in the appendix.)
 
 The results of the condom MC status model showed a significant difference of condom use between pre-2008 and post 2007 surveys (See Figure of interaction of condomStatus_intPlots.pdf).  The gap of condom use between circumcised men and non circumcised men post 2007 was significantly smaller than pre-2008 (The relative odds ratio (ROR) is 0.83 (95% CI, 0.74-0.92; P=?)).  Before the UN's MMC promotion started in 2007, circumcised men were less likely to use condom in their last intercourse compared to uncircumcised men, but MORE likely to use condom after the promotion started.  The likelihood of condom use among circumcised men increased significantly (How to transfer ROR (0.83) into words?)
 
