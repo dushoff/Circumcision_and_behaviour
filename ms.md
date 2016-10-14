@@ -65,9 +65,9 @@ In addition,  we also analyzed data from after 2007 to study the differences of 
 
 We used nationally representative surveys from the Demographic and Health Surveys (DHS) in this study.  Countries with DHS data met the following criteria were selected: first, one of the 14 MMC  prioritized nations by WHO with national engagement in MMC programs either in implementing or pilot stage [@WHO11; @WHO11a; @WHO15]  (also, see table of MC progress in appendix); second, availability of DHS data both before and after 2007; third, survey modules of the selected SRB data.  That resulted in ten nations: Kenya, Lesotho, Malawi, Mozambique, Namibia, Rwanda, Tanzania, Uganda, Zambia and Zimbabwe.
 
-Each nation has two datasets, and that summed up to 20 datasets in total.  The datasets were grouped into pre-surveys before the UN's MMC recommodention (i.e., pre-2007 and 2007) and post surveys (i.e., after 2007).  Male samples aged from 15-49 were selected in consistence with the WHO's scale-up targets [@WHO11a].
+Each nation has two datasets, and that summed up to 20 datasets in total.  The datasets were grouped into surveys before the UN's MMC recommodention (i.e., pre-2007 and 2007) and surveys after the recommondation (i.e., after 2007).  Male samples aged from 15-49 were selected in consistence with the WHO's scale-up targets [@WHO11a].
 
-The following samples were excluded from this study:  never heard of AIDS, never had sexual intercourse prior to the surveys, unaware of their circumcision status, or had NA answers to any of the variables. (We can put this sentence as part of the description to the (\tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics}))
+The following samples were excluded from this study:  never heard of AIDS, never had sexual intercourse prior to the surveys, unaware of their circumcision status, or had NA answers to any of the variables. (We can put this sentence as part of the description to the (\tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics})
 
 The sample population was not proportionally representative of the countries because the survey sampling weights were not considered in this study.  Instead, we tried to make inferences about behaviour in the surveyed population. 
 
@@ -77,9 +77,7 @@ The sample population was not proportionally representative of the countries bec
 
 There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction [@Unde13].  Our selection of SRB was based on DHS data availability and other related studies [@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14].  Our main predictors were MC status,  defined as circumcised vs. uncircumcised, in the MC status analysis, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model.  The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model.  Number of non-martial sexual partners in lifetime was analyzed only in the recency model because many of the pre 2008 surveys did not include this module.
 
-The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  (see \tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics}).  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.
-
-- insert  TABLE Sample_Selection ({Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics}):  A raw index of wealth was used and coded as a three-knot spline based on a priori decision, and age four-knot spline.  Marital status was recoded into four categories that did not distinguish between formal and informal marriage, and religion also into four categories.  Because Tanzania missed religion data, we therefore coded it separately along the code for religion.  Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non martial sexual partners in lifetime from zero to six.  Numbers exceeded the maximum was truncated as the maximum.  The media use refered to the amount spend on newspapers, radio and TV.  The basic HIV knowledge was based on three questions:  "Reduce chances of AIDS by always using condoms during sex," "Reduce chance of AIDS: have 1 sex partner with no other partner," and "Can a healthy person have AIDS."  Both of media use and HIV knowledge were constructed into scores.  __[CF: Please confirm if this is correct]
+The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.
 
 ### Statistical Model
 
@@ -102,9 +100,9 @@ Permission for using the DHS was authorized by USAID and is available upon regis
 
 -figures and tables
 
-- (insert TABLE Status_characteristics Status Sample Characteristics}  ( We can put this in Appendix.  The sociodemographic and sexual risk behaviour profile was presented in table XX in appendix. Can refer to https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3626062/ table one format)
+- (insert TABLE Status_characteristics Status Sample Characteristics}:  A raw index of wealth was used and coded as a three-knot spline based on a priori decision, and age four-knot spline.  Marital status was recoded into four categories that did not distinguish between formal and informal marriage, and religion also into four categories.  Because Tanzania missed religion data, we therefore coded it separately along the code for religion.  Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non martial sexual partners in lifetime from zero to six.  Numbers exceeded the maximum was truncated as the maximum.  The media use refered to the amount spend on newspapers, radio and TV.  The basic HIV knowledge was based on three questions:  "Reduce chances of AIDS by always using condoms during sex," "Reduce chance of AIDS: have 1 sex partner with no other partner," and "Can a healthy person have AIDS."  Both of media use and HIV knowledge were constructed into scores. (put this in appendix)   __[CF: Please confirm if this is correct] 
 
-- (insert TABLE Recency_characteristics Recency Sample Characteristics} (ditto)
+- (insert TABLE Recency_characteristics Recency Sample Characteristics}:  See (\tref{TABLE Status_characteristics Status Sample Characteristics}) for sample selection and coding criteria. (put this in appendix)
 
 -  (insert FIGURE of condomStatus: the _interaction_ plot showing the mean effect of MC Status on condom use, and the interaction with DHS survey year.  The relative odds ratio (ROR) is 0.83 (95% CI, 0.74-0.92; interaction P=?)
 figdrop/condomStatus_intplots.pdf
@@ -118,7 +116,6 @@ figdrop/partnerYearStatus_intplots.pdf
 
 - (insert FIGURE of partnerLifeRecency:  the comparison of numbers of non-martial sexual partners in lifetime by circumcision category.  P<0.001).  Men circumcised before the UN's MMC promotion had an average of xx sexual partners compared to xx in men circumcised newly circumcised after the UN's campaign started and to xx to men not circumcised; and the difference was significant.
 
-(Let's put these three recency results into one figure)
 
 __[To do: Combine the above recency figure descriptions into one P (to match one figure)]__
 
