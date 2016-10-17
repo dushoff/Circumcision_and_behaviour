@@ -77,7 +77,7 @@ The sample population was not proportionally representative of the countries bec
 
 There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction [@Unde13].  Our selection of SRB was based on DHS data availability and other related studies [@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14].  Our main predictors were MC status,  defined as circumcised vs. uncircumcised, in the MC status analysis, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model.  The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model.  Number of non-martial sexual partners in lifetime was analyzed only in the recency model because many of the pre 2008 surveys did not include this module.
 
-The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.
+The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.  For coding details, see \tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics} in the appendix.
 
 ### Statistical Model
 
@@ -88,7 +88,7 @@ We used cumulative link mixed models (CLMMs) in the statistics package R [@Rstat
 
 Variable-level P values were calculated by sequentially dropping each variable and comparing the resulting restricted models to the full model.  "Prediction" plots were made by calculating the effect of each level or value of a predictor variable on the linear predictor of the CLMM, using the model center as a reference point.  Any sample with missing data for a given variable was adaptively dropped from analyses involving that variable.
 
-(A sentence why this is a good/more sensible tool?)
+(A sentence why this is a good/more sensible tool compared to a more mainstream approach?)
 
 ### Scripts
 
@@ -100,26 +100,26 @@ Permission for using the DHS was authorized by USAID and is available upon regis
 
 -figures and tables
 
-- (insert TABLE Status_characteristics Status Sample Characteristics}:  A raw index of wealth was used and coded as a three-knot spline based on a priori decision, and age four-knot spline.  Marital status was recoded into four categories that did not distinguish between formal and informal marriage, and religion also into four categories.  Because Tanzania missed religion data, we therefore coded it separately along the code for religion.  Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non martial sexual partners in lifetime from zero to six.  Numbers exceeded the maximum was truncated as the maximum.  The media use refered to the amount spend on newspapers, radio and TV.  The basic HIV knowledge was based on three questions:  "Reduce chances of AIDS by always using condoms during sex," "Reduce chance of AIDS: have 1 sex partner with no other partner," and "Can a healthy person have AIDS."  Both of media use and HIV knowledge were constructed into scores. (put this in appendix)   __[CF: Please confirm if this is correct] 
+- (insert TABLE Status_characteristics Status Sample Characteristics}:  A raw index of wealth was used and coded as a three-knot spline based on a priori decision, and age four-knot spline.  Marital status was recoded into four categories that did not distinguish between formal and informal marriage, and religion also into four categories.  Because Tanzania missed religion data, we therefore coded it separately along the code for religion.  Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non martial sexual partners in lifetime from zero to six.  Numbers exceeded the maximum was truncated as the maximum.  The media use refered to the amount spend on newspapers, radio and TV.  The basic HIV knowledge was based on three questions:  "Reduce chances of AIDS by always using condoms during sex," "Reduce chance of AIDS: have 1 sex partner with no other partner," and "Can a healthy person have AIDS."  We used a scaled, uncentered principle component analysis (PCA) only as a simple method to construct a single index for media use and another for HIV knowledge.  The PCA indexes we constructed explain xx% of the variance in the media case and xx% in the HIV knowledge case. (put this in appendix)   __[CF: Please confirm if this is correct] 
 
-- (insert TABLE Recency_characteristics Recency Sample Characteristics}:  See (\tref{TABLE Status_characteristics Status Sample Characteristics}) for sample selection and coding criteria. (put this in appendix)
+- (insert TABLE Recency_characteristics Recency Sample Characteristics}:  See (\tref{TABLE Status_characteristics Status Sample Characteristics}) for coding criteria. (put this in appendix)
 
--  (insert FIGURE of condomStatus: the _interaction_ plot showing the mean effect of MC Status on condom use, and the interaction with DHS survey year.  The relative odds ratio (ROR) is 0.83 (95% CI, 0.74-0.92; interaction P=?)
+-  (insert FIGURE of condomStatus: the _interaction_ plot showing the mean effect of MC Status on condom use in the last sex within the previous year, and the interaction with DHS survey year.  The relative odds ratio (ROR) is 0.83 (95% CI, 0.74-0.92; interaction P=?)
 figdrop/condomStatus_intplots.pdf
 
--  (insert FIGURE of partnerYearStatus: the _interaction_ between survey year and circumcision status on numbers of non-martial sexual partners within the previous year. The ROR is 0.006 (95% CI, -0.008-0.021; P=?)
+-  (insert FIGURE of partnerYearStatus: the _interaction_ plot showing the mean effect of MC status on reported non-martial sexual partners within the previous year, and the interaction with DHS survey year.  The ROR is 0.006 (95% CI, -0.008-0.021; interaction P=?)
 figdrop/partnerYearStatus_intplots.pdf
 
-- (insert FIGURE of condomRecency:  the comparison of condom use during the last sexual intercourse by circumcision category.  P<0.001).  Men circumcised after the UN's MMC promotion started were xx times more likely to use condom than uncircumcised men; and men circumcised before the MMC promotion were least likely to use condom.
+- (insert FIGURE of condomRecency:  the association of condom use during the last sex within the preivous year by circumcision category.  P<0.001).  Men circumcised after the UN's MMC promotion started were xx times more likely to use condom than uncircumcised men; and men circumcised before the MMC promotion were least likely to use condom.
 
-- (insert FIGURE of partnerYearRecency:  the comparison of numbers of non-martial sexual partners within the previous year by circumcision category.  P=0.142).  Although men circumcised after the UN's MMC promotion started had more non-martial sexual partners within the previous year than men circumcised before the promotion and than uncircumcised men.  The difference was not significant.
+- (insert FIGURE of partnerYearRecency:  the association of numbers of non-martial sexual partners within the previous year by circumcision category.  P=0.142).  Although men circumcised after the UN's MMC promotion started had more non-martial sexual partners within the previous year than men circumcised before the promotion and than uncircumcised men.  The difference was not significant.
 
-- (insert FIGURE of partnerLifeRecency:  the comparison of numbers of non-martial sexual partners in lifetime by circumcision category.  P<0.001).  Men circumcised before the UN's MMC promotion had an average of xx sexual partners compared to xx in men circumcised newly circumcised after the UN's campaign started and to xx to men not circumcised; and the difference was significant.
+- (insert FIGURE of partnerLifeRecency:  the association of numbers of non-martial sexual partners in lifetime by circumcision category.  P<0.001).  Men circumcised before the UN's MMC promotion had an average of xx sexual partners compared to xx in men circumcised newly circumcised after the UN's campaign started and to xx to men not circumcised; and the difference was significant.
 
 
 __[To do: Combine the above recency figure descriptions into one P (to match one figure)]__
 
-__[To do: Combine the pages from the below recency figures descriptions into one figure]__
+__[To do: Combine the pages from the below recency figures descriptions into one figure]__:  to put all the captions of the 3 recency figures together.
 
 __[Second page of each of these]_
 
