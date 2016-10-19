@@ -1,4 +1,0 @@
-ms.aux: ms.tex; $(latex) ms
-ms.reqs: ;touch $@
-
-# ms.tex: 
