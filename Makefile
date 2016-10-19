@@ -16,7 +16,7 @@ Sources += notes.txt
 
 Sources += dushoff.mk
 
-Makefile: datadir
+Makefile: datadir figdrop overleaf
 
 datadir:
 	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
@@ -24,12 +24,8 @@ datadir:
 figdrop:
 	/bin/ln -s $(Drop)/MC_varlvl $@
 
-cribdir:
-	/bin/ln -s /home/dushoff/Dropbox/Downloads/MC/WorkingWiki-export/MC_risk_Africa// $@
-
-ww.mk: cribdir
-	cat cribdir/Makefile > $@
-	cat cribdir/*.mk >> $@
+overleaf:
+	git clone https://git.overleaf.com/6654613kpgmzg $@
 
 
 ##################################################################
@@ -325,6 +321,9 @@ auto.bib: autorefs
 Sources += clip.pl
 manual.clip.bib: manual.bib clip.pl
 	$(PUSH)
+
+Sources += new.rmu
+new.bib: new.rmu
 
 Sources += manual.bib auto.rmu original.rmu original.bib
 refs.bib: auto.bib manual.clip.bib
