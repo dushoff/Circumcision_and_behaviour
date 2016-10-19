@@ -71,16 +71,13 @@ The following samples were excluded from this study:  never heard of AIDS, never
 
 The sample population was not proportionally representative of the countries because the survey sampling weights were not considered in this study.  Instead, we tried to make inferences about behaviour in the surveyed population. 
 
-
 ### Measurements and Concepts
 
-
-There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction [@Unde13].  Our selection of SRB was based on DHS data availability and other related studies [@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14].  Our main predictors were MC status,  defined as circumcised vs. uncircumcised, in the MC status analysis, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model.  The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model.  Number of non-marital sexual partners in lifetime was analyzed only in the recency model because many of the pre 2008 surveys did not include this module.
+There was no agreement on how to evaluate sexual risk behaviours (SRB) when analyzing intervention in association of HIV reduction [@Unde13] __[JD: check ref and summarize what they say; you could also just cite different papers to say that a "variety of approaches have been used", or something like that]__.  Our selection of SRB was based on DHS data availability and other related studies [@AuveTalj05; @BailMose07; @GrayKigo07; @GrayKigo12; @KongSsek14].  Our main predictors were MC status,  defined as circumcised vs. uncircumcised, in the MC status analysis, and MC category, defined as uncircumcised, newly circumcised and previously circumcised (i.e., pre and post UN's MMC campaign) in the recency model.  The main responses were condom use at last sex and number of non-marital sexual partners in the last 12 months in the status model.  Number of non-marital sexual partners in lifetime was analyzed only in the recency model because many of the pre 2008 surveys did not include this module.
 
 The co-variates in the two models included age, education, work status, religion, wealth, residence (rural vs. urban), marital status, media use and HIV knowledge.  Lesotho was excluded in the status model because it missed the condom data in the pre-2007 DHS.  Clusters and country were treated as random factors in order to control for correlations between individuals from the same geographic area and background.  We also count for media slopes in the random effect based on the presumption that media content in each country was likely to be different.  For coding details, see \tref{Status_characteristics Status Sample Characteristics} and \tref{Recency_characteristics Recency Sample Characteristics} in the appendix.
 
 ### Statistical Model
-
 
  __[CF: J and M, please confirm and update this section]
  
@@ -92,8 +89,7 @@ Variable-level P values were calculated by sequentially dropping each variable a
 
 ### Scripts
 
-
-Permission for using the DHS was authorized by USAID and is available upon registration at The DHS program.  All of the R scripts used to analyze the data and produce the figures will be made available on the web when the paper is published.
+Permission for using the DHS was authorized by USAID and is available upon registration at The DHS program.  All of the R scripts used to analyze the data and produce the figures will be made available on the web when the paper is published.]__
 
 ## Results
 
