@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: ms.pdf 
+target pngtarget pdftarget vtarget acrtarget: update_overleaf 
 
 ##################################################################
 
@@ -332,6 +332,13 @@ refs.bib: auto.bib manual.clip.bib
 ## http://lalashan.mcmaster.ca/theobio/projects/index.php?title=Special:GetProjectFile&display=download&project=R.bib
 
 ######################################################################
+
+## Pushing to overleaf
+
+update_overleaf: refs.bib.po
+
+%.po: %
+	$(CPF) $< overleaf/
 
 ### Makestuff
 
