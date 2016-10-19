@@ -1,7 +1,11 @@
 
 + In surveys.Rout, there are 12570 NAs in MCCategory.  It is the sum of circumcised men in the pre-2007 datasets.
 
-+ explain how we coded partner by year and by lifetime
++ The media use referred to the
+  amount spend on newspapers, radio and TV. The basic HIV knowledge was
+  based on three questions: ``Reduce chances of AIDS by always using
+  condoms during sex,'' ``Reduce chance of AIDS: have 1 sex partner with
+  no other partner,'' and ``Can a healthy person have AIDS.''
 
 
 
