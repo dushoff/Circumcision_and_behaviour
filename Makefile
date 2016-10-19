@@ -4,7 +4,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: update_overleaf 
+target pngtarget pdftarget vtarget acrtarget: auto.bib 
 
 ##################################################################
 
@@ -309,8 +309,7 @@ Sources += clip.pl
 manual.clip.bib: manual.bib clip.pl
 	$(PUSH)
 
-Sources += new.rmu
-new.bib: new.rmu
+auto.bib: auto.rmu
 
 Sources += manual.bib auto.rmu original.rmu original.bib
 refs.bib: auto.bib manual.clip.bib

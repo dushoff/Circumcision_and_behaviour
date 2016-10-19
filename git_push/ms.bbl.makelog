@@ -1,0 +1,13 @@
+make[2]: Entering directory '/home/dushoff/git/Circumcision_and_behaviour'
+make -f ~/git/makestuff/deps.mk -f Makefile ms.reqs ms.aux
+make[3]: Entering directory '/home/dushoff/git/Circumcision_and_behaviour'
+make[3]: 'ms.reqs' is up to date.
+make[3]: 'ms.aux' is up to date.
+make[3]: Leaving directory '/home/dushoff/git/Circumcision_and_behaviour'
+/bin/rm -f ms.bbl
+biber ms
+INFO - This is Biber 2.4
+INFO - Logfile is 'ms.blg'
+INFO - Reading 'ms.bcf'
+WARN - No data sources defined!
+make[2]: Leaving directory '/home/dushoff/git/Circumcision_and_behaviour'
