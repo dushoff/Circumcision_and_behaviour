@@ -235,7 +235,6 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 %_varlvlsum.Rout: %.Rout varlvlsum.R
 	$(run-R)
 
-
 ##shortcut 
 
 .PRECIOUS: %_load.Rout
@@ -322,12 +321,14 @@ refs.bib: auto.bib manual.clip.bib
 
 ######################################################################
 
-## Pushing to overleaf
+## To connect a file made here to overleaf, add it to the update_overleaf list
 
 update_overleaf: refs.bib.po
 
 %.po: %
 	$(CPF) $< overleaf/
+
+######################################################################
 
 ### Makestuff
 
