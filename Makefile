@@ -303,6 +303,9 @@ get_fits:
 
 ## Bibliography
 
+## This file should use bibtex about the same way as the real one and can be used for testing simple stuff
+Sources += test.tex
+
 auto.bib: autorefs
 
 Sources += clip.pl
@@ -336,8 +339,10 @@ update_overleaf: refs.bib.po
 -include $(ms)/pandoc.mk
 
 -include $(ms)/wrapR.mk
--include $(ms)/flextex.mk
 -include $(ms)/linkdirs.mk
+
+-include $(ms)/flextex.mk
+-include $(ms)/bibtex.def
 
 export autorefs = autorefs
 -include autorefs/inc.mk
