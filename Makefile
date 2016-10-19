@@ -1,12 +1,14 @@
 ### Circumcision_and_behaviour
-### Hooks for the editor to set the default target
+# https://github.com/dushoff/Circumcision_and_behaviour
+
+### Hooks 
 current: target
 
 target pngtarget pdftarget vtarget acrtarget: update_overleaf 
 
 ##################################################################
 
-# make files
+# make files and directories
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
@@ -292,25 +294,10 @@ get_fits:
 
 ######################################################################
 
-## Manuscript?
+## Manuscript stuff should all be in overleaf/ now
 
-Sources += $(wildcard *.wikitext)
 
-## Current plan. Make the .wikitext into .md and then save that
-Sources += conversion_notes.md
 
-Sources += ms.md
-ms.html: ms.md
-
-### Not in the pipeline anymore
-Sources += wm.pl
-new.md: ms.wikitext wm.pl
-	$(PUSH)
-
-ms.tex: ms.md
-	pandoc -o $@ --variable fontsize=12pt --filter pandoc-eqnos --filter pandoc-fignos --template=default --biblatex $<
-
-ms.pdf: ms.md
 
 ######################################################################
 
