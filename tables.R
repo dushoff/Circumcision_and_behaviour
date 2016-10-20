@@ -21,7 +21,7 @@ newlist <- lapply(predictors,new_table)
 
 combdf <- function(pred,lldf){
   tempdf <- as.data.frame.matrix(lldf)
-  df <- data.frame(Category=pred,pred_cat=rownames(tempdf),tempdf)
+  df <- data.frame(Category=pred,Sub_Category=rownames(tempdf),tempdf)
   return(df)
 }
 
@@ -35,8 +35,8 @@ row.names(ddold) <- row.names(ddnew) <- NULL
 
 aa <- head(ddold)
 
-ddold2 <- (ddold 
-  %>% group_by(predictor)
+ddold2 <- (ddold
+  %>% group_by(Category)
   %>% mutate(KE = paste(KE,"(",signif(KE/sum(KE),2),")",sep="")
              , LS = paste(LS,"(",signif(LS/sum(LS),2),")",sep="")
              , MW = paste(MW,"(",signif(MW/sum(MW),2),")",sep="")
@@ -50,5 +50,26 @@ ddold2 <- (ddold
              )
 )
 
-knitr::kable(ddold2,format="markdown",align="c")
-knitr::kable(ddnew,format="markdown")
+ddold3 <- (ddold
+  %>% select(-Sub_Category)
+  %>% group_by(Category)
+  %>% summarise_each(funs(sum(.))) 
+  %>% mutate(Sub_Category="total")
+  %>% rbind(.,ddold)
+  %>% arrange(Category,Sub_Category)
+  %>% select(Category,Sub_Category,KE:ZW)
+)
+
+ddnew3 <- (ddnew
+           %>% select(-Sub_Category)
+           %>% group_by(Category)
+           %>% summarise_each(funs(sum(.))) 
+           %>% mutate(Sub_Category="total")
+           %>% rbind(.,ddnew)
+           %>% arrange(Category,Sub_Category)
+           %>% select(Category,Sub_Category,KE:ZW)
+)
+
+
+knitr::kable(ddold3,format="latex",align="c")
+knitr::kable(ddnew3,format="latex",align="c")
