@@ -4,7 +4,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: auto.bib 
+target pngtarget pdftarget vtarget acrtarget: update_overleaf 
 
 ##################################################################
 
@@ -323,10 +323,21 @@ refs.bib: auto.bib manual.clip.bib
 
 ## To connect a file made here to overleaf, add it to the update_overleaf list
 
-update_overleaf: refs.bib.po
-
+update_overleaf: refs.bib.po condomStatus_intplots.pdf.po recency_back.pdf.po
 %.po: %
 	$(CPF) $< overleaf/
+
+%.pdf: figdrop/%.pdf
+	cp $< $@
+
+######################################################################
+
+## Mess with recency figures
+
+recency_back.pdf: condomRecency_MCcat-1.pdf partnerLifeRecency_MCcat-1.pdf partnerYearRecency_MCcat-1.pdf Makefile
+	pdfjam -o $@ --nup 3x1 --landscape $(filter-out Makefile, $^)
+
+# --papersize '{10cm,20cm}' 
 
 ######################################################################
 
