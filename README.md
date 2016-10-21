@@ -1,5 +1,7 @@
 
-+ In surveys.Rout, there are 12570 NAs in MCCategory.  It is the sum of circumcised men in the pre-2007 datasets.
++ Need to check why >400 cases missing in Mozanbique religion. 
+
++In surveys.Rout, there are 12570 NAs in MCCategory.  It is the sum of circumcised men in the pre-2007 datasets.
 
 + The media use referred to the
   amount spend on newspapers, radio and TV. The basic HIV knowledge was
