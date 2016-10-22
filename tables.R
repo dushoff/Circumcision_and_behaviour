@@ -33,43 +33,69 @@ for(i in seq_along(predictors)){
 }
 row.names(ddold) <- row.names(ddnew) <- NULL
 
-aa <- head(ddold)
-
-ddold2 <- (ddold
-  %>% group_by(Category)
-  %>% mutate(KE = paste(KE,"(",signif(KE/sum(KE),2),")",sep="")
-             , LS = paste(LS,"(",signif(LS/sum(LS),2),")",sep="")
-             , MW = paste(MW,"(",signif(MW/sum(MW),2),")",sep="")
-             , MZ = paste(MZ,"(",signif(MZ/sum(MZ),2),")",sep="")
-             , NM = paste(NM,"(",signif(NM/sum(NM),2),")",sep="")
-             , RW = paste(RW,"(",signif(RW/sum(RW),2),")",sep="")
-             , TZ = paste(TZ,"(",signif(TZ/sum(TZ),2),")",sep="")
-             , UG = paste(UG,"(",signif(UG/sum(UG),2),")",sep="")
-             , ZM = paste(ZM,"(",signif(ZM/sum(ZM),2),")",sep="")
-             , ZW = paste(ZW,"(",signif(ZW/sum(ZW),2),")",sep="")
-             )
+ddold2 <- (ddold 
+  %>% mutate(Total = KE+LS+MW+MZ+NM+RW+TZ+UG+ZM+ZW)
 )
-
-ddold3 <- (ddold
+ddoldpercent <- (ddold2
+  %>% group_by(Category)
+  %>% mutate(KE = signif(KE/sum(KE),2)
+            , LS = signif(LS/sum(LS),2)
+            , MW = signif(MW/sum(MW),2)
+            , MZ = signif(MZ/sum(MZ),2)
+            , NM = signif(NM/sum(NM),2)
+            , RW = signif(RW/sum(RW),2)
+            , TZ = signif(TZ/sum(TZ),2)
+            , UG = signif(UG/sum(UG),2)
+            , ZM = signif(ZM/sum(ZM),2)
+            , ZW = signif(ZW/sum(ZW),2)
+            , Category2 = Sub_Category
+  )
+  %>% select(-c(Sub_Category))
+)
+ddold3 <- (ddold2
   %>% select(-Sub_Category)
   %>% group_by(Category)
   %>% summarise_each(funs(sum(.))) 
-  %>% mutate(Sub_Category="total")
-  %>% rbind(.,ddold)
-  %>% arrange(Category,Sub_Category)
-  %>% select(Category,Sub_Category,KE:ZW)
+  %>% ungroup()
+  %>% mutate(Category2=as.factor("Total"))
+  %>% rbind.data.frame(ddoldpercent,.)
+  %>% arrange(Category,Category2)
+  %>% ungroup()
+  %>% select(Category2,KE:ZW,Total)
 )
 
-ddnew3 <- (ddnew
+ddnew2 <- (ddnew 
+           %>% mutate(Total = KE+LS+MW+MZ+NM+RW+TZ+UG+ZM+ZW)
+)
+ddnewpercent <- (ddnew2
+                 %>% group_by(Category)
+                 %>% mutate(KE = signif(KE/sum(KE),2)
+                            , LS = signif(LS/sum(LS),2)
+                            , MW = signif(MW/sum(MW),2)
+                            , MZ = signif(MZ/sum(MZ),2)
+                            , NM = signif(NM/sum(NM),2)
+                            , RW = signif(RW/sum(RW),2)
+                            , TZ = signif(TZ/sum(TZ),2)
+                            , UG = signif(UG/sum(UG),2)
+                            , ZM = signif(ZM/sum(ZM),2)
+                            , ZW = signif(ZW/sum(ZW),2)
+                            , Category2 = Sub_Category
+                 )
+                 %>% select(-c(Sub_Category))
+)
+ddnew3 <- (ddnew2
            %>% select(-Sub_Category)
            %>% group_by(Category)
            %>% summarise_each(funs(sum(.))) 
-           %>% mutate(Sub_Category="total")
-           %>% rbind(.,ddnew)
-           %>% arrange(Category,Sub_Category)
-           %>% select(Category,Sub_Category,KE:ZW)
+           %>% ungroup()
+           %>% mutate(Category2=as.factor("Total"))
+           %>% rbind.data.frame(ddnewpercent,.)
+           %>% arrange(Category,Category2)
+           %>% ungroup()
+)
+           %>% select(Category2,KE:ZW,Total)
 )
 
 
-knitr::kable(ddold3,format="latex",align="c")
-knitr::kable(ddnew3,format="latex",align="c")
+knitr::kable(ddold3,format="latex",align="l")
+knitr::kable(ddnew3,format="latex",align="l")
