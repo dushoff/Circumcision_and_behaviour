@@ -323,7 +323,7 @@ refs.bib: auto.bib manual.clip.bib
 
 ## To connect a file made here to overleaf, add it to the update_overleaf list
 
-update_overleaf: refs.bib.po condomStatus_intplots.pdf.po recency_back.pdf.po
+update_overleaf: refs.bib.po condomStatus_intplots.pdf.po partnerYearStatus_intplots.pdf.po recency_back.pdf.po
 %.po: %
 	$(CPF) $< overleaf/
 
