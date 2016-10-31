@@ -321,23 +321,35 @@ refs.bib: auto.bib manual.clip.bib
 
 ######################################################################
 
-## To connect a file made here to overleaf, add it to the update_overleaf list
+## Mess with recency figures
 
 update_overleaf: refs.bib.po condomStatus_intplots.pdf.po partnerYearStatus_intplots.pdf.po recency_back.pdf.po
 %.po: %
 	$(CPF) $< overleaf/
 
-%.pdf: figdrop/%.pdf
-	cp $< $@
+overleaf_files += recency_back.pdf
+recency_back.pdf: condomRecency_MCcat-1.pdf partnerLifeRecency_MCcat-1.pdf partnerYearRecency_MCcat-1.pdf
+	pdfjam -o $@ --nup 3x1 --landscape $(filter-out Makefile, $^)
+
+recency_figs = condomRecency_MCcat-0.pdf partnerLifeRecency_MCcat-0.pdf partnerYearRecency_MCcat-0.pdf 
+overleaf_files += $(recency_figs)
+
+# --papersize '{10cm,20cm}' 
 
 ######################################################################
 
-## Mess with recency figures
+## To connect a file made here to overleaf, add it to the update_overleaf list
 
-recency_back.pdf: condomRecency_MCcat-1.pdf partnerLifeRecency_MCcat-1.pdf partnerYearRecency_MCcat-1.pdf Makefile
-	pdfjam -o $@ --nup 3x1 --landscape $(filter-out Makefile, $^)
+overleaf_files += refs.bib condomStatus_intplots.pdf 
 
-# --papersize '{10cm,20cm}' 
+update_overleaf: $(overleaf_files) $(overleaf_files:%=%.po)
+
+%.po: %
+	$(CPF) $< overleaf/
+	touch $@
+
+%.pdf: figdrop/%.pdf
+	cp $< $@
 
 ######################################################################
 
