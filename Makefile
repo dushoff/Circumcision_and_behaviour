@@ -323,6 +323,7 @@ refs.bib: auto.bib manual.clip.bib
 
 ## Mess with recency figures
 
+## update_overleaf pushes files from here to the overleaf/ subdirectory, which is linked to the overleaf version of the project.
 update_overleaf: refs.bib.po condomStatus_intplots.pdf.po partnerYearStatus_intplots.pdf.po recency_back.pdf.po
 %.po: %
 	$(CPF) $< overleaf/
