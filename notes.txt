@@ -1,5 +1,12 @@
 
 == To Do ==
+
+* Clean up these notes
+
+* Work on refs! The ambiguities are real.
+
+== What does this mean? ==
+
 * Shall we apply our results like in these  [[Mixed_models/examples | figures]]?
 * hyperlinks for figures and table
 * redo tables without NA and make sure they are consistent 
