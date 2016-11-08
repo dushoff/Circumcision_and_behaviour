@@ -8,9 +8,9 @@
 == What does this mean? ==
 
 * Shall we apply our results like in these  [[Mixed_models/examples | figures]]?
-* hyperlinks for figures and table
-* redo tables without NA and make sure they are consistent 
-* redo the 3 panel recency graph via R and not pdf/image hack
+* hyperlinks for figures and table (done)
+* redo tables without NA and make sure they are consistent (done) 
+* redo the 3 panel recency graph via R and not pdf/image hack (done)
 
 == To Discuss ==
 * Can we present part of our results by region as the [http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.1001626 Pulliin's GPS paper] did?
