@@ -1,7 +1,18 @@
+library(ordinal)
+library(splines)
 library(dplyr)
 
-old <- Answers %>% filter(period=="old")
-new <- Answers %>% filter(period=="new")
+Answers <- subset(Answers, CC != "LS")
+
+modAns <- model.frame(
+  condom ~ 
+    age + wealth + religion + edu + urRural + job + maritalStat 
+  + media + knowledge + MC + period + clusterId + CC, 
+  data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
+)
+
+old <- modAns %>% filter(period=="old")
+new <- modAns %>% filter(period=="new")
 
 old_table <- function(x){
   return(table(old[,x],old[,"CC"]))
