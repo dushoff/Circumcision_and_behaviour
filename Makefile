@@ -250,7 +250,6 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 %_intplots.Rout: %_load.Rout ordfuns.Rout plotFuns.Rout intfuns.Rout intplot.R
 	$(run-R)
 
-
 ## Iso plots
 #%_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
 	#$(run-R)
