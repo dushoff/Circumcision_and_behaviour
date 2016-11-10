@@ -28,7 +28,8 @@ estRange <- ordTrans(rawrange, mod$alpha)
 
 if(unlist(strsplit(rtargetname,"[.]")) == "condomStatus_int"){
   print(brange)
-  print(exp(brange))
+  print("Inverting odds ratio (since periodnew was the baseline")
+  print(exp(-brange))
 }
 
 if(unlist(strsplit(rtargetname,"[.]")) == "partnerYearStatus_int"){
