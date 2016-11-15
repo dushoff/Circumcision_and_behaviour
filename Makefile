@@ -4,7 +4,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: update_overleaf 
+target pngtarget pdftarget vtarget acrtarget: refs.bib 
 
 ##################################################################
 
