@@ -13,4 +13,6 @@ Answers <- ddply(Answers, .(CC), function(df){
 	return(df)
 })
 
+Answers$period <- factor(Answers$period, levels=c("old","new"))
+
 print(summary(Answers))

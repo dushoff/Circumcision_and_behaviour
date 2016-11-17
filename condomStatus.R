@@ -1,7 +1,6 @@
 options(width=200)
 library(ordinal)
 library(splines)
-Answers$period <- factor(Answers$period, levels=c("old","new"))
 # Lesotho is missing one set of condom responses, so we need to exclude the whole country
 Answers <- subset(Answers, CC != "LS")
 
