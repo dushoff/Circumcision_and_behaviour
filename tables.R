@@ -2,17 +2,33 @@ library(ordinal)
 library(splines)
 library(dplyr)
 
-Answers <- subset(Answers, CC != "LS")
+# Answers <- subset(Answers, CC != "LS")
 
-modAns <- model.frame(
+aa <- Answers %>% filter(CC=="LS") %>% mutate(condom="No")
+aa2 <- Answers %>% filter(CC != "LS")
+Ans2 <- rbind(aa,aa2)
+
+oldAns <- model.frame(
   condom ~ 
-    age + wealth + religion + edu + urRural + job + maritalStat 
-  + media + knowledge + MC + period + clusterId + CC, 
+    ageGroup + urRural + religion + edu + job + maritalStat + partnerYear + MC 
+  + knowledgeCondomsProtect + knowledgeLessPartnerProtect + knowledgeHealthyGetAids 
+  + period + mediaNpMg + mediaRadio + CC + mediaTv,# + partnerLife + MCCategory,
+  data=Ans2, na.action=na.exclude, drop.unused.levels=TRUE
+)
+
+
+newAns <- model.frame(
+  condom ~ 
+    ageGroup + urRural + religion + edu + job + maritalStat + partnerYear + MC 
+  + knowledgeCondomsProtect + knowledgeLessPartnerProtect + knowledgeHealthyGetAids 
+  + period + mediaNpMg + mediaRadio + CC + mediaTv + partnerLife + MCCategory,
   data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
 )
 
-old <- modAns %>% filter(period=="old")
-new <- modAns %>% filter(period=="new")
+
+
+old <- oldAns %>% filter(period=="old")
+new <- newAns %>% filter(period=="new")
 
 old_table <- function(x){
   return(table(old[,x],old[,"CC"]))
@@ -21,14 +37,21 @@ old_table <- function(x){
 new_table <- function(x){
   return(table(new[,x],new[,"CC"]))
 }
-predictors <- c("ageGroup","urRural","edu","religion","maritalStat","job","condom"
+
+predictorsOLD <- c("ageGroup","urRural","edu","religion","maritalStat","job","condom"
+                   ,"partnerYear", "MC","knowledgeCondomsProtect"
+                   ,"knowledgeLessPartnerProtect", "knowledgeHealthyGetAids","mediaNpMg"
+                   ,"mediaRadio","mediaTv")
+
+
+predictorsNEW <- c("ageGroup","urRural","edu","religion","maritalStat","job","condom"
                 ,"partnerYear", "partnerLife", "MC", "MCCategory","knowledgeCondomsProtect"
                 ,"knowledgeLessPartnerProtect", "knowledgeHealthyGetAids","mediaNpMg"
                 ,"mediaRadio","mediaTv")
 
 
-oldlist <- lapply(predictors,old_table)
-newlist <- lapply(predictors,new_table)
+oldlist <- lapply(predictorsOLD,old_table)
+newlist <- lapply(predictorsNEW,new_table)
 
 combdf <- function(pred,lldf){
   tempdf <- as.data.frame.matrix(lldf)
@@ -38,9 +61,12 @@ combdf <- function(pred,lldf){
 
 ddold <- data.frame()
 ddnew <- data.frame()
-for(i in seq_along(predictors)){
-  ddold <- rbind(ddold,combdf(predictors[i],oldlist[[i]]))
-  ddnew <- rbind(ddnew,combdf(predictors[i],newlist[[i]]))
+for(i in seq_along(predictorsOLD)){
+  ddold <- rbind(ddold,combdf(predictorsOLD[i],oldlist[[i]]))
+}
+
+for(i in seq_along(predictorsNEW)){
+  ddnew <- rbind(ddnew,combdf(predictorsNEW[i],newlist[[i]]))
 }
 row.names(ddold) <- row.names(ddnew) <- NULL
 
@@ -103,10 +129,9 @@ ddnew3 <- (ddnew2
            %>% rbind.data.frame(ddnewpercent,.)
            %>% arrange(Category,Category2)
            %>% ungroup()
-)
            %>% select(Category2,KE:ZW,Total)
 )
 
 
-knitr::kable(ddold3,format="latex",align="l")
-knitr::kable(ddnew3,format="latex",align="l")
+knitr::kable(ddold3,format="latex",digits=3,align="l")
+knitr::kable(ddnew3,format="latex",digits=3,align="l")

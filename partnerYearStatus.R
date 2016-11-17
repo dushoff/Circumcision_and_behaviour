@@ -2,6 +2,7 @@ options(width=200)
 library(ordinal)
 library(splines)
 
+Answers$period <- factor(Answers$period, levels=c("old","new"))
 modAns <- model.frame(
 extraPartnerYear ~ age + wealth + religion + edu + urRural + job + maritalStat +
 media + knowledge + MC + period + clusterId + CC,

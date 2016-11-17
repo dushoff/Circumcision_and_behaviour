@@ -18,7 +18,7 @@ Sources += notes.txt
 
 Sources += dushoff.mk
 
-Makefile: datadir figdrop overleaf
+# Makefile: datadir figdrop overleaf
 
 datadir:
 	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
@@ -247,7 +247,7 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
 ## Int plots (status models only)                                               
 .PRECIOUS: %_intplots.Rout
-%_intplots.Rout: %_load.Rout ordfuns.Rout plotFuns.Rout intfuns.Rout intplot.R
+%_intplots.Rout: %.Rout ordfuns.Rout plotFuns.Rout intfuns.Rout intplot.R
 	$(run-R)
 
 ## Iso plots

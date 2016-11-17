@@ -19,6 +19,7 @@ rawcounterfactual <- with(mcs,
 )
 
 # Interaction should match model
+print(c(interaction=mcs$rawfit[[4]]-rawcounterfactual))
 
 rawrange <- rawcounterfactual+brange
 
