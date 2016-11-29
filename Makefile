@@ -4,7 +4,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: combines.output 
+target pngtarget pdftarget vtarget acrtarget: auto.html 
 
 ##################################################################
 
@@ -311,6 +311,8 @@ manual.clip.bib: manual.bib clip.pl
 	$(PUSH)
 
 auto.bib: auto.rmu
+auto.md: auto.rmu
+auto.html: auto.rmu
 
 Sources += manual.bib auto.rmu original.rmu original.bib
 refs.bib: auto.bib manual.clip.bib
