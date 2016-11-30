@@ -4,7 +4,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: auto.html 
+target pngtarget pdftarget vtarget acrtarget: auto.bib 
 
 ##################################################################
 
