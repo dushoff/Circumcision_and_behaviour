@@ -21,7 +21,7 @@ newAns <- model.frame(
   condom ~ 
     ageGroup + urRural + religion + edu + job + maritalStat + partnerYear + MC 
   + knowledgeCondomsProtect + knowledgeLessPartnerProtect + knowledgeHealthyGetAids 
-  + period + mediaNpMg + mediaRadio + CC + mediaTv + partnerLife + MCCategory,
+  + period + mediaNpMg + mediaRadio + CC + mediaTv + MCCategory,
   data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
 )
 
@@ -45,7 +45,7 @@ predictorsOLD <- c("ageGroup","urRural","edu","religion","maritalStat","job","co
 
 
 predictorsNEW <- c("ageGroup","urRural","edu","religion","maritalStat","job","condom"
-                ,"partnerYear", "partnerLife", "MC", "MCCategory","knowledgeCondomsProtect"
+                ,"partnerYear", "MC", "MCCategory","knowledgeCondomsProtect"
                 ,"knowledgeLessPartnerProtect", "knowledgeHealthyGetAids","mediaNpMg"
                 ,"mediaRadio","mediaTv")
 
@@ -75,16 +75,16 @@ ddold2 <- (ddold
 )
 ddoldpercent <- (ddold2
   %>% group_by(Category)
-  %>% mutate(KE = signif(KE/sum(KE),2)
-            , LS = signif(LS/sum(LS),2)
-            , MW = signif(MW/sum(MW),2)
-            , MZ = signif(MZ/sum(MZ),2)
-            , NM = signif(NM/sum(NM),2)
-            , RW = signif(RW/sum(RW),2)
-            , TZ = signif(TZ/sum(TZ),2)
-            , UG = signif(UG/sum(UG),2)
-            , ZM = signif(ZM/sum(ZM),2)
-            , ZW = signif(ZW/sum(ZW),2)
+  %>% mutate(KE = signif(KE*100/sum(KE),2)
+            , LS = signif(LS*100/sum(LS),2)
+            , MW = signif(MW*100/sum(MW),2)
+            , MZ = signif(MZ*100/sum(MZ),2)
+            , NM = signif(NM*100/sum(NM),2)
+            , RW = signif(RW*100/sum(RW),2)
+            , TZ = signif(TZ*100/sum(TZ),2)
+            , UG = signif(UG*100/sum(UG),2)
+            , ZM = signif(ZM*100/sum(ZM),2)
+            , ZW = signif(ZW*100/sum(ZW),2)
             , Category2 = Sub_Category
   )
   %>% select(-c(Sub_Category))
@@ -106,16 +106,16 @@ ddnew2 <- (ddnew
 )
 ddnewpercent <- (ddnew2
                  %>% group_by(Category)
-                 %>% mutate(KE = signif(KE/sum(KE),2)
-                            , LS = signif(LS/sum(LS),2)
-                            , MW = signif(MW/sum(MW),2)
-                            , MZ = signif(MZ/sum(MZ),2)
-                            , NM = signif(NM/sum(NM),2)
-                            , RW = signif(RW/sum(RW),2)
-                            , TZ = signif(TZ/sum(TZ),2)
-                            , UG = signif(UG/sum(UG),2)
-                            , ZM = signif(ZM/sum(ZM),2)
-                            , ZW = signif(ZW/sum(ZW),2)
+                 %>% mutate(KE = signif(KE*100/sum(KE),2)
+                            , LS = signif(LS*100/sum(LS),2)
+                            , MW = signif(MW*100/sum(MW),2)
+                            , MZ = signif(MZ*100/sum(MZ),2)
+                            , NM = signif(NM*100/sum(NM),2)
+                            , RW = signif(RW*100/sum(RW),2)
+                            , TZ = signif(TZ*100/sum(TZ),2)
+                            , UG = signif(UG*100/sum(UG),2)
+                            , ZM = signif(ZM*100/sum(ZM),2)
+                            , ZW = signif(ZW*100/sum(ZW),2)
                             , Category2 = Sub_Category
                  )
                  %>% select(-c(Sub_Category))
@@ -132,6 +132,8 @@ ddnew3 <- (ddnew2
            %>% select(Category2,KE:ZW,Total)
 )
 
-
 knitr::kable(ddold3,format="latex",digits=3,align="l")
 knitr::kable(ddnew3,format="latex",digits=3,align="l")
+
+ddold4 <- ddold3 %>% mutate(totalper = signif(Total*100/24109,2))
+ddnew4 <- ddnew3 %>% mutate(totalpar = signif(Total*100/42261,2))
