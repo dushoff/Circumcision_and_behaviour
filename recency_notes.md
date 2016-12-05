@@ -5,10 +5,8 @@
 * The variables in the models are basically the same:  
   ** main responses:  condom use, partner year and partner life
   ** main predictors: MC category, age of MC
-
-  # other factors:  media use, HIV knowledge and socio demographics (age, education, job, area, religion, wealth, marital status
-
-  # random factors:  country, cluster, 
+  ** other factors:  media use, HIV knowledge and socio demographics (age, education, job, area, religion, wealth, marital status
+  ** random factors:  country, cluster, 
 
 * Do we need age of MC since we already have age?
 
