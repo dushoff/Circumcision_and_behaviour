@@ -13,4 +13,6 @@ Background
 
 * I also like to include MC prevalence in the models.  My presumption is that MC prevalence correlate with the idea of MC protection against HIV, therefore their SRB.
 
-* Do we want to study partner life?
+* Do we want to study partner lifetime? Maybe not.  It's not clear how we can make sense of numbers of lifetime partners mean in terms of time span.
+
+* Tanzania 2015-6 is available, but it has condom use, but not numbers of sexual partners by last year and lifetime.  Do we want to replace it with the 2010 data which has all the three variables?
