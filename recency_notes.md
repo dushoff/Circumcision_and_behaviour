@@ -1,4 +1,4 @@
-12/05/16
+Background
 ==
 
 * We will add Ethiopia 2011 and Zimbabwe (2015) to the data.  Baswana, Swaziland and South Africa have no post-2007 surveys available.
@@ -11,6 +11,6 @@
 
 * I like to compare the differences of the countries.  Compared to anaylzing an overall analysis of MC on SRB in the status model, I wonder if we can 
 
-* To include MC prevalence in the models?  My presumption is that MC prevalence is a result of governments' scale-up plans, and the scale-up plan affects MC receiver's perception of MC protection, therefore is an index on SRB.
+* I also like to include MC prevalence in the models.  My presumption is that MC prevalence correlate with the idea of MC protection against HIV, therefore their SRB.
 
 * Do we want to study partner life?
