@@ -9,7 +9,7 @@ Background 12/20/16
   * main responses:  condom use, and partner year.  We decided not to use numbers of partners in lifetime.  It is a varabile we dont' know how to interpret it because numbers could skew in the earlier time before the campaign started.
   * main predictors: MC category, when MCed.
   * other factors:  country, media use, HIV knowledge and socio demographics (age, education, job, area, religion, wealth, marital status)
-   * We decided to keep country as a fixed variable to study the difference among countries.
+      * We decided to keep country as a fixed variable to study the difference among countries.
   * random factors:  cluster, plus media
 
 * no MC prevalence.  Instead, we will put country as a fixed variable.
