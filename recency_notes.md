@@ -16,3 +16,4 @@ Background 12/20/16
 
 * Tanzania 2015-6 is available, but it has only condom use, but not numbers of sexual partners by last year and lifetime.  Do we want to replace it with the 2010 data which has all the three variables?
   * C will investigate more:  2015 vs. 2010 vs. both by 12/21/16
+      * I propose to use 2015-6 data for condom and skip 2010.  My belief is that the newer the data, the more settled the SRB.  That is, the SRB will be expected to be less volatile (therefore more predictable) once VMMC becomes less novel.  It means that we will miss Tanzania in partner model.
