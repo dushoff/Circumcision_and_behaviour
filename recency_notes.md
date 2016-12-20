@@ -6,19 +6,13 @@ Background 12/20/16
   
 * The variables in the models are basically the same from the status models:  
   
-  * main responses:  condom use, partner year and partner life
-  * main predictors: MC category, when MCed.  We don't use age of MC because it conflates the when MCed.
-  * other factors:  media use, HIV knowledge and socio demographics (age, education, job, area, religion, wealth, marital status
-  * random factors:  country, cluster, plus media
-    * will put country as a fixzed variable.
+  * main responses:  condom use, and partner year.  We decided not to use numbers of partners in lifetime.  It is a varabile we dont' know how to interpret it because numbers could skew in the earlier time before the campaign started.
+  * main predictors: MC category, when MCed.
+  * other factors:  country, media use, HIV knowledge and socio demographics (age, education, job, area, religion, wealth, marital status)
+   * We decided to keep country as a fixed variable to study the difference among countries.
+  * random factors:  cluster, plus media
 
-* I like to compare the differences of the countries.  VMMC progress and government resources are different, so does its MC prevalence.  I think it is important to compare SRB by country and it will give us some supplementary information to the MC status findings.
-
-* I also like to include MC prevalence in the models.  My presumption is that MC prevalence is a result of VMMC scale-up implementation, and correlates to movitation of MC protection against HIV infection.  Therefore it is a related variable in predicting SRB.
-  * no MC prevalence.  Instead, we will put country as a fixed variable and 
-
-* Do we want to study partner lifetime? Maybe not.  It's not clear how we can make sense of numbers of lifetime partners mean in terms of time span.
-  * no lifetime
+* no MC prevalence.  Instead, we will put country as a fixed variable.
 
 * Tanzania 2015-6 is available, but it has only condom use, but not numbers of sexual partners by last year and lifetime.  Do we want to replace it with the 2010 data which has all the three variables?
   * C will investigate more:  2015 vs. 2010 vs. both by 12/21/16
