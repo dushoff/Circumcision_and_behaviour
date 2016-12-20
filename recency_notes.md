@@ -21,4 +21,4 @@ Background 12/20/16
   * no lifetime
 
 * Tanzania 2015-6 is available, but it has only condom use, but not numbers of sexual partners by last year and lifetime.  Do we want to replace it with the 2010 data which has all the three variables?
-  * will investigate more:  2015 vs. 2010 vs. both/
+  * C will investigate more:  2015 vs. 2010 vs. both by 12/21/16
