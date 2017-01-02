@@ -5,7 +5,8 @@ library(ordinal)
 Answers <-subset(Answers, period=="new")
 
 modAns <- model.frame(
-extraPartnerYear ~ age + wealth + religion + edu + urRural + job+maritalStat + media + knowledge + MCCategory
+extraPartnerYear ~ age + wealth + religion + edu + urRural + job+maritalStat + media + CC
++ knowledge + MCCategory + ageMC
 + clusterId + survey,
 data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
 )
@@ -14,7 +15,7 @@ data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
 attr(modAns, "terms") <- NULL 
  
 mod <- clmm(extraPartnerYear ~ 
-ns(age, 4) + ns(wealth,3)
+ns(age, 4) + ns(wealth,3) + CC + ageMC
 + religion + edu + urRural + job + maritalStat
 + media + knowledge + MCCategory + (1|clusterId) + (1 + media|survey),
 data=modAns)
