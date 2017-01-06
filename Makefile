@@ -21,7 +21,7 @@ Sources += dushoff.mk
 # Makefile: datadir figdrop overleaf
 
 datadir:
-	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
+	/bin/ln -s $(Drop)/mc_data_files/ $@
 
 figdrop:
 	/bin/ln -s $(Drop)/MC_varlvl $@
@@ -65,39 +65,25 @@ datadir/nm5.men.Rout: datadir/NMMR51sv/nmmr51fl.sav
 Sources += $(wildcard *.R)
 
 ### Data sets
-sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
+sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw6 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
 
 ### Recency sets (not used; branching in all directions!)
-sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
+#sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
 
-newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
+#newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
 
 ######################################################################
 
-all: select.output combines.output surveys.Rout condomStatus.Rout
+all: combines.output surveys.Rout condomStatus.Rout
 
 ### Selecting
-select=$(sets:%=%.select.Rout)
-
-Sources += select.csv
-## wselect.R needs to be moved to a general place
-$(select): %.select.Rout: datadir/%.men.RData select.csv wselect.R
-	$(run-R)
-
-select.output: $(sets:%=%.select.Routput)
-	cat $^ > $@
-select.objects.output: $(sets:%=%.select.objects.Routput)
-	cat $^ > $@
-
-select.summary.output: $(sets:%=%.select.summary.Routput)
-	cat $^ > $@
 
 ### Recoding
 Sources += $(wildcard *.ccsv *.tsv)
 
 Sources += mccut.csv
 .PRECIOUS: %.recode.Rout
-%.recode.Rout: %.select.Rout recodeFuns.Rout religion_basic.ccsv partnership_basic.ccsv mccut.csv recode.R
+%.recode.Rout: datadir/.%.RData recodeFuns.Rout religion_basic.ccsv partnership_basic.ccsv mccut.csv recode.R
 	$(run-R)
 
 recodes.output: $(sets:%=%.recode.Routput)
@@ -232,22 +218,14 @@ patterns.Rout: surveys.Rout patterns.R
 ## Make a model (fingers crossed!)
 condomStatus.Rout: surveys.Rout condomStatus.R
 partnerYearStatus.Rout: surveys.Rout partnerYearStatus.R
-condomRecency.Rout: surveys.Rout condomRecency.R
-partnerYearRecency.Rout: surveys.Rout partnerYearRecency.R
-partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
 ## Variable p-values
 %_varlvlsum.Rout: %.Rout varlvlsum.R
 	$(run-R)
 
-##shortcut 
-
-.PRECIOUS: %_load.Rout
-%_load.Rout: MC_varlvl/.%_varlvlsum.RData load.R
-	$(run-R)
 
 .PRECIOUS: %_isoplots.Rout
-%_isoplots.Rout: %_load.Rout ordfuns.R plotFuns.R iso.R
+%_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
 ## Int plots (status models only)                                               
