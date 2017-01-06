@@ -1,9 +1,11 @@
 Background 12/20/16
 ==
 
-* We will add Ethiopia 2011, Tanzania (2015-6) and Zimbabwe (2015) to the data.  Baswana, Swaziland and South Africa have no post-2007 surveys available.
-   * not to use Ethiopia?  Because only Gambela is under the scale-up promotion, not the rest of the country.
-    * J will upload the data by the end of 2016.
+* There are 10 nations with 11 datasets in our study:  Kenya (ke7-2014), Lesotho (ls7-2014), Malawi (mw6-2010), Mozambique (mz6-2011), Nambia (nm6-2013), Rwanda (rw7-2014-5), Tanzania (tz6-2010 and tz7-2015-6), Uganda (ug6-2011), Zambia (zm6-2013-4), Zimbabwe (zw7-2015).
+
+  * We added Tanzania (2015-6) and updated Zimbabwe from 2011 to 2015.  Baswana, Swaziland and South Africa have no post-2007 surveys available; and only Gambela in Ethiopia is under the scale-up promotion, therefore also excluded in our study.
+
+  * Since Tanzania 2015-6 has no data on sexual partners, we decided to use the 2015-6 data for condom analyais and 2010 for the sexual partner analyais.  We could use 2010 data for both analyses, but it makes more sense to use the latest data when available.  We believe that SRB are more settled in the newer survey.
   
 * The variables in the models are basically the same from the status models:  
   
@@ -15,6 +17,3 @@ Background 12/20/16
 
 * no MC prevalence.  Instead, we will put country as a fixed variable.
 
-* Tanzania 2015-6 is available.  It has only condom use, but not numbers of sexual partners by last year and lifetime.  Do we want to replace it with the 2010 data which has all the three variables?
-  * C will investigate more:  2015 vs. 2010 vs. both by 12/21/16
-      * I propose to use 2015-6 data for condom and skip 2010.  My belief is that the newer the data, the more settled the SRB.  That is, the SRB will be expected to be less volatile (therefore more predictable) once VMMC becomes less novel.  It means that we will miss Tanzania in partner model.
