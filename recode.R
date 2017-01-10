@@ -87,14 +87,14 @@ partnerLifeMax <- 6
 
 # Calculate MC statuses:
 # in ageMC, 98 is "don't know" and 95 and 96 are "during childhood <5 years"  So 98 shall be coded as NA and 95 and 96 oldMC.
-# ke7_6 (phase_recode), 7 (2014)
-# ls7_6, 7 (2014)
+# zw7_6 (Zimbabwe)(phase_recode), 8 (using 2007 as threshold for MC cutting time) (2015)
 # rw7_6, 7 (2014-5)
+# ls7_6, 7 (2014)
+# ke7_6, 7 (2014)
 # nm6_6, 6 (2013)
 # zm6_6 (Zambia), 6 (2013-4)
 # mz6_6, 4 (2011)
 # ug6_6, 4 (2011)
-# zw6_6 (Zimbabwe), 3 (2010-1)
 # mw6_5, 3 (2010)
 # tz6_5, 3 (2009 Dec -2010)
 
