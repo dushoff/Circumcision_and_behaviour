@@ -21,7 +21,7 @@ Sources += dushoff.mk
 # Makefile: datadir figdrop overleaf
 
 datadir:
-	/bin/ln -s $(Drop)/MC/MC\ DHS\ data/ $@
+	/bin/ln -s $(Drop)/mc_data_files/ $@
 
 figdrop:
 	/bin/ln -s $(Drop)/MC_varlvl $@
@@ -31,74 +31,28 @@ overleaf:
 
 
 ##################################################################
-
-# New set import. Carefully
-
-newmen = $(newsets:%=datadir/%.men.RData)
-
-######################################################################
-
-## You need to uncomment these rules to import new data sets, apparently
-
-## This did not work until I made it completely implicit, which is insane. 
-## Changing back because working version is dangerous
-# datadir/%.RData: convert_dataset.R
-# 	$(MAKE) datadir/$*.Rout
-# 	cd datadir && /bin/ln -fs .$*.RData $*.RData
-
-# More danger
-# datadir/%.Rout: convert_dataset.R
-# 	$(run-R)
-
-######################################################################
-
-datadir/rw7.men.Rout: datadir/RWMR70FL.SAV
-datadir/ls7.men.Rout: datadir/LSMR71SV/LSMR71FL.SAV
-datadir/ke7.men.Rout: datadir/KEMR70SV/KEMR70FL.SAV
-datadir/nm6.men.Rout: datadir/NMMR61SV/NMMR61FL.SAV
-datadir/zm5.men.Rout: datadir/ZMMR51SV/ZMMR51FL.SAV
-datadir/zm6.men.Rout: datadir/ZMMR61SV/ZMMR61FL.SAV
-datadir/nm5.men.Rout: datadir/NMMR51sv/nmmr51fl.sav
-
-##################################################################
-
 Sources += $(wildcard *.R)
 
 ### Data sets
-sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
+sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw6 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
 
 ### Recency sets (not used; branching in all directions!)
-sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
+#sets = ke4 ke7 ls4 ls7 mw4 mw6 mz4 mz6 nm5 nm6 rw5 rw7 tz4 tz6 ug5 ug6 zm5 zm6 zw5 zw6
 
-newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
+#newsets = ke7 ls7 nm5 nm6 rw7 zm5 zm6
 
 ######################################################################
 
-all: select.output combines.output surveys.Rout condomStatus.Rout
+all: combines.output surveys.Rout condomStatus.Rout
 
 ### Selecting
-select=$(sets:%=%.select.Rout)
-
-## select.csv and associated stuff are in MC_data now
-## Sources += select.csv
-## wselect.R needs to be moved to a general place
-$(select): %.select.Rout: datadir/%.men.RData select.csv wselect.R
-	$(run-R)
-
-select.output: $(sets:%=%.select.Routput)
-	cat $^ > $@
-select.objects.output: $(sets:%=%.select.objects.Routput)
-	cat $^ > $@
-
-select.summary.output: $(sets:%=%.select.summary.Routput)
-	cat $^ > $@
 
 ### Recoding
 Sources += $(wildcard *.ccsv *.tsv)
 
 Sources += mccut.csv
 .PRECIOUS: %.recode.Rout
-%.recode.Rout: %.select.Rout recodeFuns.Rout religion_basic.ccsv partnership_basic.ccsv mccut.csv recode.R
+%.recode.Rout: datadir/.%.RData recodeFuns.Rout religion_basic.ccsv partnership_basic.ccsv mccut.csv recode.R
 	$(run-R)
 
 recodes.output: $(sets:%=%.recode.Routput)
@@ -233,22 +187,14 @@ patterns.Rout: surveys.Rout patterns.R
 ## Make a model (fingers crossed!)
 condomStatus.Rout: surveys.Rout condomStatus.R
 partnerYearStatus.Rout: surveys.Rout partnerYearStatus.R
-condomRecency.Rout: surveys.Rout condomRecency.R
-partnerYearRecency.Rout: surveys.Rout partnerYearRecency.R
-partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 
 ## Variable p-values
 %_varlvlsum.Rout: %.Rout varlvlsum.R
 	$(run-R)
 
-##shortcut 
-
-.PRECIOUS: %_load.Rout
-%_load.Rout: MC_varlvl/.%_varlvlsum.RData load.R
-	$(run-R)
 
 .PRECIOUS: %_isoplots.Rout
-%_isoplots.Rout: %_load.Rout ordfuns.R plotFuns.R iso.R
+%_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
 ## Int plots (status models only)                                               
@@ -289,19 +235,13 @@ partnerLifeRecency.Rout: surveys.Rout partnerLifeRecency.R
 ######################################################################
 
 ## Importing (without wasting Chyun's time)
+## Need to replace this with rsync stuff!
 
 get_fits:
 	cp -f datadir/condom*.Rout .; touch condom*.Rout
 	cp datadir/.condom*.RData .
 	cp datadir/partner*.Rout .
 	cp datadir/.partner*.RData .
-
-######################################################################
-
-## Manuscript stuff should all be in overleaf/ now
-
-
-
 
 ######################################################################
 
