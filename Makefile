@@ -79,7 +79,8 @@ all: select.output combines.output surveys.Rout condomStatus.Rout
 ### Selecting
 select=$(sets:%=%.select.Rout)
 
-Sources += select.csv
+## select.csv and associated stuff are in MC_data now
+## Sources += select.csv
 ## wselect.R needs to be moved to a general place
 $(select): %.select.Rout: datadir/%.men.RData select.csv wselect.R
 	$(run-R)
