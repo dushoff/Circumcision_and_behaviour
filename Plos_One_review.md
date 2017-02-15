@@ -15,7 +15,7 @@ labeled 'Revised Manuscript with Track Changes'.
  * grammers and acronyms
  * It's about heterosexual population
 
-View Letter
+Review Letter
 ==
 
 Close
