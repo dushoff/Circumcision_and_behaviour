@@ -4,17 +4,15 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: auto.bib 
+target pngtarget pdftarget vtarget acrtarget: combines.output 
 
 ##################################################################
 
 # make files and directories
 
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
+Sources = Makefile .gitignore README.md stuff.mk LICENSE.md notes.md
 include stuff.mk
 # include $(ms)/perl.def
-
-Sources += notes.txt
 
 Sources += dushoff.mk
 

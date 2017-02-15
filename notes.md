@@ -2,8 +2,10 @@
 == To Do ==
 
 * Clean up these notes
+  * Move note stuff from README to here!
 
 * Work on refs! The ambiguities are real.
+  * The $#@! does this mean? Did we fix this?
 
 == What does this mean? ==
 
