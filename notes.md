@@ -17,6 +17,7 @@
 * Can we present part of our results by region as the [http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.1001626 Pulliin's GPS paper] did?
 * We need to look at the interaction effect of religion and MC status on risk behaviors.
 * Like to tear apart [[MC_risk_Africa_gender | gender]] in the couple data to gain some ideas of women's role in MC risk.  Chyun is working on it.
+* What do we do with Tazania in religion?  What does it mean to "average" it?
 
 
 == To Be Noted ==
