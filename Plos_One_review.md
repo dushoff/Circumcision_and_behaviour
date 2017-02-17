@@ -11,8 +11,8 @@ labeled 'Revised Manuscript with Track Changes'.
  * methodologies:  relative ROs etc
  * literature reviews
  * tables and figures
-  * change job to "currently working"
-  *
+  * change job to "currently working" (to be consistent with DHS coding)
+  * change area to "residence"
  * implication of the findings besides media literacy
  * grammers and acronyms
  * It's about heterosexual population
