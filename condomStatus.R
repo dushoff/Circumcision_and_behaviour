@@ -15,7 +15,7 @@ modAns <- model.frame(
 attr(modAns, "terms") <- NULL 
 
 mod <- clmm(condom ~ 
-	ns(age, 4) + ns(wealth,3) 
+	ns(age, 4) + ns(wealth,3) + CC
 	+ religion + edu + urRural + job + maritalStat 
 	+ media + knowledge + MC*period + (1|clusterId) 
 	+ (1 + media|CC)

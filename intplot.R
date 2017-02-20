@@ -9,10 +9,6 @@ resp <- unlist(strsplit(rtargetname,"_"))[1]
 if(resp == "condomStatus"){resp = "Condom"}
 if(resp == "partnerYearStatus"){resp = "Partner Year"}
 
-if(resp == "condomRecency"){resp = "Condom"}
-if(resp == "partnerYearRecency"){resp = "Partner Year"}
-if(resp == "partnerLifeRecency"){resp = "Partner Life"}
-
 mcs$period <- factor(mcs$period,levels=c("old","new"),labels=c("Pre","Post"))
 
 # Use the same width for error bars and for dodge offset
