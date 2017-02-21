@@ -1,3 +1,8 @@
+== To Do (2) ==
+
+* CLEAN UP THESE NOTES
+* Now that we have CC as a fixed effect, we have to deal with TZ6 religion.. Not sure how to average given TZ4 has religion data
+
 
 == To Do ==
 

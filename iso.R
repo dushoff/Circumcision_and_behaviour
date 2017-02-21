@@ -9,12 +9,18 @@ attr(modAns,"terms") <- NULL
 predNames <- c("age", "wealth","CC", "religion", "edu", "urRural", "job",
            "maritalStat", "media", "knowledge")
 
+predNames <- c("CC", "religion")
+
 catNames <- c("CC","religion","urRural","job","maritalStat")
+
+catNames <- c("CC","religion")
 
 isoList <- lapply(predNames, function(n){
   ordpred(mod, n, modAns)
 })
 
+
+q()
 print(
 grid.arrange(varPlot(rename(isoList[[1]],c(age="Age")),P=varlvlsum$`Pr(>Chisq)`[1]),
              varPlot(rename(isoList[[2]],c(wealth="Wealth")),P=varlvlsum$`Pr(>Chisq)`[2]),
