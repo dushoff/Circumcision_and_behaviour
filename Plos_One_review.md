@@ -11,6 +11,8 @@ labeled 'Revised Manuscript with Track Changes'.
  * methodologies:  relative ROs etc
  * literature reviews
  * tables and figures
+  * change job to "currently working" (to be consistent with DHS coding)
+  * change area to "residence"
  * implication of the findings besides media literacy
  * grammers and acronyms
  * It's about heterosexual population
@@ -142,11 +144,14 @@ Reviewer #1: This is an interesting paper about whether or not male circumcision
 in several sub-Saharan countries. The paper is well written. I have several comments and suggestions.
 
 1 Abstract - first paragraph please use the past tense
+* done
 
 2 Abstract and rest of paper - you switch back and forth between WHO and UN. Can you be more consistent?
+* done.  We kept WHO in stead of using both names synomously.
 
 3 Abstract – Can you add one more sentence at the end with ‘this suggests’ and/or a recommendation on what we should do 
 with this information? Sell me your results!
+
 
 4 Conclusion – You have only one suggestion at the end of your paper about media literacy. Wouldn’t you want to end this 
 paper with a few more punches? It seems to me that these are encouraging results? You may want to state that here.

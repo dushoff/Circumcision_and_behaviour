@@ -4,7 +4,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: surveys.Rout 
+target pngtarget pdftarget vtarget acrtarget: condomStatus_isoplots.Rout 
 
 ##################################################################
 
@@ -187,24 +187,23 @@ partnerYearStatus.Rout: surveys.Rout partnerYearStatus.R
 
 
 .PRECIOUS: %_isoplots.Rout
+
+condomStatus_isoplots.Rout:
+partnerYearStatus_isoplots.Rout:
 %_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
 ## Int plots (status models only)                                               
 .PRECIOUS: %_intplots.Rout
+condomStatus_intplots.Rout:
+partnerYearStatus_isoplots.Rout:
 %_intplots.Rout: %.Rout ordfuns.Rout plotFuns.Rout intfuns.Rout intplot.R
 	$(run-R)
 
-## Iso plots
-#%_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
-	#$(run-R)
+## Int summaries
 
-## Int plots (status models only)
-
-#%_intplots.Rout: #_varlvlsum.Rout ordfuns.R plotFuns.R intfuns.R intplot.R
-	#$(run-R) 
-
-## Interaction coeff (status models only)
+condomStatus_int.Rout:
+partnerYearStatus_int.Rout:
 
 .PRECIOUS: %_int.Rout
 %_int.Rout: %_intplots.Rout ordfuns.Rout effectSize.R
