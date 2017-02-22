@@ -4,7 +4,7 @@ ordTrans <- function(v, a){
   })
 }
 
-ordpred <- function(mod, n, modAns){
+ordpred <- function(mod, n, modAns,Smatrix){
   v <- varpred(mod, n, modAns, isolate=TRUE)
   v$fit <- ordTrans(v$fit, mod$alpha)
   v$lwr <- ordTrans(v$lwr, mod$alpha)
@@ -13,7 +13,7 @@ ordpred <- function(mod, n, modAns){
 }
 
 
-varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.05, steps=101, dfspec=100, vv=NULL){
+varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.05, steps=101, dfspec=100, vv=NULL, Smatrix=NULL){
   # Service functions
   eff <- function(mod){
     if (inherits(mod, "lm")) return (coef(mod))
@@ -26,6 +26,10 @@ varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.0
     }
     stop("Don't recognize model type")
   }
+  if(is.null(Smatrix)){
+    Smat <- diag(length(eff(mod)))
+    rownames(Smat) <- colnames(Smat) <- attr(coef(mod),"names")
+    }
   
   varfun <- function(vcol, steps){
     if(is.numeric(vcol)){
@@ -91,7 +95,7 @@ varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.0
   vc <- vcov(mod)
   if (inherits(mod, "clmm")){
     f <- c(names(mod$alpha)[[1]], names(mod$beta))
-    vc <- vc[f, f]
+    vc <- Smat%*%vc[f, f]%*%t(Smat)
   }
   
   if(!identical(colnames(mm), names(ef))){
@@ -99,7 +103,7 @@ varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.0
     print(setdiff(names(ef), colnames(mm)))
     stop("Effect names do not match: check for empty factor levels?")
   }
-  pred <- mmvar %*% eff(mod)
+  pred <- mmvar %*% Smat %*% eff(mod)
   
   # (Centered) predictions for SEs
   if (isolate) {

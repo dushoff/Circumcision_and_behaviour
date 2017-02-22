@@ -15,8 +15,10 @@ catNames <- c("CC","religion","urRural","job","maritalStat")
 
 catNames <- c("CC","religion")
 
+Smat <- diag(length(coef(mod)))
+
 isoList <- lapply(predNames, function(n){
-  ordpred(mod, n, modAns)
+  ordpred(mod, n, modAns,Smatrix=NULL)
 })
 
 
