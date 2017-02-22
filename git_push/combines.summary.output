@@ -34,11 +34,11 @@ Answers (data.frame)
                                                          
                                                          
                   mediaTv     wealthIndex      wealth            maritalStat  
- Not at all           :955   Poorest:379   Min.   :-1.15331   Never    :1010  
- Less than once a week:621   Poorer :423   1st Qu.:-0.76758   Partnered:1621  
- At least once a week :489   Middle :448   Median :-0.34586   Separated: 104  
- Almost every day     :690   Richer :593   Mean   : 0.03846   Widowed  :  21  
- NA's                 :  1   Richest:913   3rd Qu.: 0.69625                   
+ Not at all           :955   Poorest:379   Min.   :-1.15331   Married  :1596  
+ Less than once a week:621   Poorer :423   1st Qu.:-0.76758   Never    :1010  
+ At least once a week :489   Middle :448   Median :-0.34586   Partnered:  25  
+ Almost every day     :690   Richer :593   Mean   : 0.03846   Separated: 104  
+ NA's                 :  1   Richest:913   3rd Qu.: 0.69625   Widowed  :  21  
                                            Max.   : 3.17730                   
                                                                               
                       recentSex     job       heardHIV  
@@ -147,11 +147,11 @@ Answers (data.frame)
                                              Max.   : 3.40075  
                                                                
     maritalStat                        recentSex      job       heardHIV  
- Never    :3292   Active in last 4 weeks    :6225   No  :1173   No :   0  
- Partnered:5972   Not active in last 4 weeks:3679   Yes :8723   Yes:9904  
- Separated: 584                                     NA's:   8             
+ Married  :5731   Active in last 4 weeks    :6225   No  :1173   No :   0  
+ Never    :3292   Not active in last 4 weeks:3679   Yes :8723   Yes:9904  
+ Partnered: 241                                     NA's:   8             
+ Separated: 584                                                           
  Widowed  :  56                                                           
-                                                                          
                                                                           
                                                                           
  knowledgeCondomsProtect knowledgeLessPartnerProtect knowledgeHealthyGetAids
@@ -244,12 +244,12 @@ Answers (data.frame)
                                                         
                                                         
                   mediaTv     wealthIndex      wealth           maritalStat 
- Not at all           :760   Poorest:203   Min.   :-1.2415   Never    :423  
- Less than once a week: 72   Poorer :213   1st Qu.:-0.7537   Partnered:551  
- At least once a week :162   Middle :198   Median :-0.1133   Separated: 69  
- Almost every day     : 78   Richer :211   Mean   : 0.1219   Widowed  : 28  
-                             Richest:247   3rd Qu.: 0.7311   NA's     :  1  
-                                           Max.   : 4.1412                  
+ Not at all           :760   Poorest:203   Min.   :-1.2415   Married  :545  
+ Less than once a week: 72   Poorer :213   1st Qu.:-0.7537   Never    :423  
+ At least once a week :162   Middle :198   Median :-0.1133   Partnered:  6  
+ Almost every day     : 78   Richer :211   Mean   : 0.1219   Separated: 69  
+                             Richest:247   3rd Qu.: 0.7311   Widowed  : 28  
+                                           Max.   : 4.1412   NA's     :  1  
                                                                             
                       recentSex     job      heardHIV   knowledgeCondomsProtect
  Active in last 4 weeks    :601   No  :678   No :   0   No        :172         
@@ -341,11 +341,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex      wealth            maritalStat  
- Not at all           :1233   Poorest:386   Min.   :-1.53955   Never    :1083  
- Less than once a week: 395   Poorer :406   1st Qu.:-0.68374   Partnered: 963  
- At least once a week : 583   Middle :450   Median : 0.05576   Separated: 120  
- Almost every day     :   0   Richer :474   Mean   : 0.14970   Widowed  :  45  
-                              Richest:495   3rd Qu.: 0.84339                   
+ Not at all           :1233   Poorest:386   Min.   :-1.53955   Married  : 941  
+ Less than once a week: 395   Poorer :406   1st Qu.:-0.68374   Never    :1083  
+ At least once a week : 583   Middle :450   Median : 0.05576   Partnered:  22  
+ Almost every day     :   0   Richer :474   Mean   : 0.14970   Separated: 120  
+                              Richest:495   3rd Qu.: 0.84339   Widowed  :  45  
                                             Max.   : 3.31428                   
                                                                                
                       recentSex     job       heardHIV  
@@ -446,11 +446,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex      wealth           maritalStat  
- Not at all           :1716   Poorest:343   Min.   :-0.5997   Never    : 643  
- Less than once a week: 455   Poorer :546   1st Qu.:-0.4202   Partnered:1889  
- At least once a week : 245   Middle :621   Median :-0.3117   Separated:  86  
- Almost every day     : 211   Richer :595   Mean   : 0.1662   Widowed  :  13  
- NA's                 :   4   Richest:526   3rd Qu.: 0.1515                   
+ Not at all           :1716   Poorest:343   Min.   :-0.5997   Married  :1857  
+ Less than once a week: 455   Poorer :546   1st Qu.:-0.4202   Never    : 643  
+ At least once a week : 245   Middle :621   Median :-0.3117   Partnered:  32  
+ Almost every day     : 211   Richer :595   Mean   : 0.1662   Separated:  86  
+ NA's                 :   4   Richest:526   3rd Qu.: 0.1515   Widowed  :  13  
                                             Max.   : 6.9662                   
                                                                               
                       recentSex     job       heardHIV  
@@ -551,11 +551,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex       wealth           maritalStat  
- Not at all           :2580   Poorest: 925   Min.   :-1.0379   Never    :1684  
- Less than once a week:1388   Poorer :1192   1st Qu.:-0.5759   Partnered:3844  
- At least once a week :1094   Middle :1225   Median :-0.2494   Separated: 202  
- Almost every day     : 688   Richer :1217   Mean   : 0.1523   Widowed  :  25  
- NA's                 :   5   Richest:1196   3rd Qu.: 0.4868                   
+ Not at all           :2580   Poorest: 925   Min.   :-1.0379   Married  :3273  
+ Less than once a week:1388   Poorer :1192   1st Qu.:-0.5759   Never    :1684  
+ At least once a week :1094   Middle :1225   Median :-0.2494   Partnered: 571  
+ Almost every day     : 688   Richer :1217   Mean   : 0.1523   Separated: 202  
+ NA's                 :   5   Richest:1196   3rd Qu.: 0.4868   Widowed  :  25  
                                              Max.   : 5.5857                   
                                                                                
                       recentSex      job       heardHIV  
@@ -663,14 +663,14 @@ Answers (data.frame)
  NA's                 :   1   NA's                 :   3  
                                                           
                                                           
-                  mediaTv      wealthIndex      wealth           maritalStat  
- Not at all           :1263   Poorest:406   Min.   :-0.7558   Never    : 731  
- Less than once a week: 343   Poorer :320   1st Qu.:-0.6010   Partnered:1390  
- At least once a week :  58   Middle :390   Median :-0.3443   Separated: 116  
- Almost every day     : 574   Richer :422   Mean   : 0.2768   Widowed  :   3  
- NA's                 :   2   Richest:702   3rd Qu.: 0.7825                   
-                                            Max.   : 4.8063                   
-                                                                              
+                  mediaTv      wealthIndex      wealth           maritalStat 
+ Not at all           :1263   Poorest:406   Min.   :-0.7558   Married  :543  
+ Less than once a week: 343   Poorer :320   1st Qu.:-0.6010   Never    :731  
+ At least once a week :  58   Middle :390   Median :-0.3443   Partnered:847  
+ Almost every day     : 574   Richer :422   Mean   : 0.2768   Separated:116  
+ NA's                 :   2   Richest:702   3rd Qu.: 0.7825   Widowed  :  3  
+                                            Max.   : 4.8063                  
+                                                                             
                       recentSex      job       heardHIV  
  Active in last 4 weeks    :1587   No  : 792   No :   0  
  Not active in last 4 weeks: 653   Yes :1444   Yes:2240  
@@ -769,11 +769,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex       wealth           maritalStat  
- Not at all           :1214   Poorest: 435   Min.   :-1.0008   Never    : 959  
- Less than once a week: 730   Poorer : 518   1st Qu.:-0.7565   Partnered:2016  
- At least once a week :1229   Middle : 515   Median :-0.2909   Separated: 176  
- Almost every day     :   0   Richer : 603   Mean   : 0.2233   Widowed  :  22  
-                              Richest:1102   3rd Qu.: 1.3101                   
+ Not at all           :1214   Poorest: 435   Min.   :-1.0008   Married  :1321  
+ Less than once a week: 730   Poorer : 518   1st Qu.:-0.7565   Never    : 959  
+ At least once a week :1229   Middle : 515   Median :-0.2909   Partnered: 695  
+ Almost every day     :   0   Richer : 603   Mean   : 0.2233   Separated: 176  
+                              Richest:1102   3rd Qu.: 1.3101   Widowed  :  22  
                                              Max.   : 3.0355                   
                                                                                
                       recentSex     job       heardHIV  
@@ -874,12 +874,12 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex      wealth            maritalStat  
- Not at all           :1310   Poorest:442   Min.   :-1.49455   Never    :1937  
- Less than once a week: 412   Poorer :511   1st Qu.:-0.79576   Partnered:1198  
- At least once a week : 489   Middle :924   Median :-0.18780   Separated: 158  
- Almost every day     :1100   Richer :883   Mean   : 0.05081   Widowed  :  18  
- NA's                 :   1   Richest:552   3rd Qu.: 1.01277   NA's     :   1  
-                                            Max.   : 2.00604                   
+ Not at all           :1310   Poorest:442   Min.   :-1.49455   Married  : 675  
+ Less than once a week: 412   Poorer :511   1st Qu.:-0.79576   Never    :1937  
+ At least once a week : 489   Middle :924   Median :-0.18780   Partnered: 523  
+ Almost every day     :1100   Richer :883   Mean   : 0.05081   Separated: 158  
+ NA's                 :   1   Richest:552   3rd Qu.: 1.01277   Widowed  :  18  
+                                            Max.   : 2.00604   NA's     :   1  
                                                                                
                       recentSex      job       heardHIV  
  Active in last 4 weeks    :1588   No  :1055   No :   0  
@@ -979,11 +979,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex      wealth            maritalStat  
- Not at all           :1306   Poorest:504   Min.   :-1.43020   Never    :1933  
- Less than once a week: 568   Poorer :621   1st Qu.:-0.81736   Partnered:1215  
- At least once a week :1397   Middle :748   Median :-0.21985   Separated: 114  
- Almost every day     :   0   Richer :759   Mean   : 0.01556   Widowed  :  11  
- NA's                 :   2   Richest:641   3rd Qu.: 0.89390                   
+ Not at all           :1306   Poorest:504   Min.   :-1.43020   Married  : 640  
+ Less than once a week: 568   Poorer :621   1st Qu.:-0.81736   Never    :1933  
+ At least once a week :1397   Middle :748   Median :-0.21985   Partnered: 575  
+ Almost every day     :   0   Richer :759   Mean   : 0.01556   Separated: 114  
+ NA's                 :   2   Richest:641   3rd Qu.: 0.89390   Widowed  :  11  
                                             Max.   : 2.46591                   
                                                                                
                       recentSex      job       heardHIV  
@@ -1084,11 +1084,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex      wealth            maritalStat  
- Not at all           :2070   Poorest:518   Min.   :-0.49853   Never    : 830  
- Less than once a week: 471   Poorer :492   1st Qu.:-0.40298   Partnered:2017  
- At least once a week : 255   Middle :535   Median :-0.29612   Separated:  70  
- Almost every day     : 140   Richer :607   Mean   : 0.19685   Widowed  :  21  
- NA's                 :   2   Richest:786   3rd Qu.:-0.07002                   
+ Not at all           :2070   Poorest:518   Min.   :-0.49853   Married  :1293  
+ Less than once a week: 471   Poorer :492   1st Qu.:-0.40298   Never    : 830  
+ At least once a week : 255   Middle :535   Median :-0.29612   Partnered: 724  
+ Almost every day     : 140   Richer :607   Mean   : 0.19685   Separated:  70  
+ NA's                 :   2   Richest:786   3rd Qu.:-0.07002   Widowed  :  21  
                                             Max.   : 8.72332                   
                                                                                
                       recentSex      job       heardHIV  
@@ -1189,11 +1189,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex       wealth           maritalStat  
- Not at all           :1591   Poorest: 611   Min.   :-1.6534   Never    :1154  
- Less than once a week:1290   Poorer : 660   1st Qu.:-0.4641   Partnered:2677  
- At least once a week :1062   Middle : 767   Median :-0.2340   Separated:  93  
- Almost every day     :   0   Richer : 799   Mean   : 0.2165   Widowed  :  21  
- NA's                 :   2   Richest:1108   3rd Qu.: 0.3699                   
+ Not at all           :1591   Poorest: 611   Min.   :-1.6534   Married  :1926  
+ Less than once a week:1290   Poorer : 660   1st Qu.:-0.4641   Never    :1154  
+ At least once a week :1062   Middle : 767   Median :-0.2340   Partnered: 751  
+ Almost every day     :   0   Richer : 799   Mean   : 0.2165   Separated:  93  
+ NA's                 :   2   Richest:1108   3rd Qu.: 0.3699   Widowed  :  21  
                                              Max.   : 6.9257                   
                                                                                
                       recentSex      job       heardHIV  
@@ -1294,11 +1294,11 @@ Answers (data.frame)
                                                          
                                                          
                   mediaTv      wealthIndex      wealth           maritalStat  
- Not at all           :1046   Poorest:374   Min.   :-0.9540   Never    : 597  
- Less than once a week: 506   Poorer :416   1st Qu.:-0.7148   Partnered:1373  
- At least once a week : 317   Middle :395   Median :-0.4044   Separated: 113  
- Almost every day     : 225   Richer :475   Mean   : 0.0460   Widowed  :  12  
- NA's                 :   1   Richest:435   3rd Qu.: 0.4514                   
+ Not at all           :1046   Poorest:374   Min.   :-0.9540   Married  :1258  
+ Less than once a week: 506   Poorer :416   1st Qu.:-0.7148   Never    : 597  
+ At least once a week : 317   Middle :395   Median :-0.4044   Partnered: 115  
+ Almost every day     : 225   Richer :475   Mean   : 0.0460   Separated: 113  
+ NA's                 :   1   Richest:435   3rd Qu.: 0.4514   Widowed  :  12  
                                             Max.   : 4.2763                   
                                                                               
                       recentSex     job       heardHIV  
@@ -1399,11 +1399,11 @@ Answers (data.frame)
                                                                        
                                                                        
      wealth           maritalStat                        recentSex   
- Min.   :-1.0600   Never    : 516   Active in last 4 weeks    :1280  
- 1st Qu.:-0.7200   Partnered:1252   Not active in last 4 weeks: 634  
- Median :-0.3000   Separated: 125                                    
- Mean   : 0.1156   Widowed  :  21                                    
- 3rd Qu.: 0.7000                                                     
+ Min.   :-1.0600   Married  :1183   Active in last 4 weeks    :1280  
+ 1st Qu.:-0.7200   Never    : 516   Not active in last 4 weeks: 634  
+ Median :-0.3000   Partnered:  69                                    
+ Mean   : 0.1156   Separated: 125                                    
+ 3rd Qu.: 0.7000   Widowed  :  21                                    
  Max.   : 3.2600                                                     
                                                                      
   job       heardHIV   knowledgeCondomsProtect knowledgeLessPartnerProtect
@@ -1504,11 +1504,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex      wealth            maritalStat  
- Not at all           :1383   Poorest:367   Min.   :-1.30818   Never    : 473  
- Less than once a week: 272   Poorer :405   1st Qu.:-0.62925   Partnered:1340  
- At least once a week : 173   Middle :337   Median :-0.23563   Separated: 113  
- Almost every day     : 111   Richer :376   Mean   : 0.08855   Widowed  :  15  
- NA's                 :   2   Richest:456   3rd Qu.: 0.45922                   
+ Not at all           :1383   Poorest:367   Min.   :-1.30818   Married  :1202  
+ Less than once a week: 272   Poorer :405   1st Qu.:-0.62925   Never    : 473  
+ At least once a week : 173   Middle :337   Median :-0.23563   Partnered: 138  
+ Almost every day     : 111   Richer :376   Mean   : 0.08855   Separated: 113  
+ NA's                 :   2   Richest:456   3rd Qu.: 0.45922   Widowed  :  15  
                                             Max.   : 4.15753                   
                                                                                
                       recentSex     job       heardHIV  
@@ -1608,14 +1608,14 @@ Answers (data.frame)
  NA's                 :  4   NA's                 :   1  
                                                          
                                                          
-                  mediaTv     wealthIndex      wealth            maritalStat  
- Not at all           :921   Poorest:320   Min.   :-1.36542   Never    : 478  
- Less than once a week:277   Poorer :324   1st Qu.:-0.67627   Partnered:1202  
- At least once a week :232   Middle :290   Median :-0.23301   Separated: 106  
- Almost every day     :363   Richer :372   Mean   : 0.06681   Widowed  :   8  
- NA's                 :  1   Richest:488   3rd Qu.: 0.65498                   
-                                           Max.   : 3.11615                   
-                                                                              
+                  mediaTv     wealthIndex      wealth            maritalStat 
+ Not at all           :921   Poorest:320   Min.   :-1.36542   Married  :876  
+ Less than once a week:277   Poorer :324   1st Qu.:-0.67627   Never    :478  
+ At least once a week :232   Middle :290   Median :-0.23301   Partnered:326  
+ Almost every day     :363   Richer :372   Mean   : 0.06681   Separated:106  
+ NA's                 :  1   Richest:488   3rd Qu.: 0.65498   Widowed  :  8  
+                                           Max.   : 3.11615                  
+                                                                             
                       recentSex     job       heardHIV  
  Active in last 4 weeks    :1103   No : 109   No :   0  
  Not active in last 4 weeks: 691   Yes:1685   Yes:1794  
@@ -1714,11 +1714,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex       wealth           maritalStat  
- Not at all           :2650   Poorest: 923   Min.   :-1.1632   Never    :1629  
- Less than once a week: 644   Poorer : 771   1st Qu.:-0.8173   Partnered:3169  
- At least once a week : 536   Middle :1048   Median :-0.2521   Separated: 220  
- Almost every day     :1242   Richer :1285   Mean   : 0.1426   Widowed  :  57  
- NA's                 :   3   Richest:1048   3rd Qu.: 1.0847                   
+ Not at all           :2650   Poorest: 923   Min.   :-1.1632   Married  :3141  
+ Less than once a week: 644   Poorer : 771   1st Qu.:-0.8173   Never    :1629  
+ At least once a week : 536   Middle :1048   Median :-0.2521   Partnered:  28  
+ Almost every day     :1242   Richer :1285   Mean   : 0.1426   Separated: 220  
+ NA's                 :   3   Richest:1048   3rd Qu.: 1.0847   Widowed  :  57  
                                              Max.   : 2.4773                   
                                                                                
                       recentSex      job       heardHIV  
@@ -1819,11 +1819,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex       wealth           maritalStat  
- Not at all           :5075   Poorest:1880   Min.   :-1.0712   Never    :3861  
- Less than once a week:1725   Poorer :2283   1st Qu.:-0.7132   Partnered:7086  
- At least once a week :1381   Middle :2452   Median :-0.2319   Separated: 474  
- Almost every day     :3278   Richer :2508   Mean   : 0.1179   Widowed  :  46  
- NA's                 :   8   Richest:2344   3rd Qu.: 0.8000                   
+ Not at all           :5075   Poorest:1880   Min.   :-1.0712   Married  :7006  
+ Less than once a week:1725   Poorer :2283   1st Qu.:-0.7132   Never    :3861  
+ At least once a week :1381   Middle :2452   Median :-0.2319   Partnered:  80  
+ Almost every day     :3278   Richer :2508   Mean   : 0.1179   Separated: 474  
+ NA's                 :   8   Richest:2344   3rd Qu.: 0.8000   Widowed  :  46  
                                              Max.   : 4.1438                   
                                                                                
                       recentSex      job       heardHIV   
@@ -1924,11 +1924,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex       wealth           maritalStat  
- Not at all           :2370   Poorest: 886   Min.   :-1.3809   Never    :1590  
- Less than once a week: 576   Poorer : 914   1st Qu.:-0.9501   Partnered:3048  
- At least once a week : 639   Middle : 814   Median :-0.0898   Separated: 241  
- Almost every day     :1370   Richer :1344   Mean   : 0.0670   Widowed  :  85  
- NA's                 :   9   Richest:1006   3rd Qu.: 1.0901                   
+ Not at all           :2370   Poorest: 886   Min.   :-1.3809   Married  :2878  
+ Less than once a week: 576   Poorer : 914   1st Qu.:-0.9501   Never    :1590  
+ At least once a week : 639   Middle : 814   Median :-0.0898   Partnered: 170  
+ Almost every day     :1370   Richer :1344   Mean   : 0.0670   Separated: 241  
+ NA's                 :   9   Richest:1006   3rd Qu.: 1.0901   Widowed  :  85  
                                              Max.   : 1.9264                   
                                                                                
                       recentSex      job       heardHIV  
@@ -2029,11 +2029,11 @@ Answers (data.frame)
                                                           
                                                           
                   mediaTv      wealthIndex       wealth           maritalStat  
- Not at all           :1850   Poorest: 935   Min.   :-0.8417   Never    :1448  
- Less than once a week:1193   Poorer : 866   1st Qu.:-0.2435   Partnered:3384  
- At least once a week :2092   Middle : 953   Median : 0.3652   Separated: 243  
- Almost every day     :   0   Richer :1182   Mean   : 0.4361   Widowed  :  60  
-                              Richest:1199   3rd Qu.: 1.0578                   
+ Not at all           :1850   Poorest: 935   Min.   :-0.8417   Married  :3324  
+ Less than once a week:1193   Poorer : 866   1st Qu.:-0.2435   Never    :1448  
+ At least once a week :2092   Middle : 953   Median : 0.3652   Partnered:  60  
+ Almost every day     :   0   Richer :1182   Mean   : 0.4361   Separated: 243  
+                              Richest:1199   3rd Qu.: 1.0578   Widowed  :  60  
                                              Max.   : 4.0996                   
                                                                                
                       recentSex     job       heardHIV  
