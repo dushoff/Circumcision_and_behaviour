@@ -15,10 +15,19 @@ catNames <- c("CC","religion","urRural","job","maritalStat")
 
 catNames <- c("CC","religion")
 
-Smat <- diag(length(coef(mod)))
+BSmat <- function(x){
+  Smat <- diag(length(coef(x)))
+  rownames(Smat) <- colnames(Smat) <- attr(coef(x),"name")
+  return(Smat)
+}
+
+Smat <- BSmat(mod)
+
+mm <- model.matrix(delete.response(terms(mod)), frame[rownames(model.frame(mod)), ])
+
 
 isoList <- lapply(predNames, function(n){
-  ordpred(mod, n, modAns,Smatrix=NULL)
+  ordpred(mod, n, modAns,Smatrix=Smat)
 })
 
 
