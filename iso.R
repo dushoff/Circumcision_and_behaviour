@@ -1,6 +1,7 @@
 library(ordinal)
 library(splines)
 library(gridExtra)
+library(dplyr)
 library(ggplot2)
 library(reshape)
 theme_set(theme_bw())
@@ -23,7 +24,14 @@ BSmat <- function(x){
 
 Smat <- BSmat(mod)
 
-mm <- model.matrix(delete.response(terms(mod)), frame[rownames(model.frame(mod)), ])
+dd <- data.frame(model.matrix(delete.response(terms(mod)), modAns[rownames(model.frame(mod)), ]))
+ddTZ4 <- (dd 
+  %>% filter(CCTZ == 1) 
+  %>% filter(religionTanzanian==0)
+  %>% summarise_each(funs(mean))
+)
+Smat["CCTZ",grep(pattern="religion",colnames(Smat))] <- -1
+Smat["CCTZ",] <- unlist(ddTZ4 * Smat["CCTZ",])
 
 
 isoList <- lapply(predNames, function(n){
