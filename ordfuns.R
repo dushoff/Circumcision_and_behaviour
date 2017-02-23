@@ -4,8 +4,8 @@ ordTrans <- function(v, a){
   })
 }
 
-ordpred <- function(mod, n, modAns,Smatrix){
-  v <- varpred(mod, n, modAns, isolate=TRUE)
+ordpred <- function(mod, n, modAns,Smat){
+  v <- varpred(mod, n, modAns, Smat,isolate=TRUE)
   v$fit <- ordTrans(v$fit, mod$alpha)
   v$lwr <- ordTrans(v$lwr, mod$alpha)
   v$upr <- ordTrans(v$upr, mod$alpha)
@@ -13,7 +13,7 @@ ordpred <- function(mod, n, modAns,Smatrix){
 }
 
 
-varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.05, steps=101, dfspec=100, vv=NULL, Smatrix=NULL){
+varpred <- function(mod, varname, frame, Smatrix, isolate=FALSE, isoValue=NULL, level=0.05, steps=101, dfspec=100, vv=NULL){
   # Service functions
   eff <- function(mod){
     if (inherits(mod, "lm")) return (coef(mod))
@@ -27,8 +27,8 @@ varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.0
     stop("Don't recognize model type")
   }
   if(is.null(Smatrix)){
-    Smat <- diag(length(eff(mod)))
-    rownames(Smat) <- colnames(Smat) <- attr(coef(mod),"names")
+    Smatrix <- diag(length(eff(mod)))
+    rownames(Smatrix) <- colnames(Smatrix) <- attr(coef(mod),"names")
     }
   
   varfun <- function(vcol, steps){
@@ -94,8 +94,8 @@ varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.0
   ef <- eff(mod)
   vc <- vcov(mod)
   if (inherits(mod, "clmm")){
-    f <- c(names(mod$alpha)[[1]], names(mod$beta))
-    vc <- Smat%*%vc[f, f]%*%t(Smat)
+    f <- c(names(mod$alpha), names(mod$beta))
+    vc <- Smatrix%*%vc[f, f]%*%t(Smatrix)
   }
   
   if(!identical(colnames(mm), names(ef))){
@@ -103,8 +103,8 @@ varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.0
     print(setdiff(names(ef), colnames(mm)))
     stop("Effect names do not match: check for empty factor levels?")
   }
-  pred <- mmvar %*% Smat %*% eff(mod)
-  
+  pred <- mmvar %*% Smatrix[length(mod$alpha):nrow(Smatrix),length(mod$alpha):ncol(Smatrix)] %*% eff(mod)
+
   # (Centered) predictions for SEs
   if (isolate) {
     if(!is.null(isoValue)){
@@ -114,6 +114,9 @@ varpred <- function(mod, varname, frame, isolate=FALSE, isoValue=NULL, level=0.0
       mmbar<-rowbar[rep(1, steps), ]
     }
     mmvar <- mmvar-mmbar
+  }
+  if(length(mod$alpha)>1){
+  mmvar <- cbind(rep(0,length(mod$alpha)-1),mmvar)
   }
   
   pse_var <- sqrt(diag(mmvar %*% tcrossprod(vc, mmvar)))

@@ -1,0 +1,45 @@
+> 
+> # Generated using wrapR file condomStatus_int.wrapR.r
+> source('effectSize.R', echo=TRUE)
+
+> library(ordinal)
+
+> bet <- mod$beta
+
+> int <- grep("MCYes:", names(bet), value = TRUE)
+
+> b <- bet[[int]]
+
+> se <- sqrt(vcov(mod)[[int, int]])
+
+> brange <- c(lwr = b + se * qnorm(0.025), fit = b, 
++     upr = b + se * qnorm(0.975))
+
+> rawcounterfactual <- with(mcs, rawfit[[2]] + rawfit[[3]] - 
++     rawfit[[1]])
+
+> print(c(interaction = mcs$rawfit[[4]] - rawcounterfactual))
+interaction 
+  0.1629795 
+
+> rawrange <- rawcounterfactual + brange
+
+> counterfactual <- ordTrans(rawcounterfactual, mod$alpha)
+
+> estRange <- ordTrans(rawrange, mod$alpha)
+
+> if (unlist(strsplit(rtargetname, "[.]")) == "condomStatus_int") {
++     print(brange)
++     print(exp(brange))
++ }
+       lwr        fit        upr 
+0.05359627 0.16297947 0.27236268 
+     lwr      fit      upr 
+1.055059 1.177013 1.313063 
+
+> if (unlist(strsplit(rtargetname, "[.]")) == "partnerYearStatus_int") {
++     print(counterfactual)
++     print(estRange)
++     print(estRange - coun .... [TRUNCATED] 
+> # Wrapped output file condomStatus_int.wrapR.rout
+> 

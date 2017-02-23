@@ -10,11 +10,11 @@ attr(modAns,"terms") <- NULL
 predNames <- c("age", "wealth","CC", "religion", "edu", "urRural", "job",
            "maritalStat", "media", "knowledge")
 
-predNames <- c("CC", "religion")
+# predNames <- c("CC", "religion")
 
 catNames <- c("CC","religion","urRural","job","maritalStat")
 
-catNames <- c("CC","religion")
+# catNames <- c("CC","religion")
 
 BSmat <- function(x){
   Smat <- diag(length(coef(x)))
@@ -30,21 +30,23 @@ ddTZ4 <- (dd
   %>% filter(religionTanzanian==0)
   %>% summarise_each(funs(mean))
 )
+
+if(nrow(Smat)!= length(ddTZ4)){
+  ddTZ4 <- data.frame(0,ddTZ4)
+}
 Smat["CCTZ",grep(pattern="religion",colnames(Smat))] <- -1
 Smat["CCTZ",] <- unlist(ddTZ4 * Smat["CCTZ",])
 
 
 isoList <- lapply(predNames, function(n){
-  ordpred(mod, n, modAns,Smatrix=Smat)
+  ordpred(mod, n, modAns,Smat)
 })
 
-
-q()
 print(
 grid.arrange(varPlot(rename(isoList[[1]],c(age="Age")),P=varlvlsum$`Pr(>Chisq)`[1]),
              varPlot(rename(isoList[[2]],c(wealth="Wealth")),P=varlvlsum$`Pr(>Chisq)`[2]),
              varPlot(rename(isoList[[3]],c(CC="Country")),P=varlvlsum$`Pr(>Chisq)`[3]),
-             varPlot(rename(isoList[[4]],c(religion="Religion")),P=varlvlsum$`Pr(>Chisq)`[4]),
+             varPlot(rename(isoList[[4]]%>% filter(religion != "Tanzanian"),c(religion="Religion")),P=varlvlsum$`Pr(>Chisq)`[4]),
              varPlot(rename(isoList[[5]],c(edu="Education")),P=varlvlsum$`Pr(>Chisq)`[5]),
              varPlot(rename(isoList[[6]],c(urRural="Area")),P=varlvlsum$`Pr(>Chisq)`[6]),
              varPlot(rename(isoList[[7]],c(job="Job")),P=varlvlsum$`Pr(>Chisq)`[7]),
