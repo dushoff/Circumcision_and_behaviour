@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: condomStatus_isoplots.Rout 
+target pngtarget pdftarget vtarget acrtarget: questions.output 
 
 ##################################################################
 
@@ -43,6 +43,15 @@ all: combines.output surveys.Rout condomStatus.Rout
 
 ### Recoding
 Sources += $(wildcard *.ccsv *.tsv)
+
+Sources += questions.R
+.PRECIOUS: %.questions.Rout
+ke4.questions.Rout:
+%.questions.Rout: datadir/.%.RData questions.R
+	$(run-R)
+
+questions.output: $(sets:%=%.questions.Routput)
+	cat $^ > $@
 
 Sources += mccut.csv
 .PRECIOUS: %.recode.Rout
