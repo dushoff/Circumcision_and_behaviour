@@ -1,0 +1,81 @@
+> 
+> # Generated using wrapR file condomStatus.wrapR.r
+> source('condomStatus.R', echo=TRUE)
+
+> options(width = 200)
+
+> library(ordinal)
+
+> library(splines)
+
+> Answers <- subset(Answers, CC != "LS")
+
+> modAns <- model.frame(condom ~ age + wealth + religion + 
++     edu + urRural + job + maritalStat + media + knowledge + MC + 
++     period + cluster .... [TRUNCATED] 
+
+> attr(modAns, "terms") <- NULL
+
+> mod <- clmm(condom ~ ns(age, 4) + ns(wealth, 3) + 
++     CC + religion + edu + urRural + job + maritalStat + media + 
++     knowledge + MC * period  .... [TRUNCATED] 
+
+> print(summary(mod))
+Cumulative Link Mixed Model fitted with the Laplace approximation
+
+formula: condom ~ ns(age, 4) + ns(wealth, 3) + CC + religion + edu + urRural +      job + maritalStat + media + knowledge + MC * period + (1 |      clusterId) + (1 + media | CC)
+data:    modAns
+
+ link  threshold nobs  logLik    AIC      niter        max.grad cond.H 
+ logit flexible  63792 -26699.40 53474.80 12512(37623) 1.68e-02 1.5e+04
+
+Random effects:
+ Groups    Name        Variance Std.Dev. Corr   
+ clusterId (Intercept) 0.29680  0.5448          
+ CC        (Intercept) 0.04112  0.2028          
+           media       0.04054  0.2013   -1.000 
+Number of groups:  clusterId 9939,  CC 9 
+
+Coefficients:
+                         Estimate Std. Error z value Pr(>|z|)    
+ns(age, 4)1              0.536117   0.067382   7.956 1.77e-15 ***
+ns(age, 4)2              0.341426   0.068635   4.975 6.54e-07 ***
+ns(age, 4)3              1.718165   0.132600  12.957  < 2e-16 ***
+ns(age, 4)4             -0.358149   0.072341  -4.951 7.39e-07 ***
+ns(wealth, 3)1           0.868303   0.124985   6.947 3.72e-12 ***
+ns(wealth, 3)2           2.238557   0.476167   4.701 2.59e-06 ***
+ns(wealth, 3)3           1.285181   0.425975   3.017  0.00255 ** 
+CCMW                    -0.182609   0.058332  -3.130  0.00175 ** 
+CCMZ                    -0.485691   0.114668  -4.236 2.28e-05 ***
+CCNM                     1.080157   0.056834  19.006  < 2e-16 ***
+CCRW                    -0.812762   0.077126 -10.538  < 2e-16 ***
+CCTZ                    -0.055924   0.092162  -0.607  0.54398    
+CCUG                    -0.254039   0.084392  -3.010  0.00261 ** 
+CCZM                    -0.003793   0.047640  -0.080  0.93655    
+CCZW                     0.145209   0.056871   2.553  0.01067 *  
+religionMuslim          -0.236680   0.058009  -4.080 4.50e-05 ***
+religionNone/Other      -0.179186   0.043179  -4.150 3.33e-05 ***
+religionOther Christian -0.060347   0.029236  -2.064  0.03900 *  
+religionTanzanian       -0.434630   0.118324  -3.673  0.00024 ***
+eduPrimary               0.252546   0.058481   4.318 1.57e-05 ***
+eduSecondary             0.428227   0.061378   6.977 3.02e-12 ***
+eduHigher                0.387314   0.074775   5.180 2.22e-07 ***
+urRuralRural            -0.035291   0.034976  -1.009  0.31297    
+jobYes                  -0.084935   0.031486  -2.698  0.00698 ** 
+maritalStatNever         2.609588   0.036779  70.953  < 2e-16 ***
+maritalStatPartnered     0.427387   0.047447   9.008  < 2e-16 ***
+maritalStatSeparated     2.053271   0.048526  42.313  < 2e-16 ***
+maritalStatWidowed       2.151897   0.134649  15.982  < 2e-16 ***
+media                    0.319502   0.071808   4.449 8.61e-06 ***
+knowledge                0.539529   0.058147   9.279  < 2e-16 ***
+MCYes                   -0.042337   0.048381  -0.875  0.38154    
+periodnew                0.350617   0.034904  10.045  < 2e-16 ***
+MCYes:periodnew          0.056639   0.055843   1.014  0.31046    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Threshold coefficients:
+       Estimate Std. Error z value
+No|Yes   5.1045     0.2333   21.88
+> # Wrapped output file condomStatus.wrapR.rout
+> 

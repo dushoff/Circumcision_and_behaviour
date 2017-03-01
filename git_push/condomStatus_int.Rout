@@ -20,7 +20,7 @@
 
 > print(c(interaction = mcs$rawfit[[4]] - rawcounterfactual))
 interaction 
-  0.1629795 
+ 0.05663883 
 
 > rawrange <- rawcounterfactual + brange
 
@@ -32,10 +32,10 @@ interaction
 +     print(brange)
 +     print(exp(brange))
 + }
-       lwr        fit        upr 
-0.05359627 0.16297947 0.27236268 
-     lwr      fit      upr 
-1.055059 1.177013 1.313063 
+        lwr         fit         upr 
+-0.05281078  0.05663883  0.16608843 
+      lwr       fit       upr 
+0.9485595 1.0582735 1.1806775 
 
 > if (unlist(strsplit(rtargetname, "[.]")) == "partnerYearStatus_int") {
 +     print(counterfactual)
