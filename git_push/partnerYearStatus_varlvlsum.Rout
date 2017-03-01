@@ -1,0 +1,34 @@
+> 
+> # Generated using wrapR file partnerYearStatus_varlvlsum.wrapR.r
+> source('varlvlsum.R', echo=TRUE)
+
+> library(ordinal)
+
+> library(splines)
+
+> library(RVAideMemoire)
+
+> varlvlsum <- Anova.clmm(mod)
+
+> print(varlvlsum)
+Analysis of Deviance Table (Type II tests)
+
+Response: extraPartnerYear
+              LR Chisq Df Pr(>Chisq)    
+ns(age, 4)     300.537  4  < 2.2e-16 ***
+ns(wealth, 3)    5.533  3  0.1366926    
+CC             122.750  9  < 2.2e-16 ***
+religion        33.693  4  8.615e-07 ***
+edu             12.348  3  0.0062799 ** 
+urRural          5.842  1  0.0156478 *  
+job             65.317  1  6.376e-16 ***
+maritalStat     71.449  4  1.122e-14 ***
+media           12.182  1  0.0004825 ***
+knowledge       26.306  1  2.914e-07 ***
+MC               9.109  1  0.0025433 ** 
+period           0.805  1  0.3694746    
+MC:period        0.994  1  0.3186648    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # Wrapped output file partnerYearStatus_varlvlsum.wrapR.rout
+> 
