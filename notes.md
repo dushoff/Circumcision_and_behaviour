@@ -1,3 +1,5 @@
+Ten countries (Kenya, Lesotho, Malawi, Mozambique, Namibia, Rwanda, Tanzania, Uganda, Zambia and Zimbabwe) participating in the WHO's VMMC scale-up with available data from the Demographic and Health Surveys (DHS) were analyzed.  We did not use Tanzania 2014 (TZ7) because it missed religion and HIV knowledge.
+
 == To Do (2) ==
 
 * CLEAN UP THESE NOTES
