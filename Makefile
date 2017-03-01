@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: norecodes.output 
+target pngtarget pdftarget vtarget acrtarget: new.tables.Rout 
 
 ##################################################################
 
@@ -179,6 +179,14 @@ surveys.Rout: $(sets:%=%.combined.Rout.envir) surveys.R
 
 ## Does not work! Does summary not play nicely with plyr?
 surveys.summary.Routput: surveys.R
+
+tables.Rout: surveys.Rout tables.R
+	$(run-R)
+
+old.tables.Rout: tables.Rout old.tables.R
+	$(run-R)
+
+new.tables.Rout: tables.Rout new.tables.R
 
 ######################################################################
 

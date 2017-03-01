@@ -98,7 +98,7 @@ ddold3 <- (ddold2
   %>% rbind.data.frame(ddoldpercent,.)
   %>% arrange(Category,Category2)
   %>% ungroup()
-  %>% select(Category2,KE:ZW,Total)
+  %>% select(Category,Category2,KE:ZW,Total)
 )
 
 ddnew2 <- (ddnew 
@@ -129,11 +129,12 @@ ddnew3 <- (ddnew2
            %>% rbind.data.frame(ddnewpercent,.)
            %>% arrange(Category,Category2)
            %>% ungroup()
-           %>% select(Category2,KE:ZW,Total)
+           %>% select(Category,Category2,KE:ZW,Total)
 )
 
-knitr::kable(ddold3,format="latex",digits=3,align="l")
-knitr::kable(ddnew3,format="latex",digits=3,align="l")
+# knitr::kable(ddold3,format="latex",digits=3,align="l")
+# knitr::kable(ddnew3,format="latex",digits=3,align="l")
 
 ddold4 <- ddold3 %>% mutate(totalper = signif(Total*100/24109,2))
 ddnew4 <- ddnew3 %>% mutate(totalpar = signif(Total*100/42261,2))
+print(ddold4)
