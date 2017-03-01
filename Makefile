@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: questions.output 
+target pngtarget pdftarget vtarget acrtarget: norecodes.output 
 
 ##################################################################
 
@@ -54,6 +54,13 @@ questions.output: $(sets:%=%.questions.Routput)
 	cat $^ > $@
 
 Sources += mccut.csv
+.PRECIOUS: %.norecode.Rout
+%.norecode.Rout: datadir/.%.RData recodeFuns.Rout mccut.csv norecode.R
+	$(run-R)
+
+norecodes.output: $(sets:%=%.norecode.Routput) norecode.R
+	cat $^ > $@
+
 .PRECIOUS: %.recode.Rout
 %.recode.Rout: datadir/.%.RData recodeFuns.Rout religion_basic.ccsv partnership_basic.ccsv mccut.csv recode.R
 	$(run-R)
