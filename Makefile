@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: old.tables.Rout 
+target pngtarget pdftarget vtarget acrtarget: partnerYearStatus_isoplots.Rout 
 
 ##################################################################
 
@@ -221,7 +221,7 @@ partnerYearStatus.Rout: surveys.Rout partnerYearStatus.R
 
 condomStatus_isoplots.Rout:
 partnerYearStatus_isoplots.Rout:
-%_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
+%_isoplots.Rout: tempdir/.%_varlvlsum.RData ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
 ## Int plots (status models only)                                               

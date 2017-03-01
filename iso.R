@@ -8,11 +8,11 @@ theme_set(theme_bw())
 attr(modAns,"terms") <- NULL 
 
 predNames <- c("age", "wealth","CC", "religion", "edu", "urRural", "job",
-           "maritalStat", "media", "knowledge")
+           "maritalStat", "media", "knowledge","MC","period")
 
 # predNames <- c("CC", "religion")
 
-catNames <- c("CC","religion","urRural","job","maritalStat")
+catNames <- c("CC","religion","urRural","job","maritalStat","MC","period")
 
 # catNames <- c("CC","religion")
 
@@ -53,6 +53,8 @@ grid.arrange(varPlot(rename(isoList[[1]],c(age="Age")),P=varlvlsum$`Pr(>Chisq)`[
              varPlot(rename(isoList[[8]],c(maritalStat="Marital Status")),P=varlvlsum$`Pr(>Chisq)`[8]),
              varPlot(rename(isoList[[9]],c(media="Media")),P=varlvlsum$`Pr(>Chisq)`[9]),
              varPlot(rename(isoList[[10]],c(knowledge="Knowledge")),P=varlvlsum$`Pr(>Chisq)`[10]),
+             varPlot(rename(isoList[[11]],c(MC="MC")),P=varlvlsum$`Pr(>Chisq)`[11]),
+             varPlot(rename(isoList[[12]],c(period="Period")),P=varlvlsum$`Pr(>Chisq)`[12]),
              nrow=4)
 )
 

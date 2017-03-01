@@ -40,7 +40,7 @@ Answers <- within(Answers, {
 	levels(religion) <- c(levels(religion), "Tanzanian")
 	religion[survey=="TZ5"] <- "Tanzanian"
 
-	maritalStat <- tableRecode(maritalStat, "partnership", maxCat=8)
+	maritalStat <- tableRecode(maritalStat, "partnership", maxCat=5)
 })
 
 # HIV knowledge
