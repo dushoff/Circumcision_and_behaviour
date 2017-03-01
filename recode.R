@@ -2,11 +2,25 @@ cat("##############################################\n")
 print(rtargetname)
 cat("##############################################\n")
  
-
+load("datadir//.ke7.RData")
 library(gdata)
+library(dplyr)
 
+aa <- Answers
+Answers2 <- (aa
+  ## Reweight before subsetting.
+	%>% mutate(sampleWeight = sampleWeight/sum(sampleWeight))
+  # Drop people whose age is older than 49.
+	%>% filter(age <= 49)
+  # Don't want people who haven't heard of HIV, don't know their circ history or have never had sex
+	%>% filter(!is.na(heardHIV) & heardHIV=="Yes")
+	%>% filter(!is.na(recentSex) & !grepl("Never", recentSex))
+  %>% filter(!is.na(MC) & !(MC=="Don't know") & !(MC=="DK") & !(MC=="DK/Not sure"))
+  
+  %>% mutate(MC = drop.levels(MC, reorder=FALSE)
+  , recentSex = drop.levels(recentSex, reorder=FALSE))
+)
 
-## Reweight before subsetting.
 Answers <- within(Answers, {
 	sampleWeight <- sampleWeight/sum(sampleWeight)
 })
@@ -17,12 +31,15 @@ Answers <- subset(Answers, age <=49)
 
 # Don't want people who haven't heard of HIV, don't know their circ history or have never had sex
 Answers <- subset(Answers, !is.na(heardHIV) & heardHIV=="Yes")
+
 Answers <- subset(Answers,
 	!is.na(recentSex) & !grepl("Never", recentSex)
 )
+
 Answers <- subset(Answers,
 	!is.na(MC) & !(MC=="Don't know") & !(MC=="DK") & !(MC=="DK/Not sure")
 )
+
 Answers <- within(Answers, {
 	MC <- drop.levels(MC, reorder=FALSE)
 	recentSex <- drop.levels(recentSex, reorder=FALSE)
