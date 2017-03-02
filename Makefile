@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: %.recode.Rout 
+target pngtarget pdftarget vtarget acrtarget: ke4.recode.Rout 
 
 ##################################################################
 
@@ -62,6 +62,7 @@ norecodes.output: $(sets:%=%.norecode.Routput) norecode.R
 	cat $^ > $@
 
 .PRECIOUS: %.recode.Rout
+ke4.recode.Rout:
 %.recode.Rout: datadir/.%.RData recodeFuns.Rout religion_basic.ccsv partnership_basic.ccsv mccut.csv recode.R
 	$(run-R)
 
