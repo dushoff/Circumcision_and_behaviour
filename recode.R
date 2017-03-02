@@ -2,7 +2,8 @@ cat("##############################################\n")
 print(rtargetname)
 cat("##############################################\n")
  
-load("datadir//.ke7.RData")
+load('datadir/.ke7.RData')
+load('.recodeFuns.RData')
 library(gdata)
 library(dplyr)
 
@@ -18,9 +19,13 @@ Answers2 <- (aa
   %>% filter(!is.na(MC) & !(MC=="Don't know") & !(MC=="DK") & !(MC=="DK/Not sure"))
   
   %>% mutate(MC = drop.levels(MC, reorder=FALSE)
-  , recentSex = drop.levels(recentSex, reorder=FALSE))
+  , recentSex = drop.levels(recentSex, reorder=FALSE)
+  , CC = as.factor(substring(survey, 1, 2))
+  , recode = as.numeric(substring(survey, 3, 3))
+  )
 )
 
+### old stuff
 Answers <- within(Answers, {
 	sampleWeight <- sampleWeight/sum(sampleWeight)
 })
@@ -50,6 +55,8 @@ Answers <- within(Answers, {
 	CC <- as.factor(CC)
 	recode <- as.numeric(substring(survey, 3, 3))
 })
+
+all.equal(Answers,Answers2)
 
 Answers <- within(Answers, {
 	wealth <- wealth/100000
