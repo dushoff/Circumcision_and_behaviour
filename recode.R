@@ -2,8 +2,9 @@ cat("##############################################\n")
 print(rtargetname)
 cat("##############################################\n")
  
-load('datadir/.ke7.RData')
+load('datadir/.tz6.RData')
 load('.recodeFuns.RData')
+input_files <- c("religion_basic.ccsv", "partnership_basic.ccsv", "mccut.csv")
 library(gdata)
 library(dplyr)
 
@@ -22,6 +23,11 @@ Answers2 <- (aa
   , recentSex = drop.levels(recentSex, reorder=FALSE)
   , CC = as.factor(substring(survey, 1, 2))
   , recode = as.numeric(substring(survey, 3, 3))
+  , wealth = wealth/100000
+  , religion = tableRecode(religion, "religion", maxCat=4) # 
+  , religion = factor(religion,levels=c(levels(religion), "Tanzanian"))
+  # , religion = ifelse(survey=="TZ5","Tanzanian",religion)
+  , maritalStat = tableRecode(maritalStat, "partnership", maxCat=5)
   )
 )
 
@@ -56,8 +62,6 @@ Answers <- within(Answers, {
 	recode <- as.numeric(substring(survey, 3, 3))
 })
 
-all.equal(Answers,Answers2)
-
 Answers <- within(Answers, {
 	wealth <- wealth/100000
 	religion <- tableRecode(religion, "religion", maxCat=4)
@@ -66,6 +70,8 @@ Answers <- within(Answers, {
 
 	maritalStat <- tableRecode(maritalStat, "partnership", maxCat=5)
 })
+
+all.equal(Answers,Answers2)
 
 # HIV knowledge
 Answers <- within(Answers, {
