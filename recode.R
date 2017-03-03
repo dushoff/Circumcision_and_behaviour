@@ -1,7 +1,10 @@
 cat("##############################################\n")
 print(rtargetname)
 cat("##############################################\n")
- 
+# 
+# load('datadir/.ke7.RData')
+# load('.recodeFuns.RData')
+# input_files <- c("religion_basic.ccsv", "partnership_basic.ccsv", "mccut.csv")
 library(gdata)
 library(dplyr)
 
@@ -23,13 +26,12 @@ Answers <- (Answers
   , religion = factor(religion,levels=c(levels(religion), "Tanzanian"))
   # , religion = ifelse(survey=="TZ5","Tanzanian",religion)
   , maritalStat = tableRecode(maritalStat, "partnership", maxCat=5)
-  ))
   , condom = drop.levels(condom, reorder=FALSE)
-  , partnerYearMax = 3
+  , partnerYearMax = 3 
   , partnerLifeMax = 6
-  , partnerYear = tfun(partnerYear, partnerYearMax)
+  , partnerYear = tfun(partnerYear, 3) ## avoid warning message
   , extraPartnerYear = as.factor(ifelse(partnerYear==0, 0, partnerYear-1))
-  , partnerLife <- tfun(partnerLife, partnerLifeMax)
+  , partnerLife <- tfun(partnerLife, 6)
   , partnerLife <- as.factor(partnerLife)
   , clusterId <- as.factor(clusterId)
   )
