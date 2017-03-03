@@ -36,8 +36,8 @@ Answers <- (Answers
 	%>% filter(!is.na(recentSex) & !grepl("Never", recentSex))
   %>% filter(!is.na(MC) & !(MC=="Don't know") & !(MC=="DK") & !(MC=="DK/Not sure"))
   %>% transmute(survey = survey ## keep just these variables
-  , clusterId = as.factor(clusterId) 
-  # , clusterID = as.factor(paste(survey, clusterId, sep="_")) 
+  , clusterID = as.factor(clusterId) 
+  , clusterId = as.factor(paste(survey, clusterID, sep="_")) 
   , age = age
   , ageGroup = ageGroup
   , urRural = urRural
