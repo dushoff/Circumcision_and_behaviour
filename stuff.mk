@@ -1,5 +1,5 @@
 msrepo = https://github.com/dushoff
-gitroot = ./gitroot
+gitroot = ./
 export ms = $(gitroot)/makestuff
 Drop = ~/Dropbox
 
