@@ -222,7 +222,7 @@ partnerYearStatus.Rout: surveys.Rout partnerYearStatus.R
 
 condomStatus_isoplots.Rout:
 partnerYearStatus_isoplots.Rout:
-%_isoplots.Rout: tempdir/.%_varlvlsum.RData ordfuns.R plotFuns.R iso.R
+%_isoplots.Rout: %_varlvlsum.RData ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
 ## Int plots (status models only)                                               

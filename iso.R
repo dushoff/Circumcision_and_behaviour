@@ -42,19 +42,26 @@ isoList <- lapply(predNames, function(n){
   ordpred(mod, n, modAns,Smat)
 })
 
+respLab <- "                               Non-cohabiting Partners"
+if(rtargetname=="condomStatus_isoplots"){
+  respLab <- "                               Condom usage at last sex"
+}
+
+str(isoList[[4]])
+
 print(
-grid.arrange(varPlot(rename(isoList[[1]],c(age="Age")),P=varlvlsum$`Pr(>Chisq)`[1]),
-             varPlot(rename(isoList[[2]],c(wealth="Wealth")),P=varlvlsum$`Pr(>Chisq)`[2]),
-             varPlot(rename(isoList[[3]],c(CC="Country")),P=varlvlsum$`Pr(>Chisq)`[3]),
-             varPlot(rename(isoList[[4]]%>% filter(religion != "Tanzanian"),c(religion="Religion")),P=varlvlsum$`Pr(>Chisq)`[4]),
-             varPlot(rename(isoList[[5]],c(edu="Education")),P=varlvlsum$`Pr(>Chisq)`[5]),
-             varPlot(rename(isoList[[6]],c(urRural="Area")),P=varlvlsum$`Pr(>Chisq)`[6]),
-             varPlot(rename(isoList[[7]],c(job="Job")),P=varlvlsum$`Pr(>Chisq)`[7]),
-             varPlot(rename(isoList[[8]],c(maritalStat="Marital Status")),P=varlvlsum$`Pr(>Chisq)`[8]),
-             varPlot(rename(isoList[[9]],c(media="Media")),P=varlvlsum$`Pr(>Chisq)`[9]),
-             varPlot(rename(isoList[[10]],c(knowledge="Knowledge")),P=varlvlsum$`Pr(>Chisq)`[10]),
-             varPlot(rename(isoList[[11]],c(MC="MC")),P=varlvlsum$`Pr(>Chisq)`[11]),
-             varPlot(rename(isoList[[12]],c(period="Period")),P=varlvlsum$`Pr(>Chisq)`[12]),
+grid.arrange(varPlot(rename(isoList[[1]],c(age="Age")),P=varlvlsum$`Pr(>Chisq)`[1],ylab=""),
+             varPlot(rename(isoList[[2]],c(wealth="Wealth")),P=varlvlsum$`Pr(>Chisq)`[2],ylab=""),
+             varPlot(rename(isoList[[3]],c(CC="Country")),P=varlvlsum$`Pr(>Chisq)`[3],ylab=""),
+             varPlot(rename(isoList[[4]]%>% filter(religion != "Tanzanian"),c(religion="Religion")),P=varlvlsum$`Pr(>Chisq)`[4],ylab=""),
+             varPlot(rename(isoList[[5]],c(edu="Education")),P=varlvlsum$`Pr(>Chisq)`[5],ylab=""),
+             varPlot(rename(isoList[[6]],c(urRural="Residence")),P=varlvlsum$`Pr(>Chisq)`[6],ylab=""),
+             varPlot(rename(isoList[[7]],c(job="Job")),P=varlvlsum$`Pr(>Chisq)`[7],ylab=respLab),
+             varPlot(rename(isoList[[8]],c(maritalStat="Marital Status")),P=varlvlsum$`Pr(>Chisq)`[8],ylab=""),
+             varPlot(rename(isoList[[9]],c(media="Media")),P=varlvlsum$`Pr(>Chisq)`[9],ylab=""),
+             varPlot(rename(isoList[[10]],c(knowledge="Knowledge")),P=varlvlsum$`Pr(>Chisq)`[10],ylab=""),
+             varPlot(rename(isoList[[11]],c(MC="MC")),P=varlvlsum$`Pr(>Chisq)`[11],ylab=""),
+             varPlot(rename(isoList[[12]],c(period="Period")),P=varlvlsum$`Pr(>Chisq)`[12],ylab=""),
              nrow=4)
 )
 
