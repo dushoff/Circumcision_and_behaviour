@@ -1,1 +1,0 @@
-catname <- "knowledge"
