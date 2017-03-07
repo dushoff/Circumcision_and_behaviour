@@ -1,5 +1,10 @@
 Ten countries (Kenya, Lesotho, Malawi, Mozambique, Namibia, Rwanda, Tanzania, Uganda, Zambia and Zimbabwe) participating in the WHO's VMMC scale-up with available data from the Demographic and Health Surveys (DHS) were analyzed.  We did not use Tanzania 2014 (TZ7) because it missed religion and HIV knowledge.
 
+In surveys.Rout, there are 12570 NAs in MCCategory.  It is the sum of circumcised men in the pre-2007 datasets.
+
+  
+Number of non-marital sexual partners within the last 12 months was recoded from zero to three; and number of non marital sexual partners in lifetime from zero to six. Numbers exceeded the maximum was truncated as the maximum.  
+
 == To Do (2) ==
 
 * CLEAN UP THESE NOTES
