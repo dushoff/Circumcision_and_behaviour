@@ -90,7 +90,7 @@ ddoldpercent <- (ddold2
   %>% select(-c(Sub_Category))
 )
 ddold3 <- (ddold2
-  %>% select(-Sub_Category)
+  # %>% select(-Sub_Category)
   %>% group_by(Category)
   %>% summarise_each(funs(sum(.))) 
   %>% ungroup()
@@ -138,3 +138,4 @@ ddnew3 <- (ddnew2
 ddold4 <- ddold3 %>% mutate(totalper = signif(Total*100/24109,2))
 ddnew4 <- ddnew3 %>% mutate(totalpar = signif(Total*100/42261,2))
 print(ddold4)
+
