@@ -57,7 +57,7 @@ isoList[[8]] <- (isoList[[8]]
 )
 
 isoList[[12]] <- (isoList[[12]]
-  %>% mutate(period = factor(period,levels=c("old", "new"),labels=c("Old","New")))
+  %>% mutate(period = factor(period,levels=c("old", "new"),labels=c("Pre","Post")))
 )
 
 
