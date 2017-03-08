@@ -4,31 +4,31 @@ library(dplyr)
 
 # Answers <- subset(Answers, CC != "LS")
 
-aa <- Answers %>% filter(CC=="LS") %>% mutate(condom="No")
-aa2 <- Answers %>% filter(CC != "LS")
-Ans2 <- rbind(aa,aa2)
+LSdat <- Answers %>% filter(CC=="LS") %>% mutate(condom="No")
+noLSdat <- Answers %>% filter(CC != "LS")
+Ans2 <- rbind(LSdat,noLSdat)
 
 oldAns <- model.frame(
   condom ~ 
-    ageGroup + urRural + religion + edu + job + maritalStat + partnerYear + MC 
+    ageGroup + urRural + religion + edu + job + maritalStat + extraPartnerYear + MC 
   + knowledgeCondomsProtect + knowledgeLessPartnerProtect + knowledgeHealthyGetAids 
-  + period + mediaNpMg + mediaRadio + CC + mediaTv,# + partnerLife + MCCategory,
+  + period + mediaNpMg + mediaRadio + CC + mediaTv,
   data=Ans2, na.action=na.exclude, drop.unused.levels=TRUE
 )
 
 
 newAns <- model.frame(
   condom ~ 
-    ageGroup + urRural + religion + edu + job + maritalStat + partnerYear + MC 
+    ageGroup + urRural + religion + edu + job + maritalStat + extraPartnerYear + MC 
   + knowledgeCondomsProtect + knowledgeLessPartnerProtect + knowledgeHealthyGetAids 
-  + period + mediaNpMg + mediaRadio + CC + mediaTv + MCCategory,
-  data=Answers, na.action=na.exclude, drop.unused.levels=TRUE
+  + period + mediaNpMg + mediaRadio + CC + mediaTv,
+  data=Ans2, na.action=na.exclude, drop.unused.levels=TRUE
 )
 
 
 
-old <- oldAns %>% filter(period=="old")
-new <- newAns %>% filter(period=="new")
+old <- oldAns %>% filter(period=="Old")
+new <- newAns %>% filter(period=="New")
 
 old_table <- function(x){
   return(table(old[,x],old[,"CC"]))
@@ -39,13 +39,13 @@ new_table <- function(x){
 }
 
 predictorsOLD <- c("ageGroup","urRural","edu","religion","maritalStat","job","condom"
-                   ,"partnerYear", "MC","knowledgeCondomsProtect"
+                   ,"extraPartnerYear", "MC","knowledgeCondomsProtect"
                    ,"knowledgeLessPartnerProtect", "knowledgeHealthyGetAids","mediaNpMg"
                    ,"mediaRadio","mediaTv")
 
 
 predictorsNEW <- c("ageGroup","urRural","edu","religion","maritalStat","job","condom"
-                ,"partnerYear", "MC", "MCCategory","knowledgeCondomsProtect"
+                ,"extraPartnerYear", "MC","knowledgeCondomsProtect"
                 ,"knowledgeLessPartnerProtect", "knowledgeHealthyGetAids","mediaNpMg"
                 ,"mediaRadio","mediaTv")
 

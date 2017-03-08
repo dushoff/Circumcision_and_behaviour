@@ -5,7 +5,7 @@ Answers <- (Answers
 	, maritalStat = factor(maritalStat,levels=c("Never","Married","Partnered","Separated","Widowed")
 									, labels=c("Never Unioned", "Married", "Partnered", "Separated", "Widowed")
 									)
-	, MCCategory = factor(MCCategory,levels=c("No","Old","New")) 
+	, period = factor(period,levels=c("old","new"),labels=c("Old","New")) 
 	)
 )
 
