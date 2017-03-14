@@ -28,8 +28,8 @@ figdrop:
 overleaf:
 	git clone https://git.overleaf.com/6654613kpgmzg $@
 
-
 ##################################################################
+
 Sources += $(wildcard *.R)
 
 ### Data sets
