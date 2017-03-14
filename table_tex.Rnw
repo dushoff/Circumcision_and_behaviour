@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage[top=0.01in,left=1in]{geometry}
+
+\begin{document}
+\begin{table}{}
+\tiny{
+\begin{tabular}{|lrrrrrrrrrr|r|}
+\hline
+\bf{Country} & KE & LS & MW & MZ & NM & RW & TZ & UG & ZM & ZW & Total\\
+\hline
+
+\end{tabular}
+}
+\end{table}
+\end{document}
