@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: tables.Rout 
+target pngtarget pdftarget vtarget acrtarget: old.tables.Rout 
 
 ##################################################################
 
@@ -192,6 +192,9 @@ tables.Rout: finalrecode.Rout tables.R
 
 old.tables.Rout: tables.Rout old.tables.R
 	$(run-R)
+
+old_table.pdf: old.tables.Rout 
+	pdflatex old_table.tex
 
 new.tables.Rout: tables.Rout new.tables.R
 
