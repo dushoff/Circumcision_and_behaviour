@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: new_table.pdf 
+target pngtarget pdftarget vtarget acrtarget: old_table.pdf 
 
 ##################################################################
 
@@ -190,7 +190,7 @@ finalrecode.Rout: surveys.Rout finalrecode.R
 tables.Rout: finalrecode.Rout tables.R
 	$(run-R)
 
-old_tables.Rout: tables.Rout table_funs.Rout old_tables.R
+old_tables.Rout: tables.Rout table_funs.R old_tables.R
 	$(run-R)
 
 old_table.tex: old_tables.Rout 
@@ -198,7 +198,7 @@ old_table.tex: old_tables.Rout
 old_table.pdf: old_table.tex
 	pdflatex old_table.tex
 
-new_tables.Rout: tables.Rout table_funs.Rout new_tables.R
+new_tables.Rout: tables.Rout table_funs.R new_tables.R
 	$(run-R)
 
 new_table.tex: new_tables.Rout

@@ -12,9 +12,9 @@ latex <- function(x,spaces=FALSE){
   string <- knitr:::kable(x,format="latex",digits=3,align="l",col.names = NULL,booktabs=FALSE)
   tab <- unlist(strsplit(string[1],"\n"))
   if(spaces){
-    return(paste("\\hspace{0.2in}",tab[2+2*1:n]))
+    return(paste("\\hspace{0.2in}",tab[c(2+2*1:n)]))
   }
-  return(tab[2+2*1:n])
+  return(tab[c(2+2*1:n,2+2*n+1)])
 }
 
 header <- c("
