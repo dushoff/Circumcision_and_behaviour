@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: old.tables.Rout 
+target pngtarget pdftarget vtarget acrtarget: old_table.pdf 
 
 ##################################################################
 
@@ -17,7 +17,7 @@ include stuff.mk
 
 Sources += dushoff.mk
 
-Makefile: datadir figdrop overleaf
+# Makefile: datadir figdrop overleaf
 
 datadir:
 	/bin/ln -s $(Drop)/mc_data_files/ $@
@@ -181,6 +181,7 @@ surveys.Rout: $(sets:%=%.combined.Rout.envir) surveys.R
 ## Does not work! Does summary not play nicely with plyr?
 surveys.summary.Routput: surveys.R
 
+
 #####################################################################
 
 finalrecode.Rout: surveys.Rout finalrecode.R
@@ -192,7 +193,9 @@ tables.Rout: finalrecode.Rout tables.R
 old.tables.Rout: tables.Rout old.tables.R
 	$(run-R)
 
-old_table.pdf: old.tables.Rout 
+old_table.tex: old.tables.Rout 
+
+old_table.pdf: old_table.tex
 	pdflatex old_table.tex
 
 new.tables.Rout: tables.Rout new.tables.R

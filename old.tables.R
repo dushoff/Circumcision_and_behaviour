@@ -8,10 +8,13 @@ dfill <- function(dat,x){
   )
 }
 
-latex <- function(x){
+latex <- function(x,spaces=FALSE){
   n <- nrow(x)
   string <- knitr:::kable(x,format="latex",digits=3,align="l",col.names = NULL,booktabs=FALSE)
   tab <- unlist(strsplit(string[1],"\n"))
+  if(spaces){
+    return(paste("\\hspace{0.2in}",tab[2+2*1:n]))
+  }
   return(tab[2+2*1:n])
 }
 
@@ -84,6 +87,22 @@ cat(header
   , hline
   , "\\bf{Circumcised}" , spaces
   , latex(dfill(ddold4,"MC"))
+  , hline
+  , "\\bf{Knowledge}" , spaces
+  , space , "\\bf{Condoms Protect}" , spaces
+  , latex(dfill(ddold4,"knowledgeCondomsProtect"),space=TRUE)
+  , space , "\\bf{Less Partner Protect}" , spaces
+  , latex(dfill(ddold4,"knowledgeLessPartnerProtect"),space=TRUE)
+  , space , "\\bf{Healthy Get Aids}" , spaces
+  , latex(dfill(ddold4,"knowledgeHealthyGetAids"),space=TRUE)
+  , hline
+  , "\\bf{Media}" , spaces
+  , space , "\\bf{Newspaper and Magazines}" , spaces
+  , latex(dfill(ddold4,"mediaNpMg"),space=TRUE)
+  , space , "\\bf{Radio}" , spaces
+  , latex(dfill(ddold4,"mediaRadio"),space=TRUE)
+  , space , "\\bf{TV}" , spaces
+  , latex(dfill(ddold4,"mediaTv"),space=TRUE)
   , footer
   , file="old_table.tex")
 
