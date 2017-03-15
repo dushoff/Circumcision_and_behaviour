@@ -17,7 +17,7 @@ include stuff.mk
 
 Sources += dushoff.mk
 
-# Makefile: datadir figdrop overleaf
+Makefile: datadir figdrop overleaf
 
 datadir:
 	/bin/ln -s $(Drop)/mc_data_files/ $@
