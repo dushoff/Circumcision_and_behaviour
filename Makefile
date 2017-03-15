@@ -181,7 +181,6 @@ surveys.Rout: $(sets:%=%.combined.Rout.envir) surveys.R
 ## Does not work! Does summary not play nicely with plyr?
 surveys.summary.Routput: surveys.R
 
-
 #####################################################################
 
 finalrecode.Rout: surveys.Rout finalrecode.R
