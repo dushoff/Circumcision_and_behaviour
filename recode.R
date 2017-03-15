@@ -58,6 +58,7 @@ Answers <- (Answers
   , recode = as.numeric(substring(survey, 3, 3))
   , partnerYear = tfun(partnerYear, 3) ## avoid warning message by entering the number
   , extraPartnerYear = as.factor(ifelse(partnerYear==0, 0, partnerYear-1))
+  , extraPartnerYear = factor(extraPartnerYear,levels=0:2,labels=c("0","1",">1"))
   )
   %>% select(-c(partnerYear))
 )
