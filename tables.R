@@ -137,5 +137,5 @@ ddnew3 <- (ddnew2
 # knitr::kable(ddnew3,format="latex",digits=3,align="l")
 
 ddold4 <- ddold3 %>% mutate(totalper = signif(Total*100/24974,2))
-ddnew4 <- ddnew3 %>% mutate(totalpar = signif(Total*100/42616,2))
+ddnew4 <- ddnew3 %>% mutate(totalper = signif(Total*100/42616,2))
 
