@@ -10,37 +10,27 @@ Country <- (ddnew4
 
 cat(header
     , "\\bf{Sample Size} &" , latex(Country) ## sample size 
-    , hline
     , "\\bf{Category (in percentage)}", spaces
     , hline
     , "\\bf{Age Group}" , spaces
     , latex(dfill(ddnew4,"ageGroup"))
-    , hline
     , "\\bf{Residence}" , spaces
     , latex(dfill(ddnew4,"urRural"))
-    , hline
     , "\\bf{Education}" , spaces
     , latex(dfill(ddnew4,"edu"))
-    , hline
     , "\\bf{Religion}" , spaces 
     , latex(dfill(ddnew4,"religion"))
-    , hline
     , "\\bf{Marital Status}" , spaces
     , latex(dfill(ddnew4,"maritalStat"))
-    , hline
     , "\\bf{Job}" , spaces
     , latex(dfill(ddnew4,"job"))
-    , hline
     , "\\bf{Condom Usage at Last Sex}" , spaces
     , latex(dfill(ddnew4,"condom"))
-    , hline
     , "\\bf{Non-habiting Partners}" , spaces
     , latex(dfill(ddnew4,"extraPartnerYear"))
-    , hline
     , "\\bf{Circumcised}" , spaces
     , latex(dfill(ddnew4,"MC"))
-    , hline
-    , "\\bf{Knowledge}" , spaces
+    , "\\bf{HIV Knowledge}" , spaces
     , space , "\\bf{Condoms Protect}" , spaces
     , latex(dfill(ddnew4,"knowledgeCondomsProtect"),space=TRUE)
     , space , "\\bf{Less Partner Protect}" , spaces

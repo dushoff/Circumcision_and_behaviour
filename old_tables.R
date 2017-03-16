@@ -30,7 +30,7 @@ cat(header
   , latex(dfill(ddold4,"extraPartnerYear"))
   , "\\bf{Circumcised}" , spaces
   , latex(dfill(ddold4,"MC"))
-  , "\\bf{Knowledge}" , spaces
+  , "\\bf{HIV Knowledge}" , spaces
   , space , "\\bf{Condoms Protect}" , spaces
   , latex(dfill(ddold4,"knowledgeCondomsProtect"),space=TRUE)
   , space , "\\bf{Less Partner Protect}" , spaces
