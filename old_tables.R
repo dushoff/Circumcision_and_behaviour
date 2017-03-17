@@ -9,6 +9,7 @@ Country <- (ddold4
 
 
 cat(header
+  , "\\bf{Survey Year} & 2003 & 2004 & 2004 & 2003 & 2006-7 & 2005 & 2004-5 & 2006 & 2007 & 2005-6 & \\\\"
   , "\\bf{Sample Size} &" , latex(Country) ## sample size 
   , "\\bf{Category (in percentage)}", spaces
   , hline

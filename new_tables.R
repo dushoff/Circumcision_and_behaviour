@@ -9,6 +9,7 @@ Country <- (ddnew4
 
 
 cat(header
+    , "\\bf{Survey Year} & 2014 & 2014 & 2010 & 2011 & 2013 & 2014-15 & 2010 & 2011 & 2013-14 & 2011 & \\\\"
     , "\\bf{Sample Size} &" , latex(Country) ## sample size 
     , "\\bf{Category (in percentage)}", spaces
     , hline
@@ -30,7 +31,7 @@ cat(header
     , latex(dfill(ddnew4,"extraPartnerYear"))
     , "\\bf{Circumcised}" , spaces
     , latex(dfill(ddnew4,"MC"))
-    , "\\bf{HIV Knowledge}" , spaces
+    , "\\bf{Knowledge}" , spaces
     , space , "\\bf{Condoms Protect}" , spaces
     , latex(dfill(ddnew4,"knowledgeCondomsProtect"),space=TRUE)
     , space , "\\bf{Less Partner Protect}" , spaces
