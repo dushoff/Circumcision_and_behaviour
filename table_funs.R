@@ -28,7 +28,6 @@ header <- c("
   \\hline
   \\bf{Country} & KE & LS & MW & MZ & NM & RW & TZ & UG & ZM & ZW & Total \\\\
   \\hline
-  \\bf{Survey Year} & 2003 & 2004 & 2004 & 2003 & 2006-7 & 2005 & 2004-5 & 2006 & 2007 & 2005-6 & \\\\
 ")
 
 footer <- c("
