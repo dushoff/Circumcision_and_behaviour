@@ -17,7 +17,7 @@ include stuff.mk
 
 Sources += dushoff.mk
 
-Makefile: datadir figdrop overleaf
+# Makefile: datadir figdrop overleaf
 
 datadir:
 	/bin/ln -s $(Drop)/mc_data_files/ $@
@@ -181,6 +181,7 @@ surveys.Rout: $(sets:%=%.combined.Rout.envir) surveys.R
 ## Does not work! Does summary not play nicely with plyr?
 surveys.summary.Routput: surveys.R
 
+
 #####################################################################
 
 finalrecode.Rout: surveys.Rout finalrecode.R
@@ -189,10 +190,21 @@ finalrecode.Rout: surveys.Rout finalrecode.R
 tables.Rout: finalrecode.Rout tables.R
 	$(run-R)
 
-old.tables.Rout: tables.Rout old.tables.R
+old_tables.Rout: tables.Rout table_funs.R old_tables.R
 	$(run-R)
 
-new.tables.Rout: tables.Rout new.tables.R
+old_table.tex: old_tables.Rout 
+
+old_table.pdf: old_table.tex
+	pdflatex old_table.tex
+
+new_tables.Rout: tables.Rout table_funs.R new_tables.R
+	$(run-R)
+
+new_table.tex: new_tables.Rout
+
+new_table.pdf: new_table.tex
+	pdflatex new_table.tex
 
 ######################################################################
 
