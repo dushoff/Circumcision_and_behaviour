@@ -27,16 +27,16 @@ cat(header
     , latex(dfill(ddnew4,"job"))
     , "\\bf{Condom Usage at Last Sex}" , spaces
     , latex(dfill(ddnew4,"condom"))
-    , "\\bf{Non-habiting Partners}" , spaces
+    , "\\bf{Non-cohabiting Partners}" , spaces
     , latex(dfill(ddnew4,"extraPartnerYear"))
     , "\\bf{Circumcised}" , spaces
     , latex(dfill(ddnew4,"MC"))
-    , "\\bf{Knowledge}" , spaces
+    , "\\bf{HIV Knowledge}" , spaces
     , space , "\\bf{Condoms Protect}" , spaces
     , latex(dfill(ddnew4,"knowledgeCondomsProtect"),space=TRUE)
     , space , "\\bf{Less Partner Protect}" , spaces
     , latex(dfill(ddnew4,"knowledgeLessPartnerProtect"),space=TRUE)
-    , space , "\\bf{Healthy Get Aids}" , spaces
+    , space , "\\bf{Healthy People Get Aids}" , spaces
     , latex(dfill(ddnew4,"knowledgeHealthyGetAids"),space=TRUE)
     , hline
     , "\\bf{Media}" , spaces

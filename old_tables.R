@@ -7,6 +7,8 @@ Country <- (ddold4
   %>% select(-c(Category,Category2,totalper))
 )
 
+print(dfill(ddold4,"extraPartnerYear"))
+print(latex(dfill(ddold4,"extraPartnerYear")))
 
 cat(header
   , "\\bf{Survey Year} & 2003 & 2004 & 2004 & 2003 & 2006-7 & 2005 & 2004-5 & 2006 & 2007 & 2005-6 & \\\\"
@@ -27,7 +29,7 @@ cat(header
   , latex(dfill(ddold4,"job"))
   , "\\bf{Condom Usage at Last Sex}" , spaces
   , latex(dfill(ddold4,"condom"))
-  , "\\bf{Non-habiting Partners}" , spaces
+  , "\\bf{Non-cohabiting Partners}" , spaces
   , latex(dfill(ddold4,"extraPartnerYear"))
   , "\\bf{Circumcised}" , spaces
   , latex(dfill(ddold4,"MC"))
@@ -36,7 +38,7 @@ cat(header
   , latex(dfill(ddold4,"knowledgeCondomsProtect"),space=TRUE)
   , space , "\\bf{Less Partner Protect}" , spaces
   , latex(dfill(ddold4,"knowledgeLessPartnerProtect"),space=TRUE)
-  , space , "\\bf{Healthy Get Aids}" , spaces
+  , space , "\\bf{Healthy People Get Aids}" , spaces
   , latex(dfill(ddold4,"knowledgeHealthyGetAids"),space=TRUE)
   , hline
   , "\\bf{Media}" , spaces

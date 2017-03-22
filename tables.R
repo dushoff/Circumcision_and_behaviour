@@ -4,7 +4,7 @@ library(dplyr)
 
 # Answers <- subset(Answers, CC != "LS")
 
-LSdat <- Answers %>% filter(survey=="LS4") %>% mutate(condom="No")
+LSdat <- Answers %>% filter(survey=="LS4") %>% mutate(condom="NA")
 noLSdat <- Answers %>% filter(survey != "LS4")
 Ans2 <- rbind(LSdat,noLSdat)
 
@@ -74,6 +74,8 @@ row.names(ddold) <- row.names(ddnew) <- NULL
 ddold2 <- (ddold 
   %>% mutate(Total = KE+LS+MW+MZ+NM+RW+TZ+UG+ZM+ZW)
 )
+
+
 ddoldpercent <- (ddold2
   %>% group_by(Category)
   %>% mutate(Category2 = Sub_Category
@@ -90,6 +92,8 @@ ddoldpercent <- (ddold2
   )
   %>% select(-c(Sub_Category))
 )
+
+
 ddold3 <- (ddold2
   %>% select(-Sub_Category)
   %>% group_by(Category)
@@ -139,3 +143,6 @@ ddnew3 <- (ddnew2
 ddold4 <- ddold3 %>% mutate(totalper = signif(Total*100/24974,2))
 ddnew4 <- ddnew3 %>% mutate(totalper = signif(Total*100/42616,2))
 
+print(ddold4)
+
+print(ddnew4)

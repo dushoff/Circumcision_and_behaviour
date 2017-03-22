@@ -23,8 +23,8 @@ header <- c("
             
   \\begin{document}
   \\begin{table}{}
-  \\tiny{
-  \\begin{tabular}{|lrrrrrrrrrr|r|}
+  \\scriptsize{
+  \\begin{tabular}{|l|rrrrrrrrrr|r|}
   \\hline
   \\bf{Country} & KE & LS & MW & MZ & NM & RW & TZ & UG & ZM & ZW & Total \\\\
   \\hline
