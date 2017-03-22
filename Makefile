@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: new_table.pdf 
+target pngtarget pdftarget vtarget acrtarget: auto.html 
 
 ##################################################################
 
@@ -306,7 +306,9 @@ refs.bib: auto.bib manual.clip.bib
 ## Mess with recency figures
 
 ## update_overleaf pushes files from here to the overleaf/ subdirectory, which is linked to the overleaf version of the project.
-update_overleaf: refs.bib.po condomStatus_intplots.pdf.po partnerYearStatus_intplots.pdf.po recency_back.pdf.po
+
+#condomStatus_intplots.pdf.po partnerYearStatus_intplots.pdf.po recency_back.pdf.po
+update_overleaf: refs.bib.po
 %.po: %
 	$(CPF) $< overleaf/
 
