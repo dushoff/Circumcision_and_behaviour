@@ -140,9 +140,21 @@ ddnew3 <- (ddnew2
 # knitr::kable(ddold3,format="latex",digits=3,align="l")
 # knitr::kable(ddnew3,format="latex",digits=3,align="l")
 
-ddold4 <- ddold3 %>% mutate(totalper = round(Total*100/24974,1))
-ddnew4 <- ddnew3 %>% mutate(totalper = round(Total*100/42616,1))
+oldtotal <- (ddold3
+	%>% filter(Category2 == "Total")
+	%>% select(Total)
+	%>% filter(row_number()==1)
+)
+
+newtotal <- (ddnew3
+	%>% filter(Category2 == "Total")
+	%>% select(Total)
+	%>% filter(row_number()==1)
+)
+
+
+ddold4 <- ddold3 %>% mutate(totalper = round(Total*100/oldtotal[[1]],1))
+ddnew4 <- ddnew3 %>% mutate(totalper = round(Total*100/newtotal[[1]],1))
 
 print(ddold4)
-
 print(ddnew4)
