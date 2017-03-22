@@ -8,8 +8,7 @@ Country <- (ddnew4
 )
 
 
-cat(header
-    , "\\bf{Survey Year} & 2014 & 2014 & 2010 & 2011 & 2013 & 2014-15 & 2010 & 2011 & 2013-14 & 2011 & \\\\"
+cat("\\bf{Survey Year} & 2014 & 2014 & 2010 & 2011 & 2013 & 2014-15 & 2010 & 2011 & 2013-14 & 2011 & \\\\"
     , "\\bf{Sample Size} &" , latex(Country) ## sample size 
     , "\\bf{Category (in percentage)}", spaces
     , hline
@@ -46,6 +45,5 @@ cat(header
     , latex(dfill(ddnew4,"mediaRadio"),space=TRUE)
     , space , "\\bf{TV}" , spaces
     , latex(dfill(ddnew4,"mediaTv"),space=TRUE)
-    , footer
     , file="new_table.tex")
 

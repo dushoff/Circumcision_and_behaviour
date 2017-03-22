@@ -10,8 +10,7 @@ Country <- (ddold4
 print(dfill(ddold4,"extraPartnerYear"))
 print(latex(dfill(ddold4,"extraPartnerYear")))
 
-cat(header
-  , "\\bf{Survey Year} & 2003 & 2004 & 2004 & 2003 & 2006-7 & 2005 & 2004-5 & 2006 & 2007 & 2005-6 & \\\\"
+cat("\\bf{Survey Year} & 2003 & 2004 & 2004 & 2003 & 2006-7 & 2005 & 2004-5 & 2006 & 2007 & 2005-6 & \\\\"
   , "\\bf{Sample Size} &" , latex(Country) ## sample size 
   , "\\bf{Category (in percentage)}", spaces
   , hline
@@ -48,6 +47,5 @@ cat(header
   , latex(dfill(ddold4,"mediaRadio"),space=TRUE)
   , space , "\\bf{TV}" , spaces
   , latex(dfill(ddold4,"mediaTv"),space=TRUE)
-  , footer
   , file="old_table.tex")
 
