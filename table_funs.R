@@ -20,6 +20,7 @@ latex <- function(x,spaces=FALSE){
 header <- c("
   \\documentclass{article}
   \\usepackage[top=0.01in,left=1in]{geometry}
+  \\usepackage[T1]{fontenc}
             
   \\begin{document}
   \\begin{table}{}

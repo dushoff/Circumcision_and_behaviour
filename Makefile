@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: %.recode.Rout 
+target pngtarget pdftarget vtarget acrtarget: new_table.pdf 
 
 ##################################################################
 
