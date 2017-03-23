@@ -1,0 +1,108 @@
+> 
+> # Generated using wrapR file ke7.recode.wrapR.r
+> source('recode.R', echo=TRUE)
+
+> cat("##############################################\n")
+##############################################
+
+> print(rtargetname)
+[1] "ke7.recode"
+
+> cat("##############################################\n")
+##############################################
+
+> library(gdata)
+
+> Answers <- within(Answers, {
++     sampleWeight <- sampleWeight/sum(sampleWeight)
++ })
+
+> Answers <- subset(Answers, age <= 49)
+
+> Answers <- subset(Answers, !is.na(heardHIV) & heardHIV == 
++     "Yes")
+
+> Answers <- subset(Answers, !is.na(recentSex) & !grepl("Never", 
++     recentSex))
+
+> Answers <- subset(Answers, !is.na(MC) & !(MC == "Don't know") & 
++     !(MC == "DK") & !(MC == "DK/Not sure"))
+
+> Answers <- within(Answers, {
++     MC <- drop.levels(MC, reorder = FALSE)
++     recentSex <- drop.levels(recentSex, reorder = FALSE)
++ })
+
+> Answers <- within(Answers, {
++     CC <- substring(survey, 1, 2)
++     CC <- as.factor(CC)
++     recode <- as.numeric(substring(survey, 3, 3))
++ })
+
+> Answers <- within(Answers, {
++     wealth <- wealth/1e+05
++     religion <- tableRecode(religion, "religion", maxCat = 4)
++     levels(religion) <-  .... [TRUNCATED] 
+[1] "Replacing: {{ Roman Catholic }} with  Catholic/Orthodox"
+[1] "Replacing: {{ Roman Catholic }} with  Catholic/Orthodox"
+[1] "Replacing: {{ Protestant/ Other Christian }} with  Other Christian"
+[1] "Replacing: {{ Protestant/ Other Christian }} with  Other Christian"
+[1] "Replacing: {{ Muslim }} with  Muslim"
+[1] "Replacing: {{ No religion }} with  None/Other"
+[1] "Replacing: {{ Other }} with  None/Other"
+[1] "Replacing: {{ Never in union }} with  Never"
+[1] "Replacing: {{ Married }} with  Married"
+[1] "Replacing: {{ Living with partner }} with  Partnered"
+[1] "Replacing: {{ Divorced }} with  Separated"
+[1] "Replacing: {{ Divorced }} with  Separated"
+[1] "Replacing: {{ No longer living together/separated }} with  Separated"
+[1] "Replacing: {{ Widowed }} with  Widowed"
+
+> Answers <- within(Answers, {
++     if (sum(!is.na(knowledgeCondomsProtect)) > 0) {
++         levels(knowledgeCondomsProtect)[levels(knowledgeCondoms .... [TRUNCATED] 
+
+> Answers <- within(Answers, {
++     condom <- drop.levels(condom, reorder = FALSE)
++     partnerYearMax <- 3
++     partnerLifeMax <- 6
++     partnerY .... [TRUNCATED] 
+
+> ctable <- read.csv(grep("mcc", input_files, value = TRUE))
+
+> print(ctable)
+    cut
+ke7   7
+ls7   7
+rw7   7
+nm6   6
+zm6   6
+mz6   4
+ug6   4
+zw6   3
+mw6   3
+tz6   3
+
+> set <- sub("[.].*", "", rtargetname)
+
+> ind <- cut <- which(set == rownames(ctable))
+
+> cut <- ifelse(length(ind) == 1, ctable$cut[[ind]], 
++     NA)
+
+> Answers$mccut <- rep(cut, nrow(Answers))
+
+> Answers$baseAge <- with(Answers, ifelse(ageMC == 95 | 
++     ageMC == 96, 5, ifelse(ageMC == 98, NA, ageMC)))
+
+> oldMC <- with(Answers, ifelse(age - Answers$baseAge > 
++     mccut, "Old", "New"))
+
+> Answers$MCCategory <- as.factor(with(Answers, ifelse(MC == 
++     "No", "No", oldMC)))
+
+> Answers <- within(Answers, {
++     clusterId <- as.factor(paste(survey, clusterId, sep = "_"))
++ })
+> # Wrapped output file ke7.recode.wrapR.rout
+> 
