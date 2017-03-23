@@ -1,0 +1,81 @@
+> 
+> # Generated using wrapR file partnerYearStatus.wrapR.r
+> source('partnerYearStatus.R', echo=TRUE)
+
+> options(width = 200)
+
+> library(ordinal)
+
+> library(splines)
+
+> modAns <- model.frame(extraPartnerYear ~ age + wealth + 
++     religion + edu + urRural + job + maritalStat + media + knowledge + 
++     MC + period .... [TRUNCATED] 
+
+> attr(modAns, "terms") <- NULL
+
+> mod <- clmm(extraPartnerYear ~ ns(age, 4) + ns(wealth, 
++     3) + CC + religion + edu + urRural + job + maritalStat + 
++     media + knowledge + MC .... [TRUNCATED] 
+
+> print(summary(mod))
+Cumulative Link Mixed Model fitted with the Laplace approximation
+
+formula: extraPartnerYear ~ ns(age, 4) + ns(wealth, 3) + CC + religion +      edu + urRural + job + maritalStat + media + knowledge + MC *      period + (1 | clusterId) + (1 + media | CC)
+data:    modAns
+
+ link  threshold nobs  logLik    AIC      niter        max.grad cond.H 
+ logit flexible  76952 -38119.24 76318.48 12448(47421) 3.04e-01 1.9e+04
+
+Random effects:
+ Groups    Name        Variance Std.Dev. Corr   
+ clusterId (Intercept) 0.423886 0.65107         
+ CC        (Intercept) 0.009481 0.09737         
+           media       0.009364 0.09677  -1.000 
+Number of groups:  clusterId 10782,  CC 10 
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)    
+ns(age, 4)1              0.73446    0.06658  11.031  < 2e-16 ***
+ns(age, 4)2              0.43811    0.06399   6.846 7.58e-12 ***
+ns(age, 4)3              1.56626    0.13594  11.522  < 2e-16 ***
+ns(age, 4)4             -0.21185    0.06199  -3.418 0.000632 ***
+ns(wealth, 3)1          -0.05717    0.11745  -0.487 0.626441    
+ns(wealth, 3)2          -0.70884    0.47094  -1.505 0.132279    
+ns(wealth, 3)3          -0.94010    0.50323  -1.868 0.061744 .  
+CCLS                     1.07297    0.05714  18.778  < 2e-16 ***
+CCMW                    -0.28936    0.05893  -4.910 9.12e-07 ***
+CCMZ                     1.41127    0.05566  25.356  < 2e-16 ***
+CCNM                    -0.08997    0.06026  -1.493 0.135433    
+CCRW                    -1.15725    0.07428 -15.580  < 2e-16 ***
+CCTZ                     0.75074    0.07839   9.577  < 2e-16 ***
+CCUG                     0.73967    0.06099  12.128  < 2e-16 ***
+CCZM                     0.45718    0.04851   9.425  < 2e-16 ***
+CCZW                    -0.02941    0.05848  -0.503 0.615039    
+religionMuslim           0.08745    0.04910   1.781 0.074918 .  
+religionNone/Other       0.10899    0.03916   2.783 0.005379 ** 
+religionOther Christian -0.07479    0.02709  -2.761 0.005766 ** 
+religionTanzanian       -0.07157    0.09871  -0.725 0.468438    
+eduPrimary               0.04676    0.04438   1.053 0.292147    
+eduSecondary            -0.03370    0.04918  -0.685 0.493116    
+eduHigher               -0.08496    0.06478  -1.311 0.189696    
+urRuralRural             0.08253    0.03438   2.400 0.016376 *  
+jobYes                   0.24307    0.03036   8.006 1.19e-15 ***
+maritalStatNever         0.14078    0.03332   4.225 2.39e-05 ***
+maritalStatPartnered     0.17493    0.04443   3.937 8.24e-05 ***
+maritalStatSeparated     0.25450    0.04772   5.334 9.62e-08 ***
+maritalStatWidowed      -0.65095    0.14858  -4.381 1.18e-05 ***
+media                    0.17806    0.03804   4.681 2.85e-06 ***
+knowledge                0.25972    0.05115   5.078 3.82e-07 ***
+MCYes                    0.11537    0.04190   2.753 0.005904 ** 
+periodnew                0.04445    0.03421   1.299 0.193930    
+MCYes:periodnew         -0.04985    0.04989  -0.999 0.317738    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Threshold coefficients:
+    Estimate Std. Error z value
+0|1   3.4158     0.1988   17.18
+1|2   5.5311     0.2004   27.60
+> # Wrapped output file partnerYearStatus.wrapR.rout
+> 

@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: questions.output 
+target pngtarget pdftarget vtarget acrtarget: new_table.tex 
 
 ##################################################################
 
@@ -28,8 +28,8 @@ figdrop:
 overleaf:
 	git clone https://git.overleaf.com/6654613kpgmzg $@
 
-
 ##################################################################
+
 Sources += $(wildcard *.R)
 
 ### Data sets
@@ -54,7 +54,15 @@ questions.output: $(sets:%=%.questions.Routput)
 	cat $^ > $@
 
 Sources += mccut.csv
+.PRECIOUS: %.norecode.Rout
+%.norecode.Rout: datadir/.%.RData recodeFuns.Rout mccut.csv norecode.R
+	$(run-R)
+
+norecodes.output: $(sets:%=%.norecode.Routput) norecode.R
+	cat $^ > $@
+
 .PRECIOUS: %.recode.Rout
+ke4.recode.Rout:
 %.recode.Rout: datadir/.%.RData recodeFuns.Rout religion_basic.ccsv partnership_basic.ccsv mccut.csv recode.R
 	$(run-R)
 
@@ -173,6 +181,31 @@ surveys.Rout: $(sets:%=%.combined.Rout.envir) surveys.R
 ## Does not work! Does summary not play nicely with plyr?
 surveys.summary.Routput: surveys.R
 
+
+#####################################################################
+
+finalrecode.Rout: surveys.Rout finalrecode.R
+	$(run-R)
+
+tables.Rout: finalrecode.Rout tables.R
+	$(run-R)
+
+old_tables.Rout: tables.Rout table_funs.R old_tables.R
+	$(run-R)
+
+old_table.tex: old_tables.Rout 
+
+old_table.pdf: old_table.tex
+	pdflatex old_table.tex
+
+new_tables.Rout: tables.Rout table_funs.R new_tables.R
+	$(run-R)
+
+new_table.tex: new_tables.Rout
+
+new_table.pdf: new_table.tex
+	pdflatex new_table.tex
+
 ######################################################################
 
 ## Combine all of the recency surveys
@@ -200,7 +233,7 @@ partnerYearStatus.Rout: surveys.Rout partnerYearStatus.R
 
 condomStatus_isoplots.Rout:
 partnerYearStatus_isoplots.Rout:
-%_isoplots.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R
+%_isoplots.Rout: %_varlvlsum.RData ordfuns.R plotFuns.R iso.R
 	$(run-R)
 
 ## Int plots (status models only)                                               
@@ -273,7 +306,9 @@ refs.bib: auto.bib manual.clip.bib
 ## Mess with recency figures
 
 ## update_overleaf pushes files from here to the overleaf/ subdirectory, which is linked to the overleaf version of the project.
-update_overleaf: refs.bib.po condomStatus_intplots.pdf.po partnerYearStatus_intplots.pdf.po recency_back.pdf.po
+
+#condomStatus_intplots.pdf.po partnerYearStatus_intplots.pdf.po recency_back.pdf.po
+update_overleaf: refs.bib.po
 %.po: %
 	$(CPF) $< overleaf/
 

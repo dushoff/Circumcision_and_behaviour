@@ -1,4 +1,6 @@
 cat("##############################################\n")
 print(rtargetname)
 cat("##############################################\n")
-print(Questions[26])
+ 
+print(summary(Answers))
+
