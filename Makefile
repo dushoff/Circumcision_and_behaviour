@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: new_table.tex 
+target pngtarget pdftarget vtarget acrtarget: auto.html 
 
 ##################################################################
 
