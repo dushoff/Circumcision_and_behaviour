@@ -1,3 +1,10 @@
+May 7th 2017
+
+Always put new notes at the top. Recency project wants to change "Other Christian to Christian".
+
+
+
+
 Ten countries (Kenya, Lesotho, Malawi, Mozambique, Namibia, Rwanda, Tanzania, Uganda, Zambia and Zimbabwe) participating in the WHO's VMMC scale-up with available data from the Demographic and Health Surveys (DHS) were analyzed.  We did not use Tanzania 2014 (TZ7) because it missed religion and HIV knowledge.
 
 In surveys.Rout, there are 12570 NAs in MCCategory.  It is the sum of circumcised men in the pre-2007 datasets.

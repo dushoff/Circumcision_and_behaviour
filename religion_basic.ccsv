@@ -1,37 +1,37 @@
 Catholic: Catholic/Orthodox
 Orthodox: Catholic/Orthodox
 Roman catholic: Catholic/Orthodox
-Adventist: Other Christian
-Anglican: Other Christian
-Anglican Church: Other Christian
-Apostolic Sect: Other Christian
-Aventist: Other Christian
-CCAP: Other Christian
-Charismatic: Other Christian
-Christrian: Other Christian
-Chrétienne: Other Christian
-Eglise du 7e jour: Other Christian
-Elcin: Other Christian
-Envagelic: Other Christian
-Evangelist: Other Christian
-Evangelical: Other Christian
-^Christian: Other Christian
-Jehovah: Other Christian
-Jehovah Witness: Other Christian
-kimbanguist: Other Christian
-Methodist: Other Christian
-New apostolic: Other Christian
-Pentecostal: Other Christian
-Protestant: Other Christian
-Protestant/Anglican: Other Christian
-Protestant/ other Christian: Other Christian
-Salvation Army: Other Christian
-Seventh Day: Other Christian
-Seventh-day adventist: Other Christian
-SDA: Other Christian
-Baptist: Other Christian
-^Zion: Other Christian
-Zionist: Other Christian
+Adventist: Christian
+Anglican: Christian
+Anglican Church: Christian
+Apostolic Sect: Christian
+Aventist: Christian
+CCAP: Christian
+Charismatic: Christian
+Christrian: Christian
+Chrétienne: Christian
+Eglise du 7e jour: Christian
+Elcin: Christian
+Envagelic: Christian
+Evangelist: Christian
+Evangelical: Christian
+^Christian: Christian
+Jehovah: Christian
+Jehovah Witness: Christian
+kimbanguist: Christian
+Methodist: Christian
+New apostolic: Christian
+Pentecostal: Christian
+Protestant: Christian
+Protestant/Anglican: Christian
+Protestant/ Christian: Christian
+Salvation Army: Christian
+Seventh Day: Christian
+Seventh-day adventist: Christian
+SDA: Christian
+Baptist: Christian
+^Zion: Christian
+Zionist: Christian
 Islam: Muslim
 Islamic: Muslim
 Moslem: Muslim

@@ -5,7 +5,7 @@
 ### Hooks 
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: update_bibs 
+target pngtarget pdftarget vtarget acrtarget: old_table.pdf 
 
 ##################################################################
 

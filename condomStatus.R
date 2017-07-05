@@ -18,7 +18,7 @@ mod <- clmm(condom ~
 	ns(age, 4) + ns(wealth,3) + CC
 	+ religion + edu + urRural + job + maritalStat 
 	+ media + knowledge + MC*period + (1|clusterId) 
-	+ (1 + media|CC)
+	+ (0 + media|CC)
 	, data=modAns
 )
 
