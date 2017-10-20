@@ -11,8 +11,8 @@ target pngtarget pdftarget vtarget acrtarget: old_table.pdf
 
 # make files and directories
 
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md notes.md
-include stuff.mk
+Sources = Makefile .gitignore README.md LICENSE.md notes.md
+include sub.mk
 # include $(ms)/perl.def
 
 Sources += dushoff.mk
