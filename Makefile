@@ -14,6 +14,7 @@ target pngtarget pdftarget vtarget acrtarget: old_table.pdf
 Sources = Makefile .gitignore sub.mk README.md LICENSE.md notes.md
 include sub.mk
 # include $(ms)/perl.def
+-include $(ms)/repos.def
 
 Sources += dushoff.mk
 
@@ -352,7 +353,7 @@ update_overleaf: $(overleaf_files) $(overleaf_files:%=%.po)
 -include $(ms)/pandoc.mk
 
 -include $(ms)/wrapR.mk
--include $(ms)/linkdirs.mk
+-include $(ms)/modules.mk
 
 -include $(ms)/flextex.mk
 -include $(ms)/bibtex.def
