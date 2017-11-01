@@ -4,8 +4,7 @@
 
 ### Hooks 
 current: target
-
-target pngtarget pdftarget vtarget acrtarget: old_table.pdf 
+-include target.mk
 
 ##################################################################
 
