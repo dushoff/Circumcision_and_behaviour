@@ -30,6 +30,15 @@ makestuff/
 *.output
 .Rproj.user
 
+## Refs
+auto.html
+auto.md
+manual.clip.bib
+
+*.mdmk
+*.bibmk
+*.point
+
 commit.time
 
 .localdir/
