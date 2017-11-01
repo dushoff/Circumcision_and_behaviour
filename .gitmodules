@@ -1,0 +1,3 @@
+[submodule "autorefs"]
+	path = autorefs
+	url = https://github.com/dushoff/autorefs.git
