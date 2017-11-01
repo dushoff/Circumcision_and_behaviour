@@ -285,6 +285,7 @@ get_fits:
 ## This file should use bibtex about the same way as the real one and can be used for testing simple stuff
 Sources += test.tex
 
+Sources += autorefs
 auto.bib: autorefs
 
 Sources += clip.pl
