@@ -296,6 +296,8 @@ auto.bib: auto.rmu
 auto.md: auto.rmu
 auto.html: auto.rmu
 
+small.bib: small.rmu
+
 Sources += manual.bib auto.rmu original.rmu original.bib
 refs.bib: auto.bib manual.clip.bib
 	$(cat)
