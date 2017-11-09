@@ -19,12 +19,6 @@ target.mk
 
 local.mk
 
-testdir/
-.testdir/
-subclone_dir/
-makestuff/
-
-*.makestuff
 *.Rout.envir
 *.Routput
 *.output
