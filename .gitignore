@@ -58,3 +58,5 @@ maketest/
 %.reqs
 %.mk
 
+dotdir/
+refs.bib.po
