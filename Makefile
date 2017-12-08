@@ -292,11 +292,15 @@ Sources += clip.pl
 manual.clip.bib: manual.bib clip.pl
 	$(PUSH)
 
+Sources += manual.bib auto.rmu original.rmu original.bib
+
 auto.bib: auto.rmu
 auto.md: auto.rmu
 auto.html: auto.rmu
 
-Sources += manual.bib auto.rmu original.rmu original.bib
+Sources += small.rmu
+small.bib: small.rmu
+
 refs.bib: auto.bib manual.clip.bib
 	$(cat)
 
