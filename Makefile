@@ -15,9 +15,10 @@ include sub.mk
 # include $(ms)/perl.def
 -include $(ms)/repos.def
 
-Sources += dushoff.mk
-
 # Makefile: datadir figdrop overleaf
+
+Drop = ~/Dropbox
+-include local.mk
 
 datadir:
 	/bin/ln -s $(Drop)/mc_data_files/ $@
@@ -50,6 +51,7 @@ ke4.questions.Rout:
 %.questions.Rout: datadir/.%.RData questions.R
 	$(run-R)
 
+# questions.output: questions.R
 questions.output: $(sets:%=%.questions.Routput)
 	cat $^ > $@
 
@@ -260,12 +262,6 @@ partnerYearStatus_int.Rout:
 
 #%_MCcat.Rout: %_varlvlsum.Rout ordfuns.R plotFuns.R iso.R MCcat.R
 	#$(run-R)
-
-## Crib 
-
-.PRECIOUS: %.tsv %.ccsv %.csv %.R
-# %.tsv %.ccsv %.csv %.R: 
-	# $(CP) cribdir/$@ .
 
 ######################################################################
 
