@@ -10,13 +10,24 @@ current: target
 
 # make files and directories
 
-Sources = Makefile .ignore sub.mk README.md LICENSE.md notes.md
-Ignore += .gitignore
-include sub.mk
-# include $(ms)/perl.def
--include $(ms)/repos.def
+Sources = Makefile .ignore README.md LICENSE.md notes.md
 
-# Makefile: datadir figdrop overleaf
+msrepo = https://github.com/dushoff
+ms = makestuff
+Ignore += local.mk
+-include local.mk
+-include $(ms)/os.mk
+
+# -include $(ms)/perl.def
+
+Sources += $(ms)
+Makefile: $(ms) $(ms)/Makefile
+$(ms):
+	git submodule add -b master $(msrepo)/$(ms)
+
+$(ms)/%.mk: $(ms) $(ms)/Makefile ;
+$(ms)/Makefile:
+	git submodule update -i
 
 Drop = ~/Dropbox
 -include local.mk
