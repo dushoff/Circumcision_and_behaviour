@@ -293,8 +293,9 @@ get_fits:
 ## This file should use bibtex about the same way as the real one and can be used for testing simple stuff
 Sources += test.tex
 
-Sources += autorefs
-auto.bib: autorefs
+## 2018 Nov 01 (Thu) I don't think we want autorefs anymore
+## Sources += autorefs
+## auto.bib: autorefs
 
 Sources += clip.pl
 manual.clip.bib: manual.bib clip.pl
