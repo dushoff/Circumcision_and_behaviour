@@ -296,6 +296,7 @@ Sources += test.tex
 ## 2018 Nov 01 (Thu) I don't think we want autorefs anymore
 ## Sources += autorefs
 ## auto.bib: autorefs
+## rm -fr autorefs ##
 
 Sources += clip.pl
 manual.clip.bib: manual.bib clip.pl
